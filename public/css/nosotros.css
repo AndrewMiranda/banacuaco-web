@@ -1,0 +1,233 @@
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto-regular", sans-serif;
+    text-decoration: none;
+    color: #333; /*color de textos*/
+    
+}
+
+/*Seccion de Nosotros*/
+.containerUS{
+    margin-top: 30px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.titleUs{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    margin-top: 80px;
+}
+
+.titleUs h3{
+    font-family: "arnold";
+    color:#653392;
+}
+
+.contentUs{
+    background-color: #FEBD00;
+    border-radius: 0px 63px 63px 0px;
+    height: 300px;
+    width: 100%;
+}
+
+.usText{
+    padding: 0 10%;
+    margin-top: 60px;
+}
+
+.usText h3{
+    font-family: "arnold";
+    color:#653392;
+    height: 70px;
+    width: 432px;
+    font-size: 40px;
+}
+
+.usText p{
+    font-size: 20px;
+    color: #333;
+    font-family: "roboto-bold";
+}
+
+.imgUs{
+    background: #FEBD00;
+    border-radius: 360px;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    margin-left: 30%;
+}
+
+.imgUs img{
+    height: 300px;
+    border-radius: 0px;
+}
+
+/*Seccion de historia*/
+
+.history{
+    margin-bottom: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.description{
+    color: #0000;
+    font-family: "roboto-bold";
+    text-align: justify;
+    width: 325px;
+    height: 165px;
+}
+
+
+.description p{
+    font-size: 18px;
+    line-height: 25px;
+    font-family: "roboto-bold";
+}
+
+.imgHistory{
+    height: 336px;
+
+}
+.imgHistory img{
+    height: 236px;
+    width: 325px;
+    border-radius: 63px;
+    margin-top: 10px;
+}
+
+/*Seccion de equipo*/
+.ourTeam{
+    margin-top: 20px;
+    background-color: #FFBD00;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    
+}
+
+.BackgroundTeam{
+    background-color: #FEBD00;
+    padding-top: 3%;
+}
+.containerTeam{
+    margin-bottom: 20px;
+    
+}
+   
+
+.titleTeam h3{
+    text-align: center;
+    font-size: 40px;
+    font-family: "arnold";
+    color: #653392;
+    padding-bottom: 5%;
+}
+
+.imgTeam img{
+    border-radius: 360px;
+    width: 258px;
+    height: 258px;
+}
+
+.textTeam{
+    
+    font-family: "roboto-bold";
+    text-align: center;
+
+
+}
+
+.textTeam p{
+    font-size: 20px;
+    margin-top: 10px;
+    color: #653392;
+}
+
+/*Seccion de mision y valor */
+
+.containerMision{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.textMision p{
+    font-family: "roboto-bold";
+    text-align: center;
+    font-size: 18px;
+}
+
+
+/*seccion de premios y distinciones*/
+
+.containerawards{
+    margin-top: 30px;
+    background-color: #FEBD00;
+    border-radius: 100% 100% 0px 0px;
+    width: 100%;
+
+}
+
+.titleawards{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.titleawards h3{
+    font-family: "arnold";
+    color:#653392;
+    position: relative;
+    top: 30px;
+}
+
+.textawards{
+    width: 803px;
+    height: 156px;
+
+}
+.textawards p{
+    font-family: "roboto-bold";
+    text-align: justify;
+    font-size: 18px;
+    width: 70%;
+    height: 156px;
+    position: relative;
+    left: 50%;
+}
+
+.nomatividad p{
+    
+    text-align: center;
+    color: #000;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    font-family: "roboto-bold";
+}
+
+@media screen and (max-width: 1280) {
+    
+}
+@media screen and (max-width: 768px) {
+    
+}

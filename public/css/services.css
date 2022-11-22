@@ -1,0 +1,290 @@
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto-regular", sans-serif;
+    text-decoration: none;
+    color: #333; /*color de textos*/
+}
+
+body{
+    background-color: #fff;
+    width: 100%;
+}
+
+.containerServices{
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.title{
+    font-family: "arnold";
+    color: #005E9B;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.franjaServices{
+    margin-top: 20px;
+    background-color: #FFBD00;
+    transform: rotate(5deg);
+    width: 112%;
+    margin-left: -6%;
+    padding: 1%;  
+}
+
+.contentInfo{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    column-gap: 10%;
+    transform: rotate(-5deg);
+    align-items: center;
+}
+
+.deg{
+    margin-top: 5px;
+    transform: rotate(0deg);
+}
+
+.textInfo{
+    width: 35%;
+    align-items: center;
+    margin-top: -3%;
+}
+
+
+.titleService h3{
+    font-family: "arnold";
+    font-size: 30px;
+    color: #008CDB;
+}
+
+.descriptionService{
+    margin-top: 15px;
+    color: #0000;
+    font-family: "roboto-bold";
+    text-align: justify;
+}
+
+.descriptionService p{
+    color: #000;
+    font-size: 18px;
+    font-family: "roboto-bold";
+
+}
+
+.imgService img{
+    height: 220px;
+    width: 440px;
+    border-radius: 60px;
+    box-shadow: 12px 17px 4px 0px #B9860A;
+}
+
+.imgDesign img{
+    height: 300px;
+    width: 500px;
+}
+
+.degArts{
+    transform: rotate(-5deg);
+}
+
+.degContentArts{
+    transform: rotate(5deg);
+}
+
+.imgConceptArts img{
+    border-radius: 20px;
+    box-shadow: 16px 23px 4px 0px #B9860A;
+    height: 220px;
+    width: 440px;
+}
+
+.marginTopArts{
+    margin-top:50px;
+}
+
+.imgGuiones img{
+    height: 300px;
+    width: 440px;
+    border-radius: 60px;
+}
+
+.contentStoryBoards{
+    transform: rotate(-5deg);
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+    margin: auto;
+        display: flex;
+}
+
+.textInfoHistory{
+    margin-bottom: 15px;
+    margin-left: 2%;
+}
+
+.imgStory img{
+    width: 90vw;
+    height: 220px;
+    margin: auto;
+        display: flex;
+}
+
+.foundImgService{
+    background-image: url("../images/GEO\ ROBOTS\ sin\ logos.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin-top: -5%;
+   /* background-size: 100% 100%;*/
+
+}
+.contentPostproduction{
+    padding-top: 5%;
+    height: 410px;
+    width: 100vw;
+}
+
+.textPostproduction{
+    width: 25%;
+    align-items: center;
+    padding-top: 10%;
+    margin-right: 5%;
+    margin-left: auto;
+    text-align: justify;
+}
+
+.postproductionTitle h3{
+    color: #005E9B;
+}
+
+
+.contentContact{
+    background-color: #FFBD00;
+    width: 100vw;
+    padding: 5%;
+}
+
+.buttonContact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonContact a{
+    background-color: #fff;
+    padding: 10px 20px ;
+    font-family: "arnold";
+    color: #008CDB;
+    font-size: 30px;
+    border-radius: 25px;
+    box-shadow: -8px 10px 4px 0px #00000040;
+}
+
+.normativity p{
+    background-color: #FFBD00;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "roboto-bold";
+}
+
+.mobil{
+    display: none;
+}
+
+/** Responsive*/
+
+@media screen and (max-width: 1023px) {
+    .contentInfo{
+        column-gap: 5%;
+    }
+
+    .imgService  img{
+        width: 400px;
+    }
+
+    .deg{
+        margin-top: 40px;
+        
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .contentInfo{
+        flex-direction: column;
+        column-gap: 0;
+    }
+
+    .desktop{
+        display: none;
+    }
+    
+    .mobil{
+        display: block;
+    }
+
+    .textInfo {
+        width: 100%;
+        align-items: center;
+        margin-top: -3%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+      }
+
+      .descriptionService p{
+        width: 100%;
+        margin: auto;
+      }
+
+    .imgService img{
+        margin: auto;
+        display: flex;
+        width: 90vw;
+    }
+
+    .imgDesign img{
+        margin: auto;
+        display: flex;
+        width: 90vw;
+    }
+    .imgConceptArts img{
+        margin: auto;
+        display: flex;
+        width: 90vw;
+    }
+    .imgGuiones img{
+        margin: auto;
+        display: flex;
+        width: 90vw;
+        height: 220PX;
+    }
+
+  .textPostproduction{
+     width:100%; 
+     padding: 30px;
+     margin-top:35%;
+  }
+  }
