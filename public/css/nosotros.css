@@ -1,7 +1,10 @@
+@charset "utf-8";
+
 @font-face {
     font-family: "arnold";
     src: url("../fonts/arnold-21_[allfont.es].ttf");
 }
+
 @font-face {
     font-family: "roboto-bold";
     src: url("../fonts/Roboto/Roboto-Bold.ttf");

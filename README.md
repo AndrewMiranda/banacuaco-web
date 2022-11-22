@@ -1,3 +1,3 @@
-# kybernets-web
+# banacuaco web
 
-# Repositorio del sitio web de Kybernets ✨
+# sitio web de banacuaco
