@@ -118,6 +118,14 @@
     border: 0;
 }
 
+.normativity p{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "roboto-bold";
+    color:#000s;
+}
+
 @media screen and (max-width: 768px){
     .containerForm{
         width: 95%;

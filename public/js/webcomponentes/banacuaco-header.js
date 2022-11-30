@@ -212,7 +212,7 @@ export function createheaderbanacuaco() {
                 `<header>
                 <div class="conainerHeader">
                     <div class="imgHeader">
-                        <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco">
+                        <a href="/"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
                     </div>
                     <div class="">
                         <div class="navBar">
@@ -299,17 +299,3 @@ export function createheaderbanacuaco() {
 
     window.customElements.define('header-banacuaco', headerheaderbanacuaco);
 };
-
-export function crationHeader(params) {
-    /* Seteamos al web component 'mipescao-foot-menu' */
-    let bodyClas = document.getElementsByTagName('body');
-    let headbanacuaco = document.createElement('header-banacuaco');
-    bodyClas.innerHTML = headbanacuaco;
-    let display;
-
-    if(params){
-        display = 'none';
-    }else{
-        display = 'flex';
-    };
-}

@@ -111,12 +111,10 @@
     width: 80%;
 }
 
-.nomatividad p{
-    
+.normativity p{
     text-align: center;
-    color: #000;
-    padding-top: 40px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-family: "roboto-bold";
 }
 
