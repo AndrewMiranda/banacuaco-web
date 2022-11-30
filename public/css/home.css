@@ -1,0 +1,179 @@
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto-regular", sans-serif;
+    text-decoration: none;
+    color: #333; /*color de textos*/
+    
+}
+
+
+.containerHero{
+    margin-top: 50px;
+    
+    overflow: hidden;
+
+}
+
+.title p{
+    color: #80240B;
+    font-family: "arnold";
+    font-size: 40px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom:50px;
+    
+}
+.imgHome {
+    height: 805px;
+    width: 100%;
+    padding: 0 5%;
+}
+
+.imgHome img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+.imgKimia{
+    width: 100%;
+}
+.imgKimia img{
+    height: 400px;
+    width: 500px; 
+    margin: 0 5%;
+    object-fit: cover;
+  
+}
+.imgKimiaPerson img{
+    height: auto;
+    width: 150px;
+    position: relative;
+    top: 40px;
+}
+
+.mobile{
+    display: none;
+}
+
+.franjaServices{
+
+    background-color: #FFBD00;
+    transform: rotate(5deg);
+    width: 110%;
+    margin-left: -5%;
+    padding: 1% 5%;
+    margin-top: 15%;
+    
+}
+.textInfo{
+    
+    align-items: center;
+    margin-top: -3%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.contentInfo{
+    width: 90%;
+    margin: auto;
+    transform: rotate(-5deg);
+    
+}
+
+.descriptionService{
+    width: 100%;
+}
+.descriptionService p{
+    color: #000;
+    font-size: 18px;
+    width: 90%;
+    
+
+}
+.titleSecund h3{
+    font-family: "arnold";
+    color: #80240B;
+    font-size: 30px;
+    margin-bottom: 40px;
+    width: 80%;
+}
+
+.nomatividad p{
+    
+    text-align: center;
+    color: #000;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    font-family: "roboto-bold";
+}
+
+/*responsive**/
+
+
+@media screen and (max-width: 1220px) {
+    .imgKimia img {
+        height: 300px;
+        width: 400px;
+        margin-bottom: 35px;
+}
+
+
+    
+    
+.titleSecund h3 {  
+    width: 100%;
+    margin-top: 40px;
+}
+
+.imgKimiaPerson img {
+    display: none;
+}
+
+
+
+}
+@media screen and (max-width: 902px) {
+
+    .desktop{
+        display: none;
+    }
+    
+    .mobile{
+        display: block;
+    }
+    .descriptionService {
+        text-align: center;
+}
+.imgKimia img {
+    height: 250px;
+    width: 350px;
+
+}
+
+  .franjaServices {
+
+    padding: 1% 5%;
+}
+
+.descriptionService p {
+   
+    margin:auto;
+    text-align:justify;
+    width:70%;
+    padding-bottom: 5%;
+}
+}

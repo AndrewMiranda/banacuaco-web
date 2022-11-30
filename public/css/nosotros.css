@@ -1,10 +1,7 @@
-@charset "utf-8";
-
 @font-face {
     font-family: "arnold";
     src: url("../fonts/arnold-21_[allfont.es].ttf");
 }
-
 @font-face {
     font-family: "roboto-bold";
     src: url("../fonts/Roboto/Roboto-Bold.ttf");
@@ -24,8 +21,9 @@
 .containerUS{
     margin-top: 30px;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
 }
 
@@ -45,7 +43,6 @@
     background-color: #FEBD00;
     border-radius: 0px 63px 63px 0px;
     height: 300px;
-    width: 100%;
 }
 
 .usText{
@@ -73,7 +70,8 @@
     height: 300px;
     width: 300px;
     text-align: center;
-    margin-left: 30%;
+    margin-right: 5%;
+    margin-left: auto;
 }
 
 .imgUs img{
@@ -87,8 +85,10 @@
     margin-bottom: 50px;
     overflow: hidden;
     display: flex;
-    justify-content: space-between;
     padding: 0 5%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 5%;
 }
 
 .description{
@@ -96,7 +96,7 @@
     font-family: "roboto-bold";
     text-align: justify;
     width: 325px;
-    height: 165px;
+    height: 120px;
 }
 
 
@@ -115,6 +115,7 @@
     width: 325px;
     border-radius: 63px;
     margin-top: 10px;
+    box-shadow: -10px 0px 4px 0 #00000025;
 }
 
 /*Seccion de equipo*/
@@ -123,8 +124,11 @@
     background-color: #FFBD00;
     width: 100%;
     display: flex;
-    justify-content: space-between;
     padding: 0 5%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 5%;
+    row-gap: 30px;
     
 }
 
@@ -133,11 +137,9 @@
     padding-top: 3%;
 }
 .containerTeam{
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;   
 }
    
-
 .titleTeam h3{
     text-align: center;
     font-size: 40px;
@@ -150,9 +152,11 @@
     border-radius: 360px;
     width: 258px;
     height: 258px;
+    box-shadow: 8px 6px 2px 0px #00000025;
 }
 
 .textTeam{
+    
     font-family: "roboto-bold";
     text-align: center;
 }
@@ -167,7 +171,7 @@
 
 .containerMision{
     margin-top: 30px;
-    margin-bottom: 30px;
+    width: 100%;
 }
 
 .textMision p{
@@ -179,7 +183,7 @@
 
 /*seccion de premios y distinciones*/
 
-.containerAwards{
+containerAwards{
     height: 350px;
     width: 100%;
     overflow: hidden;
@@ -221,30 +225,6 @@
     margin: auto;
 }
 
-
-
-/*.titleawards{
-    text-align: center;
-    font-size: 40px;
-}
-
-.titleawards h3{
-    font-family: "arnold";
-    color:#653392;
-}
-
-.textawards{
-
-}
-.textawards p{
-    font-family: "roboto-bold";
-    text-align: justify;
-    font-size: 18px;
-    width: 70%;
-}
-*/
-
-
 .nomatividad p{
     
     text-align: center;
@@ -275,5 +255,64 @@
         width: 100%;
         padding: 0 5%;
     }
+
+}
+
+.nomatividad p{
+    
+    text-align: center;
+    color: #000;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    font-family: "roboto-bold";
+}
+
+@media screen and (max-width: 1052px) {
+    .containerUS{
+        background-color: #FEBD00;
+        border-radius: 63px;
+        
+        }
+    
+        .imgUs{
+            display: none;
+        }
+        .imgUs{
+            display: none;
+        }
+    
+        .usText h3 {
+            text-align: center;
+            width: 100%;
+          }
+        
+        .usText p {
+        text-align: center;
+      }
+   
+}
+@media screen and (max-width: 768px) {
+    .containerUS{
+    background-color: #FEBD00;
+    border-radius: 63px;
+    
+    }
+
+    .imgUs{
+        display: none;
+    }
+
+    .usText h3 {
+        text-align: center;
+        width: 100%;
+      }
+    
+    .usText p {
+    text-align: center;
+  }
+  .titleawards{
+    font-size: 30px;
+    
+}
 
 }
