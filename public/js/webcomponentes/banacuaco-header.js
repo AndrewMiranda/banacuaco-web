@@ -241,7 +241,7 @@ export function createheaderbanacuaco() {
                                   src="../images/menuMobil.svg"
                                   class="iconoMenu"
                                   id="menuClick"
-                                  onclick="changueImg()"
+                                  onclick="changeMenu()"
                                 />
                               </label>
                         </div>
