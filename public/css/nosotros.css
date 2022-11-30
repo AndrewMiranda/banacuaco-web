@@ -153,11 +153,8 @@
 }
 
 .textTeam{
-    
     font-family: "roboto-bold";
     text-align: center;
-
-
 }
 
 .textTeam p{
@@ -170,7 +167,7 @@
 
 .containerMision{
     margin-top: 30px;
-    width: 100%;
+    margin-bottom: 30px;
 }
 
 .textMision p{
@@ -182,31 +179,61 @@
 
 /*seccion de premios y distinciones*/
 
-.containerawards{
-    margin-top: 30px;
-    background-color: #FEBD00;
-    border-radius: 100% 100% 0px 0px;
+.containerAwards{
+    height: 350px;
     width: 100%;
+    overflow: hidden;
+}
+
+.elipse{
+    background-color: #FEBD00;
+    border-radius: 50% 50% 0 0;
+    width: 110%;
+    height: 900px;
+    padding-bottom: 109px;
+    margin-left: -5%;
+    margin-right: -5%;
+}
+
+.InfoElipse{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    height: 350px;
+    row-gap: 53px;
 
 }
 
-.titleawards{
+.titleAwards h3{
+    color: #653392;
+    font-family: "arnold";
+    font-size: 40px;
+    text-align: center;
+}
+
+.textAwards p{
+    font-size: 18px;
+    font-family: "roboto-bold";
+    width: 50%;
+    text-align: justify;
+    margin: auto;
+}
+
+
+
+/*.titleawards{
     text-align: center;
     font-size: 40px;
-    margin-bottom: 100px;
-    margin-top: 50px;
 }
 
 .titleawards h3{
     font-family: "arnold";
     color:#653392;
-    position: relative;
-    top: 30px;
 }
 
 .textawards{
-    width: 803px;
-    height: 156px;
 
 }
 .textawards p{
@@ -214,10 +241,9 @@
     text-align: justify;
     font-size: 18px;
     width: 70%;
-    height: 156px;
-    position: relative;
-    left: 50%;
 }
+*/
+
 
 .nomatividad p{
     
@@ -232,5 +258,22 @@
     
 }
 @media screen and (max-width: 768px) {
-    
+
+    .elipse{
+        height: 350px;
+    }
+
+    .InfoElipse{
+        width: 90%;
+    }
+
+    .titleAwards h3{
+        font-size: 25px;
+    }
+    .textAwards p{
+        font-size: 16px;
+        width: 100%;
+        padding: 0 5%;
+    }
+
 }

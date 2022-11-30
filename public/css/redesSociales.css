@@ -1,0 +1,13 @@
+.socialMedia{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    bottom: 5%;
+    position: fixed;
+    right: 2%;
+    row-gap: 15px;
+}
+
+.icon img{
+    cursor: pointer;
+}
