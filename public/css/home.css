@@ -35,7 +35,6 @@
     
 }
 .imgHome {
-    height: 805px;
     width: 100%;
     padding: 0 5%;
 }
@@ -74,7 +73,7 @@
     transform: rotate(5deg);
     width: 110%;
     margin-left: -5%;
-    padding: 1% 5%;
+    padding: 1%;
     margin-top: 15%;
     
 }
@@ -164,10 +163,9 @@
 
 }
 
-  .franjaServices {
-
-    padding: 1% 5%;
-}
+.title p {
+    font-size: 30px;
+  }
 
 .descriptionService p {
    
@@ -176,4 +174,8 @@
     width:70%;
     padding-bottom: 5%;
 }
+.franjaServices {
+    width: 112%;
+    margin-left: -6%;
+  }
 }
