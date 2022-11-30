@@ -1,15 +1,15 @@
 /**
- * Componente de prueba creado por Camilo Valencia Padilla 
+ * Componente creado por Juan José Arteta Maury
  * 
  * Header Dinamico
  * 
- * Fecha de creacion 29/03/2022
+ * Fecha de creacion 20/11/2022
  * 
  */
 /** Importar de esta manera:
- * import {headerheaderKybernets} from "../webConponent/headAlascol.js";
+ * import {headerheaderbanacuaco} from "../webConponent/banacuaco-header.js";
  * 
- * craeteheaderAlasColonbianas();
+ * createheaderbanacuaco();
  */
 export function createheaderbanacuaco() {
 
