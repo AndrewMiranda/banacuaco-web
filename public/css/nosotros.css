@@ -31,7 +31,7 @@
     text-align: center;
     font-size: 40px;
     margin-bottom: 50px;
-    margin-top: 80px;
+    margin-top: 70px;
 }
 
 .titleUs h3{
@@ -178,12 +178,13 @@
     font-family: "roboto-bold";
     text-align: center;
     font-size: 18px;
+    margin-bottom: 50px;
 }
 
 
 /*seccion de premios y distinciones*/
 
-containerAwards{
+.containerAwards{
     height: 350px;
     width: 100%;
     overflow: hidden;
@@ -220,7 +221,7 @@ containerAwards{
 .textAwards p{
     font-size: 18px;
     font-family: "roboto-bold";
-    width: 50%;
+    width: 70%;
     text-align: justify;
     margin: auto;
 }
@@ -234,29 +235,7 @@ containerAwards{
     font-family: "roboto-bold";
 }
 
-@media screen and (max-width: 1280) {
-    
-}
-@media screen and (max-width: 768px) {
 
-    .elipse{
-        height: 350px;
-    }
-
-    .InfoElipse{
-        width: 90%;
-    }
-
-    .titleAwards h3{
-        font-size: 25px;
-    }
-    .textAwards p{
-        font-size: 16px;
-        width: 100%;
-        padding: 0 5%;
-    }
-
-}
 
 .nomatividad p{
     
@@ -310,9 +289,21 @@ containerAwards{
     .usText p {
     text-align: center;
   }
-  .titleawards{
-    font-size: 30px;
-    
+  .elipse{
+    height: 350px;
+}
+
+.InfoElipse{
+    width: 90%;
+}
+
+.titleAwards h3{
+    font-size: 25px;
+}
+.textAwards p{
+    font-size: 16px;
+    width: 100%;
+    padding: 0 5%;
 }
 
 }
