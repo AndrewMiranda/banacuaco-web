@@ -4,11 +4,10 @@
  * Archivo para el cambio del icono al activar el menu hamburguesa
  */
 
- var estado = 0;
+var estado = 0;
 function changeMenu() {
     let imagen = document.getElementsByTagName('header-banacuaco')[0].shadowRoot;
     if (estado==0) {
-       
         imagen.getElementById('menuClick').src = "../images/menuMobilClose.svg";
         
         estado=1;

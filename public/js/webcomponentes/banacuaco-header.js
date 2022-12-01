@@ -238,12 +238,12 @@ export function createheaderbanacuaco() {
                         <div class="hamburgerMenu">
                             <label for="btnMenu">
                                 <img
-                                  src="../images/menuMobil.svg"
-                                  class="iconoMenu"
-                                  id="menuClick"
-                                  onclick="changeMenu()"
+                                    src="../images/menuMobil.svg"
+                                    class="iconoMenu"
+                                    id="menuClick"
+                                    onclick="changeMenu()"
                                 />
-                              </label>
+                            </label>
                         </div>
                     </div>
                     <div class="optionsLanguaje">

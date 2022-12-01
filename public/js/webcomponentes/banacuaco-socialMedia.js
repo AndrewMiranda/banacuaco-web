@@ -11,7 +11,8 @@
  * 
  * createSocialMediaBanacuaco();
  */
- export function createSocialMediaBanacuaco() {
+
+export function createSocialMediaBanacuaco() {
 
     class socialMediaBanacuaco extends HTMLElement {
         constructor() {
