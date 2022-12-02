@@ -26,5 +26,22 @@ router.get('/galeria', (req, res) => {
     res.render('galery', { title: 'nosotros' });
 });
 
+// desde aqui inician las rutas del dashboard
+
+router.get("/dashboard", (req, res) => {
+    res.render("dashboard/indexDashboard");
+});
+
+router.get("/dashboard/producciones", (req, res) => {
+    res.render("dashboard/productionsDashboard");
+});
+
+router.get("/dashboard/galeria", (req, res) => {
+    res.render("dashboard/galeryDashboard");
+});
+
+router.get("/dashboard/usuarios", (req, res) => {
+    res.render("dashboard/usersDashboard");
+});
 
 module.exports = router;

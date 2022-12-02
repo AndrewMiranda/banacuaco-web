@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "roboto-regular";
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+.title{
+    text-align: center;
+    padding-bottom: 5%;
+    color: #FE670E;
+    font-family: "arnold";
+    font-size: 40px;
+}
+
+.conatinerGalery{
+    width: 100%;
+    height: auto;
+    padding: 5% 5% 0 5%;
+}
+
+.contentGalery{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 60px;
+    row-gap: 60px;
+}
+
+.imgGalery{
+    height: 160px;
+    width: 250px;
+    position: relative;
+}
+
+.imgGalery img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.iconsImg{
+    display: flex;
+    justify-content: end;
+}
+
+.iconsImg img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.newGalery{
+    position: fixed;
+    /*top: calc(80px + 5%);*/
+    right: 3%;
+}
+
+.newGalery img{
+    height: 40px;
+    width: 40px;
+}
+
+@media screen and (max-width: 902px) {
+    .newGalery{
+        bottom: 5%;
+        z-index: 10000;
+    }
+}

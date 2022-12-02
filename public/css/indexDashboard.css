@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "roboto-regular";
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+
+.textWelcome h4{
+    padding-top: 5%;
+    text-align: center;
+    color: #005E9B ;
+    font-family: "arnold";
+    font-size: 40px;
+}
+
+.imgHome {
+    padding:5%;
+    width: 100%;
+}
+
+.imgHome img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
