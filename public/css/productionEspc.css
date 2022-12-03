@@ -1,0 +1,219 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto-regular", sans-serif;
+    text-decoration: none;
+    color: #333; /*color de textos*/
+}
+
+
+.containerProduction{
+    margin-top: 50px;
+    overflow: hidden;
+
+}
+
+/*Seccion sinopsis*/
+
+.imgHome{
+    width: 100%;
+    text-align: center;
+}
+
+.imgHome img{
+    height: 100%;
+    width: 40%;
+    object-fit: cover;
+    
+}
+
+.title p{
+    color: #b73310;
+    font-family: "arnold";
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.textSinopsis p{
+    font-size: 22px;
+    font-family: "roboto-bold";
+    width: 100%;
+    text-align: justify;
+    padding: 0 5%;
+    color:#333;
+}
+
+/** seccion franja con el video*/
+
+.franjaServices{
+    margin-top: 100px;
+    background-color: #FFBD00;
+    transform: rotate(5deg);
+    width: 112%;
+    margin-left: -6%;
+    padding: 1%;  
+}
+
+.contentInfo{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    column-gap: 10%;
+    transform: rotate(-5deg);
+    align-items: center;
+}
+
+.deg{
+    margin-top: 5px;
+    transform: rotate(0deg);
+}
+
+.imgService{
+    text-align: center;
+}
+.imgService img{
+    width: 30%;
+    border-radius: 60px;
+    box-shadow: 12px 8px 1px 0px #B9860A;
+}
+
+
+/**Seccion idea */
+.idea h3{
+    color: #b73310;
+    font-family: "arnold";
+    font-size: 42px;
+    text-align: center;
+    margin-top: 40px;
+    width: 35%;
+}
+
+.imgidea{
+    display: flex;
+    padding: 0 5%;
+    height: 600px;
+}
+
+.imgidea img{
+    width: 100%;
+    height: 100%;
+}
+
+/*Seccion personajes*/
+
+.degArts{
+    transform: rotate(-5deg);
+}
+
+.degContentArts{
+    transform: rotate(5deg);
+}
+
+.titleChart{
+    padding-right: 15%;
+    margin-bottom: 20px;
+}
+.titleChart h3{
+    font-family: "arnold";
+    color: #fff;
+    text-align: right;
+    font-size: 42px
+}
+.imgChart{
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    height: 100%;
+    justify-content: center;
+}
+
+.comlunImg img{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 205px;
+    margin: 5px;
+}
+
+.fleximg img{    
+    width: 297px;
+    margin: 5px;
+}
+
+.containerDescriptionA{
+    display: flex;
+    padding: 0 5%;
+}
+.imgA{
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    height: 100%;
+}
+
+.imgA img{
+    width: 250px;
+    margin: 5px;
+}
+
+.contentDescriptionA {
+    margin-top: 5%;
+    margin-left: 20px;
+  }
+
+.txtA h3{
+    font-family: "arnold";
+    color:#fff;
+    font-size:42px;
+    margin-bottom: 20px;
+
+}
+
+.contentA p{
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #80240B;
+    font-family: "roboto-bold";
+}
+
+.margin-rigth{
+    margin-right:20px;
+}
+
+.imgAFondo img{
+    width: 100%;
+    padding: 0 5%;
+    object-fit: cover;
+}
+
+
+
+.nomatividad p{
+    
+    text-align: center;
+    color: #000;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    font-family: "roboto-bold";
+}
+
+
