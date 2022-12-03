@@ -9,12 +9,10 @@ function changeMenu() {
     let imagen = document.getElementsByTagName('header-banacuaco')[0].shadowRoot;
     if (estado==0) {
         imagen.getElementById('menuClick').src = "../images/menuMobilClose.svg";
-        
         estado=1;
         console.log("funciona1");
     } else {
         imagen.getElementById('menuClick').src = "../images/menuMobil.svg";
-        
         estado=0;
         console.log("funciona0");
     }

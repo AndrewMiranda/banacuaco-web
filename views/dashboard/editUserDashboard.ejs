@@ -33,25 +33,30 @@
                         <th>Opciones</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Juan José Arteta Maury</td>
-                            <td>jj131204@gmail.com</td>
-                            <td>13/12/2004</td>
+                        <form action="">
+                            <td>
+                                <input type="text" value="Juan José Arteta Maury" id="editUserName"  class="inputEditUser">
+                            </td>
+                            <td>
+                                <input type="email" name="email" value="jj131204@gmail.com" id="editUserE-mail" class="inputEditUser">
+                            </td>
+                            <td>
+                                <input type="date" value="13/12/2004" name="dateTime" class="inputEditUser">
+                                </td>
                             <td>
                                 <div class="containerIcons">
-                                    <div class="editUser">
-                                        <a href="/dashboard/editarUsuario"><img src="../images/editCrud.svg" alt="" > </a>
-                                    </div>
+                                    <!--<div class="editUser">
+                                        <a href="/descripcion"><img src="../images/editCrud.svg" alt="" > </a>
+                                    </div> -->
+                                    <input type="submit">
                                     <div class="deleteUser">
-                                        <img src="../images/deletecrud.svg" alt="delete">
+                                        <img src="../images/deletecrud.svg" alt=""  onclick="deleteInfoCrud()">
                                     </div>
                                 </div>
                             </td>
-                        </tr>
-
-                        
+                        </form>
                     </tbody>
-                    </table>
+                </table>
             </div>
         </div>
     </div>

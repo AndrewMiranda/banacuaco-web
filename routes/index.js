@@ -29,6 +29,11 @@ router.get('/galeria', (req, res) => {
 // desde aqui inician las rutas del dashboard
 
 router.get("/dashboard", (req, res) => {
+    res.render("dashboard/login");
+});
+
+
+router.get("/dashboard/home", (req, res) => {
     res.render("dashboard/indexDashboard");
 });
 
@@ -43,5 +48,14 @@ router.get("/dashboard/galeria", (req, res) => {
 router.get("/dashboard/usuarios", (req, res) => {
     res.render("dashboard/usersDashboard");
 });
+
+router.get("/dashboard/nuevoUsuario", (req, res) => {
+    res.render("dashboard/newUserDashboard");
+});
+
+router.get("/dashboard/editarUsuario", (req, res) => {
+    res.render("dashboard/editUserDashboard");
+});
+
 
 module.exports = router;
