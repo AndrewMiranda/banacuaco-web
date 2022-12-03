@@ -108,8 +108,8 @@
 
 .imgidea{
     display: flex;
-    justify-content:space-between;
     padding: 0 5%;
+    height: 600px;
 }
 
 .imgidea img{
@@ -170,7 +170,7 @@
 }
 
 .imgA img{
-    width: 297px;
+    width: 250px;
     margin: 5px;
 }
 
