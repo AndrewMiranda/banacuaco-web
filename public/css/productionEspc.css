@@ -69,7 +69,6 @@
     width: 112%;
     margin-left: -6%;
     padding: 1%;  
-    height: 270px;
 }
 
 .contentInfo{
@@ -128,6 +127,93 @@
     transform: rotate(5deg);
 }
 
-.containerChart{
-    
+.titleChart{
+    padding-right: 15%;
+    margin-bottom: 20px;
 }
+.titleChart h3{
+    font-family: "arnold";
+    color: #fff;
+    text-align: right;
+    font-size: 42px
+}
+.imgChart{
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    height: 100%;
+    justify-content: center;
+}
+
+.comlunImg img{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 205px;
+    margin: 5px;
+}
+
+.fleximg img{    
+    width: 297px;
+    margin: 5px;
+}
+
+.containerDescriptionA{
+    display: flex;
+    padding: 0 5%;
+}
+.imgA{
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    height: 100%;
+}
+
+.imgA img{
+    width: 297px;
+    margin: 5px;
+}
+
+.contentDescriptionA {
+    margin-top: 5%;
+    margin-left: 20px;
+  }
+
+.txtA h3{
+    font-family: "arnold";
+    color:#fff;
+    font-size:42px;
+    margin-bottom: 20px;
+
+}
+
+.contentA p{
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #80240B;
+    font-family: "roboto-bold";
+}
+
+.margin-rigth{
+    margin-right:20px;
+}
+
+.imgAFondo img{
+    width: 100%;
+    padding: 0 5%;
+    object-fit: cover;
+}
+
+
+
+.nomatividad p{
+    
+    text-align: center;
+    color: #000;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    font-family: "roboto-bold";
+}
+
+
