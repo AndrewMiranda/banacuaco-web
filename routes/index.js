@@ -61,6 +61,13 @@ router.get("/dashboard/editarUsuario", (req, res) => {
     res.render("dashboard/editUserDashboard");
 });
 
+router.get("/dashboard/editarProduccion", (req, res) => {
+    res.render("dashboard/editProductionDashboardSinopsis");
+});
+
+router.get("/dashboard/editarProduccionPersonajes", (req, res) => {
+    res.render("dashboard/editProductionDashboardcharacter");
+});
 
 
 module.exports = router;

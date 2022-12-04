@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "roboto-regular";
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto-regular', sans-serif;
+    text-decoration: none;
+    
+}
+
+body{
+    /** background-color: ; */
+    margin: 0;
+    padding: 0;
+    background-color: #F8F9FB;
+}
+
+.containerProductions{
+    width: 100%;
+    height: auto;
+    padding: 5% 5% 0 5%;
+}
+
+.newProductions{
+    position: fixed;
+    /*top: calc(80px + 5%);*/
+    right: 3%;
+    z-index: 10000;
+}
+
+.newProductions img{
+    height: 40px;
+    width: 40px;
+}
+
+.titleProductions{
+    text-align: center;
+    padding-bottom: 5%;
+    color: #005E9B;
+    font-family: "arnold";
+    font-size: 40px;
+}
+
+.contentProductions{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 2%;
+    row-gap: 60px;
+}
+
+.infoProduction{
+    height: 160px;
+    width: 250px;
+    position: relative;
+}
+.infoProduction img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.infoProduction p{
+    color: #007F10;
+    font-size: 16px;
+    text-align: center;
+    font-family: "roboto-bold";
+    width: 80%;
+    margin: 15px  auto;
+}
+
+.icons{
+    display: flex;
+    margin-top: -20%;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.iconsImgEdit,
+.iconsImgDelete{
+    background: #00000060;
+    z-index: 100;
+    position: relative;
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.iconsImgEdit:hover,
+.iconsImgDelete:hover{
+    background-color: #000000;
+}
+
+.iconsImgEdit img,
+.iconsImgDelete img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}

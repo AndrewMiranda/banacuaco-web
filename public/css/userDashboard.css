@@ -104,7 +104,8 @@ table td{
 }
 
 .editUser img,
-.deleteUser img{
+.deleteUser img,
+.icoSaveUser{
     width: 24px;
     height: 24px;
     cursor: pointer;

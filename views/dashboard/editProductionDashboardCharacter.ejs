@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/editProductionsDashboardHeader.css">
+    <link rel="stylesheet" href="../css/editProductionDashboardSinopsis.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <div class="infoDashboard">
+        <div>
+            <%- include('./partials/productionsDashboardCreateAndEdit.ejs') %>
+        </div>
+
+        <!-- Agregar sinopsis-->
+        <form action="">
+            <div class="containerForm">
+                <div class="titleDescription">
+                    Personajes
+                </div>
+                <div class="optionFormProduction">
+                    <p>Nombre del personaje</p>
+                    <input type="text" name="nombre" id="video" placeholder="nombre de la producción">
+                </div>
+                <div class="optionFormProduction">
+                    <p>Imagen del personaje:</p>
+                    <label for="imgProduction">
+                        <span>inserta imagen</span>
+                    </label>
+                    <input type="file" name="mainImage" id="imgProduction">
+                </div>
+                <div class="optionFormProduction">
+                    <p>Descripción:</p>
+                    <textarea placeholder="ingresa la descripción de tu producción" name="Descipcion" id="description" cols="30" rows="10"></textarea>
+                    
+                </div>
+                
+                <div class="submit">
+                    <input type="submit" value="enviar">
+                </div>
+            </div>        
+        </form>
+
+    </div>
+    </body>
+</html>
