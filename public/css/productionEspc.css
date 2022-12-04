@@ -37,7 +37,7 @@
 
 .imgHome img{
     height: 100%;
-    width: 40%;
+    width: 30%;
     object-fit: cover;
     
 }
@@ -52,12 +52,13 @@
 }
 
 .textSinopsis p{
-    font-size: 22px;
+    font-size: 18px;
     font-family: "roboto-bold";
     width: 100%;
     text-align: justify;
     padding: 0 5%;
     color:#333;
+    line-height: 1.5;
 }
 
 /** seccion franja con el video*/
@@ -89,8 +90,8 @@
 .imgService{
     text-align: center;
 }
-.imgService img{
-    width: 30%;
+.imgService video{
+    width: 350px;
     border-radius: 60px;
     box-shadow: 12px 8px 1px 0px #B9860A;
 }
@@ -109,7 +110,7 @@
 .imgidea{
     display: flex;
     padding: 0 5%;
-    height: 600px;
+    height: 500px;
 }
 
 .imgidea img{
@@ -121,6 +122,7 @@
 
 .degArts{
     transform: rotate(-5deg);
+    padding-bottom: 5%; /* Le añade un padding abajo para que no se salga la imagen*/
 }
 
 .degContentArts{
@@ -142,7 +144,7 @@
     display: flex;
     column-gap: 10px;
     height: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .comlunImg img{
@@ -206,7 +208,134 @@
 }
 
 
+/* Secciones de galeria para produciones especificas*/
+.containerGalery{
+    margin-top: 30px;
+    overflow: hidden;
+}
 
+.containerMoreInfo{
+    padding: 0 5%;
+}
+.title{
+    font-family: "arnold";
+    color: #b73310;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.contentGalery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5%;
+    row-gap: 50px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.infoGalery{
+    width: 100%;
+    
+}
+
+.infoGalery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+@media screen and (max-width: 1023px){
+    /*galeria*/
+    .contentGalery{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    /***/
+
+}
+
+@media screen and (max-width: 768px){
+    /*galeria*/
+    .contentGalery{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /***/
+
+    .imgHome img {
+        width: 60%;
+    }
+    .textSinopsis p {
+        font-size: 16px;
+        
+    }
+
+
+    .imgService img {
+        width: 300px;
+    }
+
+
+
+    .imgidea {
+        height: 100%;
+        flex-direction: column;
+    }
+
+
+    .titleChart {
+        padding-right: 0;
+        
+    }
+    .titleChart h3{
+        text-align: center;       
+    }
+
+    .imgChart {
+        flex-direction: column;
+        justify-content: space-around;
+    }     
+    .comlunImg{
+        margin: auto;
+    }
+    .comlunImg img {       
+        width: 300px;
+    }
+
+    .fleximg{
+        margin: auto;
+        flex-direction: column;
+        display: flex;
+    } 
+
+    .reverse{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .textInfo{
+        width: 90%;
+        text-align:center;
+    }
+    .containerDescriptionA {   
+        flex-direction: column;
+    }
+    .imgA {
+        flex-direction: column;
+
+    }
+    .imgA img {
+        width: 300px;
+
+    }
+    .fleximg img {
+        width: 300px;
+    } 
+
+}
 .nomatividad p{
     
     text-align: center;
