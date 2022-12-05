@@ -73,6 +73,10 @@
     display: none;
 }
 
+#alert{
+    display:block;
+}
+
 @media screen and (max-width: 902px) {
     .newImages{
         bottom: 5%;

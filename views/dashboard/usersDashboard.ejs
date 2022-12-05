@@ -42,8 +42,8 @@
                                     <div class="editUser">
                                         <a href="/dashboard/editarUsuario"><img src="../images/editCrud.svg" alt="" > </a>
                                     </div>
-                                    <div class="deleteUser">
-                                        <img src="../images/deletecrud.svg" alt="delete">
+                                    <div class="deleteUser" id="alert">
+                                        <img src="../images/deletecrud.svg" alt="delete" onclick="deleteFunction()" >
                                     </div>
                                 </div>
                             </td>
@@ -57,3 +57,7 @@
     </div>
 </body>
 </html>
+
+
+<script src="../js/general/addAlertModal.js"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

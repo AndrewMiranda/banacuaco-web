@@ -87,6 +87,10 @@ router.get("/dashboard/editarProduccionIlustraciones", (req, res) => {
 });
 
 
+router.get("/dashboard/alertaModal", (req, res) => {
+    res.render("alertaModal");
+});
+
 
 
 module.exports = router;
