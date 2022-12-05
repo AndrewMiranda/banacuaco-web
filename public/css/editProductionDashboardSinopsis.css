@@ -63,6 +63,7 @@ label span{
 
 .optionFormProduction textarea{
     color: #A2A2A2;
+    resize: vertical;
 }
 
 #imgProduction{

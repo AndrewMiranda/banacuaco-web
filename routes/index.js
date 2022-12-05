@@ -69,5 +69,24 @@ router.get("/dashboard/editarProduccionPersonajes", (req, res) => {
     res.render("dashboard/editProductionDashboardcharacter");
 });
 
+router.get("/dashboard/editarProduccionFauna", (req, res) => {
+    res.render("dashboard/editProductionDashboardFauna");
+});
+
+
+router.get("/dashboard/editarProduccionVerPersonajes", (req, res) => {
+    res.render("dashboard/editProductionDashboardSeeCharacters");
+});
+
+router.get("/dashboard/editarProduccionFondos", (req, res) => {
+    res.render("dashboard/editProductionDashboardBackground");
+});
+
+router.get("/dashboard/editarProduccionIlustraciones", (req, res) => {
+    res.render("dashboard/editProductionDashboardIllustrations");
+});
+
+
+
 
 module.exports = router;
