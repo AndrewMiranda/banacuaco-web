@@ -163,6 +163,7 @@
 .containerDescriptionA{
     display: flex;
     padding: 0 5%;
+    column-gap: 20px;
 }
 .imgA{
     width: 100%;
@@ -178,7 +179,6 @@
 
 .contentDescriptionA {
     margin-top: 5%;
-    margin-left: 20px;
   }
 
 .txtA h3{
@@ -197,9 +197,6 @@
     font-family: "roboto-bold";
 }
 
-.margin-rigth{
-    margin-right:20px;
-}
 
 .imgAFondo img{
     width: 100%;
@@ -254,6 +251,69 @@
         grid-template-columns: 1fr 1fr;
     }
     /***/
+    .imgidea {
+        height: 100%;
+        flex-direction: column;
+    }
+    .franjaServices{
+    width: 146%;
+    margin-left: -23%;
+    }
+    .titleChart {
+        padding-right: 0;
+        
+    }
+    .titleChart h3{
+        text-align: center;       
+    }
+    .imgChart {
+        display: block;
+    }  
+    
+    .comlunImg img {
+        display: inline;
+
+        width: 300px;
+        height: 200px;
+
+    }  
+    .fleximg{
+        display: inline;
+    }     
+
+
+
+    .contentA p {
+        padding: 0 5%;
+    }
+
+
+    .reverse{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .textInfo{
+        width: 90%;
+        text-align:center;
+    }
+    .containerDescriptionA {   
+        flex-direction: column;
+    }
+
+    .imgA img {
+    width: 300px;       
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+    }
+    .fleximg img {
+        width: 300px;
+    } 
+
+
+
 
 }
 
@@ -265,6 +325,10 @@
     }
     /***/
 
+    .franjaServices{
+    width: 200%;
+    margin-left: -50%;
+    }
     .imgHome img {
         width: 60%;
     }
@@ -305,11 +369,11 @@
         width: 300px;
     }
 
-    .fleximg{
-        margin: auto;
-        flex-direction: column;
-        display: flex;
-    } 
+    .contentA p {
+        padding: 0 10%;
+    }
+
+ 
 
     .reverse{
         display: flex !important;
@@ -328,14 +392,28 @@
 
     }
     .imgA img {
-        width: 300px;
+    width: 300px;       
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
 
     }
+    .fleximg{
+
+        flex-direction: column;
+        display: flex;
+    } 
     .fleximg img {
         width: 300px;
+        margin: auto;
+        padding-bottom: 10px;
+        padding-top: 10px;
     } 
 
 }
+
+
+
 .nomatividad p{
     
     text-align: center;
