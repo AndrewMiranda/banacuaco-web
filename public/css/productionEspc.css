@@ -37,7 +37,7 @@
 
 .imgHome img{
     height: 100%;
-    width: 40%;
+    width: 30%;
     object-fit: cover;
     
 }
@@ -52,12 +52,13 @@
 }
 
 .textSinopsis p{
-    font-size: 22px;
+    font-size: 18px;
     font-family: "roboto-bold";
     width: 100%;
     text-align: justify;
     padding: 0 5%;
     color:#333;
+    line-height: 1.5;
 }
 
 /** seccion franja con el video*/
@@ -89,8 +90,8 @@
 .imgService{
     text-align: center;
 }
-.imgService img{
-    width: 30%;
+.imgService video{
+    width: 350px;
     border-radius: 60px;
     box-shadow: 12px 8px 1px 0px #B9860A;
 }
@@ -109,7 +110,7 @@
 .imgidea{
     display: flex;
     padding: 0 5%;
-    height: 600px;
+    height: 500px;
 }
 
 .imgidea img{
@@ -121,6 +122,7 @@
 
 .degArts{
     transform: rotate(-5deg);
+    padding-bottom: 5%; /* Le añade un padding abajo para que no se salga la imagen*/
 }
 
 .degContentArts{
@@ -142,7 +144,7 @@
     display: flex;
     column-gap: 10px;
     height: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .comlunImg img{
@@ -161,6 +163,7 @@
 .containerDescriptionA{
     display: flex;
     padding: 0 5%;
+    column-gap: 20px;
 }
 .imgA{
     width: 100%;
@@ -176,8 +179,7 @@
 
 .contentDescriptionA {
     margin-top: 5%;
-    margin-left: 20px;
-  }
+}
 
 .txtA h3{
     font-family: "arnold";
@@ -195,9 +197,6 @@
     font-family: "roboto-bold";
 }
 
-.margin-rigth{
-    margin-right:20px;
-}
 
 .imgAFondo img{
     width: 100%;
@@ -206,6 +205,217 @@
 }
 
 
+/* Secciones de galeria para produciones especificas*/
+.containerGalery{
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.containerMoreInfo{
+    padding: 0 5%;
+}
+.title p{
+    font-family: "arnold";
+    color: #b73310;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.contentGalery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5%;
+    row-gap: 50px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.infoGalery{
+    width: 100%;
+    
+}
+
+.infoGalery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+
+@media screen and ( min-width: 768px) and (max-width: 1023px){
+    /*galeria*/
+    .contentGalery{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    /***/
+    .imgidea {
+        height: 100%;
+        flex-direction: column;
+    }
+    .franjaServices{
+    width: 146%;
+    margin-left: -23%;
+    }
+    .titleChart {
+        padding-right: 0;
+        
+    }
+    .titleChart h3{
+        text-align: center;       
+    }
+    .imgChart {
+        display: block;
+    }  
+    
+    .comlunImg img {
+        display: inline;
+
+        width: 300px;
+        height: 200px;
+
+    }  
+    .fleximg{
+        display: inline;
+    }     
+
+
+
+    .contentA p {
+        padding: 0 5%;
+    }
+
+
+    .reverse{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .textInfo{
+        width: 90%;
+        text-align:center;
+    }
+    .containerDescriptionA {   
+        flex-direction: column;
+    }
+
+    .imgA img {
+    width: 300px;       
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+    }
+    .fleximg img {
+        width: 300px;
+    } 
+
+
+
+
+}
+
+@media screen and (max-width: 768px){
+    /*galeria*/
+    .contentGalery{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /***/
+
+    .imgService video {
+        width: 300px;
+    }
+
+    .franjaServices{
+    width: 200%;
+    margin-left: -50%;
+    }
+    .imgHome img {
+        width: 60%;
+    }
+    .textSinopsis p {
+        font-size: 16px;
+        
+    }
+
+
+    .imgService img {
+        width: 300px;
+    }
+
+
+
+    .imgidea {
+        height: 100%;
+        flex-direction: column;
+    }
+
+
+    .titleChart {
+        padding-right: 0;
+        
+    }
+    .titleChart h3{
+        text-align: center;       
+    }
+
+    .imgChart {
+        flex-direction: column;
+        justify-content: space-around;
+    }     
+    .comlunImg{
+        margin: auto;
+    }
+    .comlunImg img {       
+        width: 300px;
+    }
+
+    .contentA p {
+        padding: 0 20%;
+    }
+
+
+
+    .reverse{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .textInfo{
+        width: 90%;
+        text-align:center;
+    }
+    .containerDescriptionA {   
+        flex-direction: column;
+    }
+    .imgA {
+        flex-direction: column;
+
+    }
+    .imgA img {
+    width: 300px;       
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    }
+    .fleximg{
+
+        flex-direction: column;
+        display: flex;
+    } 
+    .fleximg img {
+        width: 300px;
+        margin: auto;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    } 
+
+}
 
 .nomatividad p{
     

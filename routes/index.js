@@ -26,6 +26,11 @@ router.get('/produccion', (req, res) => {
     res.render('productionEspc', { title: 'nosotros' });
 });
 
+router.get('/produccion2', (req, res) => {
+    res.render('productionEspc2', { title: 'nosotros' });
+});
+
+
 router.get('/galeria', (req, res) => {
     res.render('galery', { title: 'nosotros' });
 });
