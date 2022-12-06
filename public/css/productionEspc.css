@@ -1,0 +1,429 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto-regular", sans-serif;
+    text-decoration: none;
+    color: #333; /*color de textos*/
+}
+
+
+.containerProduction{
+    margin-top: 50px;
+    overflow: hidden;
+
+}
+
+/*Seccion sinopsis*/
+
+.imgHome{
+    width: 100%;
+    text-align: center;
+}
+
+.imgHome img{
+    height: 100%;
+    width: 30%;
+    object-fit: cover;
+    
+}
+
+.title p{
+    color: #b73310;
+    font-family: "arnold";
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.textSinopsis p{
+    font-size: 18px;
+    font-family: "roboto-bold";
+    width: 100%;
+    text-align: justify;
+    padding: 0 5%;
+    color:#333;
+    line-height: 1.5;
+}
+
+/** seccion franja con el video*/
+
+.franjaServices{
+    margin-top: 100px;
+    background-color: #FFBD00;
+    transform: rotate(5deg);
+    width: 112%;
+    margin-left: -6%;
+    padding: 1%;  
+}
+
+.contentInfo{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    column-gap: 10%;
+    transform: rotate(-5deg);
+    align-items: center;
+}
+
+.deg{
+    margin-top: 5px;
+    transform: rotate(0deg);
+}
+
+.imgService{
+    text-align: center;
+}
+.imgService video{
+    width: 350px;
+    border-radius: 60px;
+    box-shadow: 12px 8px 1px 0px #B9860A;
+}
+
+
+/**Seccion idea */
+.idea h3{
+    color: #b73310;
+    font-family: "arnold";
+    font-size: 42px;
+    text-align: center;
+    margin-top: 40px;
+    width: 35%;
+}
+
+.imgidea{
+    display: flex;
+    padding: 0 5%;
+    height: 500px;
+}
+
+.imgidea img{
+    width: 100%;
+    height: 100%;
+}
+
+/*Seccion personajes*/
+
+.degArts{
+    transform: rotate(-5deg);
+    padding-bottom: 5%; /* Le añade un padding abajo para que no se salga la imagen*/
+}
+
+.degContentArts{
+    transform: rotate(5deg);
+}
+
+.titleChart{
+    padding-right: 15%;
+    margin-bottom: 20px;
+}
+.titleChart h3{
+    font-family: "arnold";
+    color: #fff;
+    text-align: right;
+    font-size: 42px
+}
+.imgChart{
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.comlunImg img{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 205px;
+    margin: 5px;
+}
+
+.fleximg img{    
+    width: 297px;
+    margin: 5px;
+}
+
+.containerDescriptionA{
+    display: flex;
+    padding: 0 5%;
+    column-gap: 20px;
+}
+.imgA{
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    height: 100%;
+}
+
+.imgA img{
+    width: 250px;
+    margin: 5px;
+}
+
+.contentDescriptionA {
+    margin-top: 5%;
+}
+
+.txtA h3{
+    font-family: "arnold";
+    color:#fff;
+    font-size:42px;
+    margin-bottom: 20px;
+
+}
+
+.contentA p{
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #80240B;
+    font-family: "roboto-bold";
+}
+
+
+.imgAFondo img{
+    width: 100%;
+    padding: 0 5%;
+    object-fit: cover;
+}
+
+
+/* Secciones de galeria para produciones especificas*/
+.containerGalery{
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.containerMoreInfo{
+    padding: 0 5%;
+}
+.title p{
+    font-family: "arnold";
+    color: #b73310;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.contentGalery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5%;
+    row-gap: 50px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.infoGalery{
+    width: 100%;
+    
+}
+
+.infoGalery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+
+@media screen and ( min-width: 768px) and (max-width: 1023px){
+    /*galeria*/
+    .contentGalery{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    /***/
+    .imgidea {
+        height: 100%;
+        flex-direction: column;
+    }
+    .franjaServices{
+    width: 146%;
+    margin-left: -23%;
+    }
+    .titleChart {
+        padding-right: 0;
+        
+    }
+    .titleChart h3{
+        text-align: center;       
+    }
+    .imgChart {
+        display: block;
+    }  
+    
+    .comlunImg img {
+        display: inline;
+
+        width: 300px;
+        height: 200px;
+
+    }  
+    .fleximg{
+        display: inline;
+    }     
+
+
+
+    .contentA p {
+        padding: 0 5%;
+    }
+
+
+    .reverse{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .textInfo{
+        width: 90%;
+        text-align:center;
+    }
+    .containerDescriptionA {   
+        flex-direction: column;
+    }
+
+    .imgA img {
+    width: 300px;       
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+    }
+    .fleximg img {
+        width: 300px;
+    } 
+
+
+
+
+}
+
+@media screen and (max-width: 768px){
+    /*galeria*/
+    .contentGalery{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /***/
+
+    .imgService video {
+        width: 300px;
+    }
+
+    .franjaServices{
+    width: 200%;
+    margin-left: -50%;
+    }
+    .imgHome img {
+        width: 60%;
+    }
+    .textSinopsis p {
+        font-size: 16px;
+        
+    }
+
+
+    .imgService img {
+        width: 300px;
+    }
+
+
+
+    .imgidea {
+        height: 100%;
+        flex-direction: column;
+    }
+
+
+    .titleChart {
+        padding-right: 0;
+        
+    }
+    .titleChart h3{
+        text-align: center;       
+    }
+
+    .imgChart {
+        flex-direction: column;
+        justify-content: space-around;
+    }     
+    .comlunImg{
+        margin: auto;
+    }
+    .comlunImg img {       
+        width: 300px;
+    }
+
+    .contentA p {
+        padding: 0 20%;
+    }
+
+
+
+    .reverse{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .textInfo{
+        width: 90%;
+        text-align:center;
+    }
+    .containerDescriptionA {   
+        flex-direction: column;
+    }
+    .imgA {
+        flex-direction: column;
+
+    }
+    .imgA img {
+    width: 300px;       
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    }
+    .fleximg{
+
+        flex-direction: column;
+        display: flex;
+    } 
+    .fleximg img {
+        width: 300px;
+        margin: auto;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    } 
+
+}
+
+.nomatividad p{
+    
+    text-align: center;
+    color: #000;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    font-family: "roboto-bold";
+}
+
+
