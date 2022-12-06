@@ -219,6 +219,9 @@
         grid-template-columns: 1fr 1fr;
     }
     /***/
+    .imgInit img {
+        width: 400px;
+    }
 
 }
 
@@ -230,7 +233,7 @@
     }
     /***/
     .imgHome img {
-        width: 06%;
+        width: 60%;
         
     }
     .txt p {
