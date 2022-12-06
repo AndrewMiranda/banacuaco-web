@@ -38,8 +38,6 @@ form{
 }
 
 
-
-
 .optionFormProduction label,
 .optionFormProduction textarea,
 .optionFormProduction input{
@@ -97,12 +95,21 @@ label span{
 
 
 @media screen and (max-width: 768px) {
-    .optionFormProduction p{
-        font-size:16px;
-        width: 30%;
-    }
+
 
     .containerForm{
         width: 90%;
     }
-}
+    
+    .optionFormProduction{
+        flex-direction: column;
+        align-items: start;
+        width: 90%;
+        row-gap: 10px;
+    }
+
+    .optionFormProduction label,
+    .optionFormProduction textarea,
+    .optionFormProduction input{
+        width: 100%;
+       }

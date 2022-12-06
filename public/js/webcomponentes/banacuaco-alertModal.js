@@ -133,6 +133,11 @@ export function createAlertModal() {
                     background-color: #B73310;
                     margin-left: 25px;
                 }
+                @media screen and (max-width: 902px) {
+                    .contentInfo img{
+                        height: 34%;
+                    }
+                }
             </style>`
         }
 
@@ -149,7 +154,7 @@ export function createAlertModal() {
                             </div>
                         </div>
                         <div class="containerAlertButtons">
-                            <div class=" AlertButtons buttonCancel" onclick="cancelar()">Cancelar</div>
+                            <div class=" AlertButtons buttonCancel" onclick="cancelAlert()">Cancelar</div>
                             <div class="AlertButtons  buttonDelete" onclick="eliminar()">Eliminar</div>
                         </div>
                     </div>
@@ -169,3 +174,13 @@ export function createAlertModal() {
     window.customElements.define('modal-banacuaco',  alertModalBanacuaco);
 };
 
+export function cancelar(){
+    document.querySelector('modal-banacuaco').remove();
+};
+
+
+export function launchAlert(){
+    let alert = document.createElement('modal-banacuaco');
+
+    document.body.appendChild(alert);
+};

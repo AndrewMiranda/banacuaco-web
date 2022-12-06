@@ -14,9 +14,13 @@
     </div>
     <div class="infoDashboard">
         <div class="conatinerGalery">
-            <div class="newGalery">
-                <img src="../images/icoAddGalery.svg" alt="">
-            </div>
+            <label for="newImage">
+                <div class="newGalery">
+                    <img src="../images/icoAddGalery.svg" alt="">
+                </div>
+            </label>
+            <input type="file" id="newImage">
+            
             <div class="titleGalery">
                 Galeria
             </div>
@@ -24,84 +28,22 @@
                 <div class="imgGalery">
                     <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
                     <div class="iconsImg">
-                        <img src="../images/deleteCrud.svg" alt="">
+                        <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert()">
                     </div>
                 </div>
 
                 <div class="imgGalery">
                     <img src="../images/Escala personajes copia.jpg" alt="" />
                     <div class="iconsImg">
-                        <img src="../images/deleteCrud2.svg" alt="">
+                        <img src="../images/deleteCrud2.svg" alt="" onclick="deleteAlert()">
                     </div>
                 </div>
-
-                <div class="imgGalery">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud2.svg" alt="">
-                    </div>
-                </div>
-                <div class="imgGalery">
-                    <img src="../images/CLC_Ca_03_Es_7_T_1.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud2.svg" alt="">
-                    </div>
-                </div>
-
-                <div class="imgGalery">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud2.svg" alt="">
-                    </div>
-                </div>
-
-                <div class="imgGalery">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud2.svg" alt="">
-                    </div>
-                </div>
-                <div class="imgGalery">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud2.svg" alt="">
-                    </div>
-                </div>
-
-                <div class="imgGalery">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud2.svg" alt="">
-                    </div>
-                </div>
-
-
-                <div class="imgGalery">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud.svg" alt="">
-                        <img src="../images/editCrud.svg" alt="">
-                    </div>
-                </div>
-
-                <div class="imgGalery">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud.svg" alt="">
-                        <img src="../images/editCrud.svg" alt="">
-                    </div>
-                </div>
-
-                <div class="imgGalery">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud.svg" alt="">
-                        <img src="../images/editCrud.svg" alt="">
-                    </div>
-                </div>    
             </div>
 
         </div>
     </div>
 </body>
 </html>
+
+<script src="../js/general/addAlertModal.js"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

@@ -61,6 +61,8 @@
 
 table{
     width: 90%;
+    margin: auto;
+
 }
 
 table th,
@@ -119,4 +121,7 @@ table td{
         margin: auto;
     }
     
+    .contentCrudHeader{
+        flex-direction: column;
+    }
 }
