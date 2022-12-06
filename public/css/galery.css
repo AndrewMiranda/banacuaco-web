@@ -54,6 +54,12 @@
     box-shadow: -8px 8px 4px 0px #33333340;
     border-radius: 60px;
 }
+.normativity p{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "roboto-bold";
+}
 
 @media screen and (max-width: 1023px){
     .contentGalery{

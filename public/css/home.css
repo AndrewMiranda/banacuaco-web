@@ -54,7 +54,6 @@
     width: 500px; 
     margin: 0 5%;
     object-fit: cover;
-  
 }
 .imgKimiaPerson img{
     height: auto;
@@ -111,12 +110,10 @@
     width: 80%;
 }
 
-.nomatividad p{
-    
+.normativity p{
     text-align: center;
-    color: #000;
-    padding-top: 40px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-family: "roboto-bold";
 }
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../css/newUserDashboard.css" rel="stylesheet" type="text/css" media="all">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <div class="infoDashboard">
+        <div class="containerNewUser">
+            <form>
+                <div class="contentNewUser">
+                        <div class="titleNewUser">
+                            Crear nuevo usuario
+                        </div>
+                        <div class="userName">
+                            <p>Nombre:</p>
+                            <input type="text" name="usuario" id="userName">
+                        </div>
+                        <div class="userPassword">
+                            <p>Usuario:</p>
+                            <input type="email" name="contraseña" id="passwName">
+                        </div>
+                        <div class="userPassword">
+                            <p>Contraseña:</p>
+                            <input type="password" name="contraseña" id="passwName">
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="enviar" id="sendUser">
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

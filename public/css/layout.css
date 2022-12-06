@@ -1,0 +1,196 @@
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "roboto-regular";
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto-regular', sans-serif;
+    text-decoration: none;
+    
+}
+
+body{
+    /** background-color: ; */
+    margin: 0;
+    padding: 0;
+    background-color: #F8F9FB;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-bottom: solid #E2E2E2 1px; 
+}
+
+#optionsHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 0px 5%;
+}
+
+#menu img{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+}
+
+#btnMenu{
+    display: none;
+}
+
+#btnMenu:checked ~ .container {
+    display: none;
+}
+
+
+
+#optionsHeader .botton{
+    color: #FFFFFF;
+    background-color: #FFBD00;
+    padding: 5px;
+    border-radius: 5px;
+    width: 125px;
+    text-align: center;
+    cursor: pointer;
+    font-family: "roboto-bold";
+}
+
+
+
+.navBar{
+    width: 210px;
+    height: 100%;
+    background: #B73310;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    z-index: 2000;
+    overflow: auto;
+
+}
+
+.navBarItems{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 28px;
+    margin-bottom: 8vh;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+.navBar div{
+    display: flex ;
+}
+
+.navBarItems img{
+    margin-right: 12px;
+    width: 28px;
+}
+
+
+.navBarItems h4{
+    color: #fff;
+    font-size: 16px;
+    font-family: "roboto-bold";
+}
+
+.desktopNone{
+    display: none !important;
+}
+
+.infoDashboard{
+    width: calc(100% - 210px);
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 80px;
+    background-color: #F8F9FB;
+}
+
+.infoDashboard h4{
+    text-align: end;
+}
+
+/*Titulo seccion del dashboard*/
+
+.titleSection h1{
+    color: #1783DB;
+    padding-top: 23px;
+    text-align: center;
+    font-size: 40px;
+    font-family: "roboto";
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) { 
+    .titleSection h1{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 760px){
+    
+    .desktopNone{
+        display: flex !important;
+    }
+    
+    .navBar{
+        width: 80px;
+    }
+
+    .navBar div{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navBarItems{
+        margin-left: 0;
+        margin-right:0 ;
+    }
+
+    .navBarItems h4{
+        font-size: 10px;
+        text-align: center;
+    }
+    .navBarItems img{
+        margin-right: 0;
+    }
+
+    .infoDashboard{
+        width: 100%;
+    }
+    .titleSection h1{
+        font-size: 30px;
+    }
+    
+#container1{
+    display: none;
+}
+}
+
