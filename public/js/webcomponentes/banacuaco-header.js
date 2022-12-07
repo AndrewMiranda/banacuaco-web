@@ -1,15 +1,15 @@
 /**
- * Componente de prueba creado por Camilo Valencia Padilla 
+ * Componente creado por Juan José Arteta Maury
  * 
  * Header Dinamico
  * 
- * Fecha de creacion 29/03/2022
+ * Fecha de creacion 20/11/2022
  * 
  */
 /** Importar de esta manera:
- * import {headerheaderKybernets} from "../webConponent/headAlascol.js";
+ * import {headerheaderbanacuaco} from "../webConponent/banacuaco-header.js";
  * 
- * craeteheaderAlasColonbianas();
+ * createheaderbanacuaco();
  */
 export function createheaderbanacuaco() {
 
@@ -212,7 +212,7 @@ export function createheaderbanacuaco() {
                 `<header>
                 <div class="conainerHeader">
                     <div class="imgHeader">
-                        <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco">
+                        <a href="/"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
                     </div>
                     <div class="">
                         <div class="navBar">
@@ -238,12 +238,12 @@ export function createheaderbanacuaco() {
                         <div class="hamburgerMenu">
                             <label for="btnMenu">
                                 <img
-                                  src="../images/menuMobil.svg"
-                                  class="iconoMenu"
-                                  id="menuClick"
-                                  onclick="changueImg()"
+                                    src="../images/menuMobil.svg"
+                                    class="iconoMenu"
+                                    id="menuClick"
+                                    onclick="changeMenu()"
                                 />
-                              </label>
+                            </label>
                         </div>
                     </div>
                     <div class="optionsLanguaje">
@@ -299,17 +299,3 @@ export function createheaderbanacuaco() {
 
     window.customElements.define('header-banacuaco', headerheaderbanacuaco);
 };
-
-export function crationHeader(params) {
-    /* Seteamos al web component 'mipescao-foot-menu' */
-    let bodyClas = document.getElementsByTagName('body');
-    let headbanacuaco = document.createElement('header-banacuaco');
-    bodyClas.innerHTML = headbanacuaco;
-    let display;
-
-    if(params){
-        display = 'none';
-    }else{
-        display = 'flex';
-    };
-}

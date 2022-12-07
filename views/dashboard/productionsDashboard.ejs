@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/productionsDashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <div class="infoDashboard">
+        <div class="containerProductions">
+            <div class="newProductions">
+                <a href="/dashboard/editarProduccion"><img src="../images/icoAddProduction.svg" alt=""></a>
+            </div>
+            <div class="titleProductions">Producciónes</div>
+            <div class="contentProductions">
+                <div class="infoProduction">
+                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="">
+                    <div class="icons">
+                        <div class="iconsImgEdit">
+                            <a href="/dashboard/editarProduccion"><img src="../images/editCrud.svg" alt="" > </a>
+                        </div>
+                        <div class="iconsImgDelete">
+                            <img src="../images/deleteCrud.svg" alt="delete" onclick="deleteAlert()">
+                        </div>
+                    </div>
+                    <p>fdsfdfdfdfdfsd</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="../js/general/addAlertModal.js"></script>
+
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

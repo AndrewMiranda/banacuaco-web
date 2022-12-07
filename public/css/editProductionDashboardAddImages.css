@@ -1,0 +1,182 @@
+
+
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto-regular', sans-serif;
+    text-decoration: none;
+    
+}
+
+.titleSection{
+    text-align: center;
+    padding-bottom: 5%;
+    color: #FE670E;
+    font-family: "arnold";
+    font-size: 40px;
+}
+
+.conatinerImages{
+    width: 100%;
+    height: auto;
+    padding: 5% 5% 0 5%;
+}
+
+.contentSection{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 2%;
+    row-gap: 60px;
+}
+
+.imgSection{
+    height: 160px;
+    width: 250px;
+    position: relative;
+}
+
+.imgSection img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.icons{
+    display: flex;
+    margin-top: -20%;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.iconsImgEdit,
+.iconsImgDelete{
+    background: #00000060;
+    z-index: 100;
+    position: relative;
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.iconsImgEdit:hover,
+.iconsImgDelete:hover{
+    background-color: #000000;
+}
+
+.iconsImgEdit img,
+.iconsImgDelete img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.newImages{
+    position: fixed;
+    /*top: calc(80px + 5%);*/
+    right: 3%;
+    z-index: 10000;
+    
+}
+
+.newImages img{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.imgSection {
+    color: #007F10;
+    font-size: 16px;
+    text-align: center;
+    font-family: "roboto-bold";
+    margin: 15px auto;
+}
+
+#newImage{
+    display: none;
+}
+
+#alert{
+    display:block;
+}
+
+
+/**
+* ver imagenes
+*/
+
+
+.subTitleSection{
+    text-align: center;
+    color: #005E9B;
+    font-family: "arnold";
+    font-size: 30px;
+}
+
+.containerSeeImages{
+    padding-top: 40px;
+    padding-bottom: 5%;
+}
+.contentGaleryImage{
+    margin-top: 40px;
+}
+
+.description{
+    width: 70%;
+    margin: auto;
+}
+
+.description p{
+    font-family: "roboto-bold";
+    font-size: 20px;
+    color: #005E9B;
+    margin-bottom: 10px;
+}
+
+.description textarea{
+    color: #000;
+    font-size: 18px;
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    max-width: 100%;
+    min-width: 100%;
+    outline: none;
+    box-shadow: -5px 5px 3px 0px #33333310;
+    color: #000;
+    border: 0;
+    display: flex;
+    align-items: center;
+}
+
+.widthIcon{
+    width: 35px;
+}
+
+.flexIcons{
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+    column-gap: 10px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 902px) {
+    .newImages{
+        bottom: 5%;
+        z-index: 10000;
+    }
+}

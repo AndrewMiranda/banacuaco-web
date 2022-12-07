@@ -41,7 +41,7 @@
     width: 70%;
     background-color: #FFBD00;
     margin: auto;
-      margin-bottom: auto;
+    margin-bottom: auto;
     border-radius: 60px;
     padding: 3%;
     row-gap: 35px;
@@ -116,6 +116,14 @@
     cursor: pointer;
     outline: none;
     border: 0;
+}
+
+.normativity p{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "roboto-bold";
+    color:#000;
 }
 
 @media screen and (max-width: 768px){

@@ -54,6 +54,7 @@
     object-fit: cover;
     box-shadow: -8px 8px 4px 0px #33333340;
     border-radius: 60px;
+    margin-bottom:20px;
 }
 
 .infoProduction p{
@@ -61,9 +62,18 @@
     font-size: 16px;
     text-align: center;
     font-family: "roboto-bold";
-    margin-top: 20px;
     width: 80%;
-    margin: 20px auto;
+    margin: auto;
+}
+
+
+
+
+.normativity p{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "roboto-bold";
 }
 
 @media screen and (max-width: 1023px){

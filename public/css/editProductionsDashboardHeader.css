@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "roboto-regular";
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+.contentInfoProduction{
+    padding-top:5px;
+}
+
+.headerInfoProduction{
+
+    width: 100%;
+    margin: 0;
+    background-color: #FFBD00;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 5%;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.headerInfoProduction a p{
+    font-family: "arnold";
+    color: #80240B;
+    font-size: 25px;
+}
+
+.headerInfoProduction a p:hover{
+    border-bottom: 1px solid #80240B;
+}

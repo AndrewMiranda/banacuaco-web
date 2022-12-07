@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/userDashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <div class="infoDashboard">
+        <div class="containerCurdUsers">
+            <div class="contentCrudHeader">
+                <div class="titleUsers">
+                    Usuarios
+                </div>
+                <div class="newUser">
+                    <a href="/dashboard/nuevoUsuario"><button>Nuevo usuario</button></a>
+                </div>
+            </div>
+
+
+            <div class="contentCrudUsers">
+                <table>
+                    <thead>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Creación</th>
+                        <th>Opciones</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Juan José Arteta Maury</td>
+                            <td>jj131204@gmail.com</td>
+                            <td>13/12/2004</td>
+                            <td>
+                                <div class="containerIcons">
+                                    <div class="editUser">
+                                        <a href="/dashboard/editarUsuario"><img src="../images/editCrud.svg" alt="" > </a>
+                                    </div>
+                                    <div class="deleteUser" id="alert">
+                                        <img src="../images/deletecrud.svg" alt="delete" onclick="deleteAlert()">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script src="../js/general/addAlertModal.js"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>
