@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto-regular', sans-serif;
+    text-decoration: none;
+}
 
 .containerForm{
     display: flex;
@@ -40,13 +57,13 @@ form{
 
 .optionFormProduction label,
 .optionFormProduction textarea,
-.optionFormProduction input{
+.optionFormProduction input,
+.optionFormProduction select{
     width:75%;
     border: 0;
     border-radius: 60px;
     height: 60px;
     box-shadow: -10px 10px 4px 0px #B9860AB0;
-    color: #000;
     padding-left: 5%;
     outline: none;
     background-color: #ffffff;
@@ -54,13 +71,14 @@ form{
     display: flex;
     align-items: center;
     column-gap: 11px;
+    color: #A2A2A2;
+    font-size: 16px;
 }
 
 
 .optionFormProduction textarea,
 label span{
     display: flex;
-    color: #A2A2A2;
     font-size: 14px;
 }
 
@@ -69,11 +87,21 @@ label span{
     height: 24px;
 }
 
-
 .optionFormProduction textarea{
-    color: #A2A2A2;
     resize: vertical;
     padding-top: 20px;
+}
+
+.optionFormProduction select{
+    margin-top: 15px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+
+.optionFormProduction select opton{
+    color: #FFBD00;
 }
 
 #imgProduction{
@@ -112,4 +140,5 @@ label span{
     .optionFormProduction textarea,
     .optionFormProduction input{
         width: 100%;
-       }
+    }
+}

@@ -91,9 +91,8 @@ router.get("/dashboard/editarProduccionIlustraciones", (req, res) => {
     res.render("dashboard/editProductionDashboardIllustrations");
 });
 
-
-router.get("/dashboard/alertaModal", (req, res) => {
-    res.render("alertaModal");
+router.get("/dashboard/fondosEdit", (req, res) => {
+    res.render("dashboard/editProductionDashboardSeeBackgrounds");
 });
 
 
