@@ -177,10 +177,6 @@
     margin: 5px;
 }
 
-.reverseInline{
-    flex-direction: row-reverse;
-}
-
 .contentDescriptionA {
     margin-top: 5%;
 }
@@ -307,15 +303,18 @@
     }
 
     .imgA img {
-        width: 300px;       
-        margin: auto;
-        padding-bottom: 10px;
-        padding-top: 20px;
+    width: 300px;       
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 20px;
 
     }
     .fleximg img {
         width: 300px;
     } 
+
+
+
 
 }
 
@@ -426,5 +425,3 @@
     padding-bottom: 15px;
     font-family: "roboto-bold";
 }
-
-
