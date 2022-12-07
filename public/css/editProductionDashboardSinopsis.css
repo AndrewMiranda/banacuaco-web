@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "arnold";
+    src: url("../fonts/arnold-21_[allfont.es].ttf");
+}
+
+@font-face {
+    font-family: "roboto-bold";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto-regular', sans-serif;
+    text-decoration: none;
+}
 
 .containerForm{
     display: flex;
@@ -40,7 +57,8 @@ form{
 
 .optionFormProduction label,
 .optionFormProduction textarea,
-.optionFormProduction input{
+.optionFormProduction input,
+.optionFormProduction select{
     width:75%;
     border: 0;
     border-radius: 60px;
@@ -54,14 +72,14 @@ form{
     display: flex;
     align-items: center;
     column-gap: 11px;
+    color: #A2A2A2;
+    font-size: 14Wpx;
 }
 
 
 .optionFormProduction textarea,
 label span{
     display: flex;
-    color: #A2A2A2;
-    font-size: 14px;
 }
 
 .addImg{
@@ -69,12 +87,19 @@ label span{
     height: 24px;
 }
 
-
 .optionFormProduction textarea{
-    color: #A2A2A2;
+    color: #A2A2A264;
     resize: vertical;
     padding-top: 20px;
 }
+
+.optionFormProduction select{
+    margin-top: 15px;
+    color: #A2A2A264;
+    box-sizing: border-box;
+    outline: none;
+}
+
 
 #imgProduction{
     display: none;
@@ -112,4 +137,5 @@ label span{
     .optionFormProduction textarea,
     .optionFormProduction input{
         width: 100%;
-       }
+    }
+}
