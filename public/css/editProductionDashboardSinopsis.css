@@ -64,7 +64,6 @@ form{
     border-radius: 60px;
     height: 60px;
     box-shadow: -10px 10px 4px 0px #B9860AB0;
-    color: #000;
     padding-left: 5%;
     outline: none;
     background-color: #ffffff;
@@ -73,13 +72,14 @@ form{
     align-items: center;
     column-gap: 11px;
     color: #A2A2A2;
-    font-size: 14Wpx;
+    font-size: 16px;
 }
 
 
 .optionFormProduction textarea,
 label span{
     display: flex;
+    font-size: 14px;
 }
 
 .addImg{
@@ -88,18 +88,21 @@ label span{
 }
 
 .optionFormProduction textarea{
-    color: #A2A2A264;
     resize: vertical;
     padding-top: 20px;
 }
 
 .optionFormProduction select{
     margin-top: 15px;
-    color: #A2A2A264;
     box-sizing: border-box;
     outline: none;
 }
 
+
+
+.optionFormProduction select opton{
+    color: #FFBD00;
+}
 
 #imgProduction{
     display: none;
