@@ -17,6 +17,10 @@
     color: #0000; /*color de textos*/
 }
 
+form{
+    width: 100%;
+}
+
 .containerContact{
     display: flex;
     flex-direction: column;

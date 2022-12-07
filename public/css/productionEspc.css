@@ -120,6 +120,11 @@
 
 /*Seccion personajes*/
 
+.reverse{
+    display: flex !important;
+    flex-direction: row-reverse !important;
+}
+
 .degArts{
     transform: rotate(-5deg);
     padding-bottom: 5%; /* Le añade un padding abajo para que no se salga la imagen*/
@@ -175,10 +180,6 @@
 .imgA img{
     width: 250px;
     margin: 5px;
-}
-
-.reverseInline{
-    flex-direction: row-reverse;
 }
 
 .contentDescriptionA {
@@ -307,15 +308,18 @@
     }
 
     .imgA img {
-        width: 300px;       
-        margin: auto;
-        padding-bottom: 10px;
-        padding-top: 20px;
+    width: 300px;       
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 20px;
 
     }
     .fleximg img {
         width: 300px;
     } 
+
+
+
 
 }
 
@@ -426,5 +430,3 @@
     padding-bottom: 15px;
     font-family: "roboto-bold";
 }
-
-
