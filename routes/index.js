@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const nodemailer = require('nodemailer');
 
 router.get('/', (req, res) => {
     res.render('home', { title: 'home' });
@@ -12,6 +13,39 @@ router.get('/servicios', (req, res) => {
 
 router.get('/contacto', (req, res) => {
     res.render('contact', { title: 'contact' });
+});
+
+router.post('/contacto', (req, res) => {
+    res.render('contact', { title: 'contact' });
+
+
+    var transporter = nodemailer.createTransport({
+        host: "smtp-mail.outlook.com", // hostname
+        port: 587, // port for secure SMTP
+        secureConnection: false,
+        tls: {
+            ciphers:'SSLv3'
+        },
+        auth: {
+        user: 'camilovalenciapadilla@gmail.com',
+        pass: 'camilosemilo1'
+        }
+    });
+
+    var mailOptions = {
+        from: 'camilovalenciapadilla@gmail.com',
+        to: 'jj131204@gmail.com',
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+        console.log(error);
+        } else {
+        console.log('Email sent: ' + info.response);
+        }
+}); 
 });
 
 router.get('/nosotros', (req, res) => {
