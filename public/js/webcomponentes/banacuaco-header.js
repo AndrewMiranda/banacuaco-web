@@ -20,13 +20,16 @@ export function createheaderbanacuaco() {
         }
 
         static get observedAttributes(){
-            return["hide"]
+            return["hide", "languaje"]
         }
 
         attributeChangedCallback(attr, oldValue, newVal){
 
             if (attr === "hide") {
                 this.hide = newVal;
+            }
+            if (attr === "languaje") {
+                this.languaje = newVal;
             }
 
         }
@@ -212,26 +215,26 @@ export function createheaderbanacuaco() {
                 `<header>
                 <div class="conainerHeader">
                     <div class="imgHeader">
-                        <a href="/"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
+                        <a href="${this.languaje}"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
                     </div>
                     <div class="">
                         <div class="navBar">
-                            <a href="/producciones">
+                            <a href="/producciones${this.languaje}">
                                 <p>Producciones</p>
                             </a>
-                            <a href="/servicios">
+                            <a href="/servicios${this.languaje}">
                                 <p>Servicios</p>
                             </a>
                             
-                            <a href="/nosotros">
+                            <a href="/nosotros${this.languaje}">
                                 <p>Nosotros</p>
                             </a>
                             
-                            <a href="/galeria">
+                            <a href="/galeria${this.languaje}">
                                 <p>Galeria</p>
                             </a>
                             
-                            <a href="/contacto">
+                            <a href="/contacto${this.languaje}">
                                 <p>Contactenos</p>
                             </a>
                         </div>
@@ -248,11 +251,11 @@ export function createheaderbanacuaco() {
                     </div>
                     <div class="optionsLanguaje">
                         <div class="content">
-                            <div class="english">
+                            <div class="english" onclick="es_en('en')">
                                 <img src="../images/american-flag.png" alt="">
                                 <p>Ingles</p>
                             </div>
-                            <div class="spanish">
+                            <div class="spanish" onclick="es_en('es')">
                                 <img src="../images/colombia.png" alt="">
                                 <p>Español</p>
                             </div>
@@ -262,14 +265,14 @@ export function createheaderbanacuaco() {
                 <input type="checkbox" id="btnMenu" />
                 <div class="menu">
                     <div class="contentMenu">
-                    <a href="/producciones">
+                    <a href="/producciones${this.languaje}">
                         <p>Producciones</p>
                     </a>
-                    <a href="/servicios">
+                    <a href="/servicios${this.languaje}">
                         <p>Servicios</p>
                     </a>
                     
-                    <a href="/nosotros">
+                    <a href="/nosotros${this.languaje}">
                         <p>Nosotros</p>
                     </a>
                     
