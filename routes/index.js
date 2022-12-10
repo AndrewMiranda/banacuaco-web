@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+//Llamada de BD
+const pool = require("../config/dbConnection");
+
 router.get('/', (req, res) => {
     res.render('home', { title: 'home' });
 });
@@ -11,6 +14,11 @@ router.get('/servicios', (req, res) => {
 
 
 router.get('/contacto', (req, res) => {
+    res.render('contact', { title: 'contact' });
+});
+
+//Recibir información de formulario de contacto
+router.post('/contacto', (req, res) => {
     res.render('contact', { title: 'contact' });
 });
 
@@ -31,16 +39,24 @@ router.get('/produccion2', (req, res) => {
 });
 
 
-router.get('/galeria', (req, res) => {
-    res.render('galery', { title: 'nosotros' });
+router.get('/galeria', async (req, res) => {
+    let data = await pool.query("SELECT * FROM `images`");
+    console.log(data)
+    res.render('galery', { title: 'Galeria', images: data });
 });
 
 // desde aqui inician las rutas del dashboard
 
-router.get("/dashboard", (req, res) => {
+router.post("/dashboard", (req, res, next) => {    
+    //let user = req.body.user;
+    //let password = req.body.password;
+    res.send(req.body);
+    console.log(req.body);
+}); 
+
+router.get("/dashboard", (req, res, next) => {
     res.render("dashboard/login");
 });
-
 
 router.get("/dashboard/home", (req, res) => {
     res.render("dashboard/indexDashboard");
@@ -95,6 +111,10 @@ router.get("/dashboard/fondosEdit", (req, res) => {
     res.render("dashboard/editProductionDashboardSeeBackgrounds");
 });
 
+router.get("/:idioma/dashboards", (req, res) => {
+    let idioma = req.params.idioma;
 
+    res.render(idioma+"/home.ejs");
+});
 
 module.exports = router;
