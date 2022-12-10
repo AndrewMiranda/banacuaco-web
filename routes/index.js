@@ -5,19 +5,32 @@ const nodemailer = require('nodemailer');
 //Llamada de BD
 const pool = require("../config/dbConnection");
 
-router.get('/:idioma', (req, res) => {
-    let idioma = req.params.idioma;
+const defaultLanguage = "en"
 
-    res.render(idioma+"/home.ejs");
-    res.render('home', { title: 'home', idioma: idioma });
+router.get('/', (req, res) => {
+    res.redirect('/en/home');
+});
+
+router.get('/:idioma/home', async(req, res) => {
+    let idioma = req.params.idioma;
+    if(idioma == undefined) idioma = defaultLanguage;
+
+    let data =  await pool.query("SELECT * FROM `"+idioma+"_premieres` ORDER BY `date` DESC LIMIT 1");
+    data = data[0];
+
+    res.render(idioma+'/home', { title: 'home', idiom: idioma, img: data.image, desc: data.description, character: data.characters});
 });
 
 router.get('/:idioma/servicios', (req, res) => {
     let idioma = req.params.idioma;
+    if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+"/services.ejs", { title: 'services', idioma: idioma });
+    res.render(idioma+'/services', { title: 'services' });
 });
 
+router.get('/:idioma/contacto', (req, res) => {
+    let idioma = req.params.idioma;
+    if(idioma == undefined) idioma = defaultLanguage;
 
 router.get('/:idioma/contacto', (req, res) => {
     let idioma = req.params.idioma;
@@ -97,40 +110,45 @@ router.post('/:idioma/contacto', (req, res) => {
 
 router.get('/:idioma/nosotros', (req, res) => {
     let idioma = req.params.idioma;
+    if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+"/nosotros.ejs", { title: 'nosotros', idioma: idioma });
+    res.render(idioma+'/nosotros', { title: 'nosotros' });
 });
 
 router.get('/:idioma/producciones', (req, res) => {
     let idioma = req.params.idioma;
+    if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+"/productions.ejs", { title: 'nosotros', idioma: idioma });
+    res.render(idioma+'/productions', { title: 'nosotros' });
 });
 
 router.get('/:idioma/produccion', (req, res) => {
     let idioma = req.params.idioma;
+    if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+"/productionEspc.ejs", { title: 'nosotros', idioma: idioma });
+    res.render(idioma+'/productionEspc', { title: 'nosotros' });
 });
 
 router.get('/:idioma/produccion2', (req, res) => {
     let idioma = req.params.idioma;
+    if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/productionEspc2.ejs', { title: 'nosotros', idioma: idioma });
+    res.render(idioma+'/productionEspc2', { title: 'nosotros' });
 });
 
 
 router.get('/:idioma/galeria', async (req, res) => {
     let idioma = req.params.idioma;
+    if(idioma == undefined) idioma = defaultLanguage;
 
     let data = await pool.query("SELECT * FROM `images`");
     console.log(data)
-    res.render(idioma+"/galery.ejs", { title: 'Galeria', images: data });
+    res.render(idioma+'/galery', { title: 'Galeria', images: data });
 });
 
 // desde aqui inician las rutas del dashboard
 
-router.post("/dashboard", (req, res, next) => {    
+router.post("/dashboard", (req, res) => {    
     //let user = req.body.user;
     //let password = req.body.password;
     res.send(req.body);
@@ -192,12 +210,6 @@ router.get("/dashboard/editarProduccionIlustraciones", (req, res) => {
 
 router.get("/dashboard/fondosEdit", (req, res) => {
     res.render("dashboard/editProductionDashboardSeeBackgrounds");
-});
-
-router.get("/:idioma/dashboards", (req, res) => {
-    let idioma = req.params.idioma;
-
-    res.render(idioma+"/home.ejs");
 });
 
 module.exports = router;
