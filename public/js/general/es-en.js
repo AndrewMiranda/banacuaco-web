@@ -7,6 +7,7 @@ function es_en(params) {
     c = b.length
     console.log(b)
     if(c === 2){
+        console.log('se ejecuta')
         if(b[c-1] === params){
             window.location = routes;
         }
@@ -19,7 +20,8 @@ function es_en(params) {
             window.location = routes;
         }
         else{
-            r = '/' + b[1] + '/' + params;
+            console.log('se ejecuta else')
+            r = '/' + params + '/' + b[2];
             for(e in b){
                 if (e > 3){
                     r = r + b[e]

@@ -10,20 +10,10 @@
   "author": "alapacua",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
-    "body-parser": "^1.20.1",
-    "ejs": "^2.7.4",
-    "express": "^4.18.1",
-    "morgan": "^1.10.0",
-    "node-fetch": "^2.6.7",
-    "nodemailer": "^6.8.0",
-    "package.json": "^2.0.1"
-=======
     "ejs": "^2.7.4",
     "express": "^4.18.1",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1"
->>>>>>> 48b9a1c3d91d08129297d03bec5b863bb4d15bd3
   },
   "devDependencies": {
     "nodemon": "^1.19.4"

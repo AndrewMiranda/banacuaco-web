@@ -215,26 +215,26 @@ export function createheaderbanacuaco() {
                 `<header>
                 <div class="conainerHeader">
                     <div class="imgHeader">
-                        <a href="${this.languaje}"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
+                        <a href="/${this.languaje}"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
                     </div>
                     <div class="">
                         <div class="navBar">
-                            <a href="/producciones${this.languaje}">
+                            <a href="/${this.languaje}/producciones">
                                 <p>Producciones</p>
                             </a>
-                            <a href="/servicios${this.languaje}">
+                            <a href="/${this.languaje}/servicios">
                                 <p>Servicios</p>
                             </a>
                             
-                            <a href="/nosotros${this.languaje}">
+                            <a href="/${this.languaje}/nosotros">
                                 <p>Nosotros</p>
                             </a>
                             
-                            <a href="/galeria${this.languaje}">
+                            <a href="/${this.languaje}/galeria">
                                 <p>Galeria</p>
                             </a>
                             
-                            <a href="/contacto${this.languaje}">
+                            <a href="/${this.languaje}/contacto">
                                 <p>Contactenos</p>
                             </a>
                         </div>
@@ -265,22 +265,22 @@ export function createheaderbanacuaco() {
                 <input type="checkbox" id="btnMenu" />
                 <div class="menu">
                     <div class="contentMenu">
-                    <a href="/producciones${this.languaje}">
+                    <a href="/${this.languaje}/producciones">
                         <p>Producciones</p>
                     </a>
-                    <a href="/servicios${this.languaje}">
+                    <a href="/${this.languaje}/servicios">
                         <p>Servicios</p>
                     </a>
                     
-                    <a href="/nosotros${this.languaje}">
+                    <a href="/${this.languaje}/nosotros">
                         <p>Nosotros</p>
                     </a>
                     
-                    <a href="/galeria">
+                    <a href="/${this.languaje}/galeria">
                         <p>Galeria</p>
                     </a>
                     
-                    <a href="/contacto">
+                    <a href="/${this.languaje}/contacto">
                         <p>Contactenos</p>
                     </a>
                         

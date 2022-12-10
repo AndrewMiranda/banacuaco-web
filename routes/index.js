@@ -5,45 +5,127 @@ const nodemailer = require('nodemailer');
 //Llamada de BD
 const pool = require("../config/dbConnection");
 
-router.get('/', (req, res) => {
-    res.render('home', { title: 'home' });
+router.get('/:idioma', (req, res) => {
+    let idioma = req.params.idioma;
+
+    res.render(idioma+"/home.ejs");
+    res.render('home', { title: 'home', idioma: idioma });
 });
 
-router.get('/servicios', (req, res) => {
-    res.render('services', { title: 'services' });
+router.get('/:idioma/servicios', (req, res) => {
+    let idioma = req.params.idioma;
+
+    res.render(idioma+"/services.ejs", { title: 'services', idioma: idioma });
 });
 
 
-router.get('/contacto', (req, res) => {
-    res.render('contact', { title: 'contact' });
+router.get('/:idioma/contacto', (req, res) => {
+    let idioma = req.params.idioma;
+
+    res.render(idioma+"/contact.ejs", { title: 'contact', idioma: idioma });
 });
 
 //Recibir información de formulario de contacto
-router.post('/contacto', (req, res) => {
-    res.render('contact', { title: 'contact' });
+router.post('/:idioma/contacto', (req, res) => {
+    let idioma = req.params.idioma;
+    const {nombre, mensaje, emails} = req.body;
+    var transporter = nodemailer.createTransport({
+        host: "smtp-mail.outlook.com", // hostname
+        port: 587, // port for secure SMTP
+        secureConnection: false,
+        tls: {
+            ciphers:'SSLv3'
+        },
+        auth: {
+        user: 'camilovalenciapadilla@hotmail.com',
+        pass: 'camilosemilo1'
+        }
+    });
+
+    var mailOptions = {
+        from: 'camilovalenciapadilla@hotmail.com',
+        to: 'camilovalenciapadilla@gmail.com',
+        subject: `email enviado de la direccion de correo de: ${emails}`,
+        html: `<html lang="en">
+        <head>
+        <style>
+            p, a, h1, h2, h3, h4, h5, h6 {font-family: 'Roboto', sans-serif !important;}
+            .imgHeader{
+                height: 200px;
+                width: 100%;
+            }
+            
+            .imgHeader img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            p{
+                color: #000;
+                font-size: 18px;
+                font-family: "roboto-bold";
+            }
+        </style>
+        </head>
+        <body>
+            <div class="imgHeader">
+                <img src="cid:Bna" alt="banacuaco"></a>
+            </div>
+            <div style="text-align: center; color: #FE670E; font-size: 50px;"> contactos</div> 
+            <p style="text-align: center; color: #000;font-size: 18px;"> Este email viene a nombre de: <b> ${nombre}</b></p>
+            <p style="text-align: center; color: #000;font-size: 18px;"> el mensaque recibido es el siguiente:</p>
+            <p style="text-align: center; color: #000;font-size: 18px;"> ${mensaje}</p>
+        </body>
+        </html> `,
+        attachments: [{
+            filename: 'BANACUACO Banner Youtube 2022 web.jpg',
+            path: './public/images/BANACUACO Banner Youtube 2022 web.jpg',
+            cid: 'Bna' //same cid value as in the html img src
+        }]
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+        console.log(error);
+        } else {
+        console.log('Email sent: ' + info.response);
+        }
+    }); 
+
+    res.render(idioma+"/contact.ejs", { title: 'contact', idioma: idioma });
 });
 
-router.get('/nosotros', (req, res) => {
-    res.render('nosotros', { title: 'nosotros' });
+router.get('/:idioma/nosotros', (req, res) => {
+    let idioma = req.params.idioma;
+
+    res.render(idioma+"/nosotros.ejs", { title: 'nosotros', idioma: idioma });
 });
 
-router.get('/producciones', (req, res) => {
-    res.render('productions', { title: 'nosotros' });
+router.get('/:idioma/producciones', (req, res) => {
+    let idioma = req.params.idioma;
+
+    res.render(idioma+"/productions.ejs", { title: 'nosotros', idioma: idioma });
 });
 
-router.get('/produccion', (req, res) => {
-    res.render('productionEspc', { title: 'nosotros' });
+router.get('/:idioma/produccion', (req, res) => {
+    let idioma = req.params.idioma;
+
+    res.render(idioma+"/productionEspc.ejs", { title: 'nosotros', idioma: idioma });
 });
 
-router.get('/produccion2', (req, res) => {
-    res.render('productionEspc2', { title: 'nosotros' });
+router.get('/:idioma/produccion2', (req, res) => {
+    let idioma = req.params.idioma;
+
+    res.render(idioma+'/productionEspc2.ejs', { title: 'nosotros', idioma: idioma });
 });
 
 
-router.get('/galeria', async (req, res) => {
+router.get('/:idioma/galeria', async (req, res) => {
+    let idioma = req.params.idioma;
+
     let data = await pool.query("SELECT * FROM `images`");
     console.log(data)
-    res.render('galery', { title: 'Galeria', images: data });
+    res.render(idioma+"/galery.ejs", { title: 'Galeria', images: data });
 });
 
 // desde aqui inician las rutas del dashboard

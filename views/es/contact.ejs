@@ -17,12 +17,12 @@
     <link rel="stylesheet" href="../css/redesSociales.css">
 </head>
 <body>
-    <header-banacuaco languaje="/en"></header-banacuaco>
+    <header-banacuaco languaje=<%= idioma%>></header-banacuaco>
 
     <div class="containerContact">
         <div class="titlecontact">CONTÁCTANOS</div>
 
-        <form action="/contacto/en" method="POST">
+        <form action="/<%= idioma%>/contacto" method="POST">
             <div class="containerForm">
                 <div class="optionsForm">
                     <p>Nombre:</p>
@@ -57,5 +57,6 @@
 <!--
     alerta modal
 -->
+<script type="text/javascript" src="../js/general/es-en.js"></script>
 <script src="../js/general/addAlertModal.js"></script>
 <script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>
