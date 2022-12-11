@@ -25,17 +25,14 @@ router.get('/:idioma/servicios', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/services', { title: 'services' });
+    res.render(idioma+'/services', { title: 'services', idiom: idioma });
 });
 
 router.get('/:idioma/contacto', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-router.get('/:idioma/contacto', (req, res) => {
-    let idioma = req.params.idioma;
-
-    res.render(idioma+"/contact.ejs", { title: 'contact', idioma: idioma });
+    res.render(idioma+"/contact.ejs", { title: 'contact',idiom: idioma });
 });
 
 //Recibir información de formulario de contacto
@@ -86,7 +83,7 @@ router.post('/:idioma/contacto', (req, res) => {
             </div>
             <div style="text-align: center; color: #FE670E; font-size: 50px;"> contactos</div> 
             <p style="text-align: center; color: #000;font-size: 18px;"> Este email viene a nombre de: <b> ${nombre}</b></p>
-            <p style="text-align: center; color: #000;font-size: 18px;"> el mensaque recibido es el siguiente:</p>
+            <p style="text-align: center; color: #000;font-size: 18px;"> el mensaje recibido es el siguiente:</p>
             <p style="text-align: center; color: #000;font-size: 18px;"> ${mensaje}</p>
         </body>
         </html> `,
@@ -105,35 +102,35 @@ router.post('/:idioma/contacto', (req, res) => {
         }
     }); 
 
-    res.render(idioma+"/contact.ejs", { title: 'contact', idioma: idioma });
+    res.render(idioma+"/contact.ejs", { title: 'contact', idiom: idioma });
 });
 
 router.get('/:idioma/nosotros', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/nosotros', { title: 'nosotros' });
+    res.render(idioma+'/nosotros', { title: 'nosotros',idiom: idioma });
 });
 
 router.get('/:idioma/producciones', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/productions', { title: 'nosotros' });
+    res.render(idioma+'/productions', { title: 'nosotros',idiom: idioma });
 });
 
 router.get('/:idioma/produccion', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/productionEspc', { title: 'nosotros' });
+    res.render(idioma+'/productionEspc', { title: 'nosotros',idiom: idioma });
 });
 
 router.get('/:idioma/produccion2', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/productionEspc2', { title: 'nosotros' });
+    res.render(idioma+'/productionEspc2', { title: 'nosotros',idiom: idioma });
 });
 
 
@@ -143,7 +140,7 @@ router.get('/:idioma/galeria', async (req, res) => {
 
     let data = await pool.query("SELECT * FROM `images`");
     console.log(data)
-    res.render(idioma+'/galery', { title: 'Galeria', images: data });
+    res.render(idioma+'/galery', { title: 'Galeria', images: data, idiom: idioma, });
 });
 
 // desde aqui inician las rutas del dashboard

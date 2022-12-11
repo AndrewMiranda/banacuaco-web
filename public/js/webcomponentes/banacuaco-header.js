@@ -215,7 +215,7 @@ export function createheaderbanacuaco() {
                 `<header>
                 <div class="conainerHeader">
                     <div class="imgHeader">
-                        <a href="/${this.languaje}"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
+                        <a href="/${this.languaje}/home"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
                     </div>
                     <div class="">
                         <div class="navBar">
