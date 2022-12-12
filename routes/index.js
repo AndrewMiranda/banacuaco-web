@@ -47,14 +47,14 @@ router.post('/:idioma/contacto', (req, res) => {
             ciphers:'SSLv3'
         },
         auth: {
-        user: 'camilovalenciapadilla@hotmail.com',
-        pass: 'camilosemilo1'
+        user: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        pass: 'xxxxxxxxxxxxx'
         }
     });
 
     var mailOptions = {
-        from: 'camilovalenciapadilla@hotmail.com',
-        to: 'camilovalenciapadilla@gmail.com',
+        from: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        to: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx',
         subject: `email enviado de la direccion de correo de: ${emails}`,
         html: `<html lang="en">
         <head>
