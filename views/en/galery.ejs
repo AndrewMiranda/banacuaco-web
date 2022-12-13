@@ -19,33 +19,10 @@
     <header-banacuaco></header-banacuaco>
 
     <div class="containerGalery">
-		<div class="title">galeria</div>
+		<div class="title">Galery</div>
 		
 		<div class="contentGalery">
-			<div class="infoGalery">
-				<img src="../images/Escala personajes copia.jpg" alt="">
-			</div>
-
-			<div class="infoGalery">
-				<img src="../images/CLC_Ca_03_Es_7_T_1.jpg" alt="">
-			</div>
-
-			<div class="infoGalery">
-				<img src="../images/Las entradas a Banacuaco-12-c.jpg" alt="">
-			</div>
-
-			<div class="infoGalery">
-				<img src="../images/Escala personajes copia.jpg" alt="">
-			</div>
-
-			<div class="infoGalery">
-				<img src="../images/Escala personajes copia.jpg" alt="">
-			</div>
-
-			<div class="infoGalery">
-				<img src="../images/Escala personajes copia.jpg" alt="">
-			</div>
-
+			<%- include('../partials/imagesGalery'); %>
 		</div>
     
 		<div class="normativity">
@@ -66,8 +43,5 @@
 <!--
     alerta modal
 -->
-<script>
-	console.log(<%= images %>)
-</script>
 <script src="../js/general/addAlertModal.js"></script>
 <script type="module" src="js/general/modules/headerAndsocialMedia.mjs"></script>
