@@ -17,12 +17,12 @@
     <link rel="stylesheet" href="../css/redesSociales.css">
 </head>
 <body>
-    <header-banacuaco></header-banacuaco>
+    <header-banacuaco languaje=<%= idiom%>></header-banacuaco>
 
     <div class="containerContact">
         <div class="titlecontact">CONTACT US</div>
 
-        <form action="">
+        <form action="/<%= idiom%>/contacto" method="POST">
             <div class="containerForm">
                 <div class="optionsForm">
                     <p>Name:</p>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="optionsForm">
                     <p>E-mail:</p>
-                    <input type="text" name="e-mail" >
+                    <input type="text" name="emails" >
                 </div>
                 <div class="optionsFormMessaje">
                     <p>Message:</p>
@@ -39,7 +39,7 @@
 
                 <div class="contentSend">
                     <div class="buttonSend">
-                        <button>Send</button>
+                        <button type="submit" value="Save"> Enviar</button>
                     </div>
                 </div>
             </div>
@@ -57,5 +57,6 @@
 <!--
     alerta modal
 -->
+<script type="text/javascript" src="../js/general/es-en.js"></script>
 <script src="../js/general/addAlertModal.js"></script>
 <script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>
