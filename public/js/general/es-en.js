@@ -1,7 +1,15 @@
-let routes = window.location.pathname.toString();
-b = routes.split('/');
-c = b.length
+/**
+ * Realiza el cambio de idioma en la pagina, mandando por la ruta /es para español y /en para ingles 
+ * Realizado por Camilo Andres Valencia Padilla
+ * 13/12/2022
+ */
 
+
+let routes = window.location.pathname.toString();
+let b = routes.split('/');
+let c = b.length
+
+// Realiza el cambio de idioma, mandando por la ruta /es para español y /en para ingles 
 function es_en(params) {
     b = routes.split('/');
     c = b.length
