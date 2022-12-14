@@ -86,23 +86,47 @@ router.get('/:idioma/galeria', async (req, res) => {
 
 // desde aqui inician las rutas del dashboard
 
-router.post("/dashboard", (req, res) => {    
-    //let user = req.body.user;
-    //let password = req.body.password;
-    res.send(req.body);
-    console.log(req.body);
-}); 
-
 router.get("/dashboard", (req, res, next) => {
+    let controlUser = require("../modules/dashboard/login");
+
+    //Si ya está logueado lo manda al home del dashboard
+    if(controlUser.verify(req, res) == true){
+        res.redirect("/dashboard/main");
+    }
+
     res.render("dashboard/login");
 });
 
-router.get("/dashboard/home", (req, res) => {
-    res.render("dashboard/indexDashboard");
+router.post("/dashboard", async(req, res) => {
+    let controlUser = require("../modules/dashboard/login");
+
+    //Datos de logueo
+    let user = req.body.user;
+    let password = req.body.password;
+
+    //Verificación de datos
+    if (await controlUser.login(user, password) == true) {
+        res.cookie("session" , true).redirect("/dashboard/main");
+    } else {
+        res.redirect("/dashboard?error=1");
+    }
+});
+
+router.get("/dashboard/main", (req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/indexDashboard");
+    };
 });
 
 router.get("/dashboard/producciones", (req, res) => {
     res.render("dashboard/productionsDashboard");
+});
+
+
+router.get("/dashboard/estrenos", (req, res) => {
+    res.render("dashboard/premieresDashboard");
 });
 
 router.get("/dashboard/galeria", (req, res) => {
