@@ -1,0 +1,47 @@
+<!-- 
+    Archivo para la secciòn de servicios
+    Creado por: Juan José Arteta Maury
+    Fecha: 21/11/2022
+    
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Galeria</title>
+	<link href="./css/sevicios.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../css/header.css">
+	<link rel="stylesheet" href="../css/galery.css">
+</head>
+<body>
+    <header-banacuaco languaje=<%= idiom%>></header-banacuaco>
+
+    <div class="containerGalery">
+		<div class="title">Galery</div>
+		
+		<div class="contentGalery">
+			<%- include('../partials/imagesGalery'); %>
+		</div>
+    
+		<div class="normativity">
+			<p>nomatividad</p>
+		</div>
+    </div>
+
+
+    <social-banacuaco></social-banacuaco>
+</body>
+
+</html>
+
+
+<script type="text/javascript" src="../js/general/closeMenu.js"></script>
+
+
+<!--
+    alerta modal
+-->
+<script src="../js/general/addAlertModal.js"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

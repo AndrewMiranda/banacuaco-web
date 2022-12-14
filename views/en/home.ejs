@@ -1,0 +1,44 @@
+<!--
+- Fecha de creación:  20/11/2022
+- Por: Adrian camilo guerra polo
+- El estilo se toma del archivo home.css
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+</head>
+<body>
+    <header-banacuaco languaje=<%= idiom%>></header-banacuaco>
+
+    <div class="containerHero">
+        <div class="title">
+            <p>We tell stories that change lives.</p>
+        </div>
+
+        <div class="imgHome">
+            <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
+        </div>
+    
+        <%- include('../partials/premieres'); %>
+    <div class="normativity">
+        <p>nomatividad</p>
+    </div>
+    <social-banacuaco></social-banacuaco>
+</body>
+
+</html>
+
+
+<script type="text/javascript" src="../js/general/closeMenu.js"></script>
+<script type="text/javascript" src="../js/general/es-en.js"></script>
+
+<!--
+    alerta modal
+-->
+<script src="../js/general/addAlertModal.js"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

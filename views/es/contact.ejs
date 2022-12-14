@@ -1,0 +1,64 @@
+<!-- 
+    Archivo para la secciòn de servicios
+    Creado por: Juan José Arteta Maury
+    Fecha: 21/11/2022
+    
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Contacto</title>
+    <link href="./css/sevicios.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/redesSociales.css">
+</head>
+<body>
+    <header-banacuaco languaje=<%= idiom%>></header-banacuaco>
+
+    <div class="containerContact">
+        <div class="titlecontact">CONTÁCTANOS</div>
+
+        <form id="form" action="/<%= idiom%>/contacto" method="post">
+            <div class="containerForm">
+                <div class="optionsForm">
+                    <p>Nombre:</p>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+                <div class="optionsForm">
+                    <p>E-mail:</p>
+                    <input type="text" name="emails"  id="email">
+                </div>
+                <div class="errorAlert" id="errorEmail"></div>
+                <div class="optionsFormMessaje">
+                    <p>Mensaje:</p>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+                </div>
+                <div class="errorAlert" id="errorPassword"></div>
+                <div class="contentSend">
+                    <div class="buttonSend">
+                        <div class="sendsDiv" onclick="submitFun()" > Enviar</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="normativity">
+            <p>nomatividad</p>
+        </div>
+    <social-banacuaco></social-banacuaco>
+</body>
+
+</html>
+
+<script type="text/javascript" src="../js/general/closeMenu.js"></script>
+
+<!--
+    alerta modal
+-->
+<script type="text/javascript" src="../js/general/es-en.js"></script>
+<script type="text/javascript" src="../js/general/contact.js"></script>
+<script src="../js/general/addAlertModal.js"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

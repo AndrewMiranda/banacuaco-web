@@ -10,12 +10,12 @@
   "author": "alapacua",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.0",
     "ejs": "^2.7.4",
     "express": "^4.18.1",
     "morgan": "^1.10.0",
-    "node-fetch": "^2.6.7",
-    "package.json": "^2.0.1"
+    "nodemailer": "^6.8.0",
+    "cookie-parser": "^1.4.6",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
