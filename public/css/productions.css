@@ -55,6 +55,7 @@
     box-shadow: -8px 8px 4px 0px #33333340;
     border-radius: 60px;
     margin-bottom:20px;
+    transition: 0.3s;
 }
 
 .infoProduction img:hover {
