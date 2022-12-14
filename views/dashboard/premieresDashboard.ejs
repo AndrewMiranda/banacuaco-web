@@ -1,0 +1,47 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/editProductionsDashboardHeader.css">
+    <link rel="stylesheet" href="../css/editProductionDashboardSinopsis.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <!-- Agregar sinopsis-->
+    <div class="infoDashboard">
+        <div class="marginFormPremieres"></div>
+        <form action="">
+            <div class="containerForm">
+                <div class="titleDescription">
+                    Estreno
+                </div>
+                <div class="optionFormProduction">
+                    <p>Nombre:</p>
+                    <input type="text" name="namePremiere" id="premiere">
+                </div>
+                <div class="optionFormProduction">
+                    <p>Imagen:</p>
+                    <label for="imgProduction">
+                        <img class="addImg" src="../images/icoAddImgForm.svg" alt="">
+                        <span>inserta imagen</span>
+                    </label>
+                    <input type="file" name="imagePremiere" id="imgPremiere">
+                </div>
+                <div class="optionFormProduction">
+                    <p>Descripción:</p>
+                    <textarea  name="descriptionPremiere" id="decPremiere" cols="30" rows="10"></textarea>
+                    
+                </div>
+                
+                <div class="submit">
+                    <input type="submit" value="enviar">
+                </div>
+            </div>        
+        </form>
+    </div>
+</body>
+</html>
