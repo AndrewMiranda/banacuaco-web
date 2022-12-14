@@ -211,14 +211,141 @@ export function createheaderbanacuaco() {
 
         getTemplate() {
             const template = document.createElement('template');
-            template.innerHTML =
-                `<header>
-                <div class="conainerHeader">
-                    <div class="imgHeader">
-                        <a href="/${this.languaje}/home"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
-                    </div>
-                    <div class="">
-                        <div class="navBar">
+            if (this.languaje === 'es') {
+                template.innerHTML =
+                        `<header>
+                        <div class="conainerHeader">
+                            <div class="imgHeader">
+                                <a href="/${this.languaje}/home"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
+                            </div>
+                            <div class="">
+                                <div class="navBar">
+                                    <a href="/${this.languaje}/producciones">
+                                        <p>Producciones</p>
+                                    </a>
+                                    <a href="/${this.languaje}/servicios">
+                                        <p>Servicios</p>
+                                    </a>
+                                    
+                                    <a href="/${this.languaje}/nosotros">
+                                        <p>Nosotros</p>
+                                    </a>
+                                    
+                                    <a href="/${this.languaje}/galeria">
+                                        <p>Galeria</p>
+                                    </a>
+                                    
+                                    <a href="/${this.languaje}/contacto">
+                                        <p>Contactenos</p>
+                                    </a>
+                                </div>
+                                <div class="hamburgerMenu">
+                                    <label for="btnMenu">
+                                        <img
+                                            src="../images/menuMobil.svg"
+                                            class="iconoMenu"
+                                            id="menuClick"
+                                            onclick="changeMenu()"
+                                        />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="optionsLanguaje">
+                                <div class="content">
+                                    <div class="english" onclick="es_en('en')">
+                                        <img src="../images/american-flag.png" alt="">
+                                        <p>Ingles</p>
+                                    </div>
+                                    <div class="spanish" onclick="es_en('es')">
+                                        <img src="../images/colombia.png" alt="">
+                                        <p>Español</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="checkbox" id="btnMenu" />
+                        <div class="menu">
+                            <div class="contentMenu">
+                            <a href="/${this.languaje}/producciones">
+                                <p>Producciones</p>
+                            </a>
+                            <a href="/${this.languaje}/servicios">
+                                <p>Servicios</p>
+                            </a>
+                            
+                            <a href="/${this.languaje}/nosotros">
+                                <p>Nosotros</p>
+                            </a>
+                            
+                            <a href="/${this.languaje}/galeria">
+                                <p>Galeria</p>
+                            </a>
+                            
+                            <a href="/${this.languaje}/contacto">
+                                <p>Contáctenos</p>
+                            </a>
+                                
+                            </div>
+                        </div>
+                
+                    </header>
+                ${this.getStyle()}`;
+            }
+            if (this.languaje === 'en') {
+                        template.innerHTML =
+                        `<header>
+                        <div class="conainerHeader">
+                            <div class="imgHeader">
+                                <a href="/${this.languaje}/home"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
+                            </div>
+                            <div class="">
+                                <div class="navBar">
+                                    <a href="/${this.languaje}/producciones">
+                                        <p>Productions</p>
+                                    </a>
+                                    <a href="/${this.languaje}/servicios">
+                                        <p>Services</p>
+                                    </a>
+                                    
+                                    <a href="/${this.languaje}/nosotros">
+                                        <p>About Us</p>
+                                    </a>
+                                    
+                                    <a href="/${this.languaje}/galeria">
+                                        <p>Gallery</p>
+                                    </a>
+                                    
+                                    <a href="/${this.languaje}/contacto">
+                                        <p>Contact Us</p>
+                                    </a>
+                                </div>
+                                <div class="hamburgerMenu">
+                                    <label for="btnMenu">
+                                        <img
+                                            src="../images/menuMobil.svg"
+                                            class="iconoMenu"
+                                            id="menuClick"
+                                            onclick="changeMenu()"
+                                        />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="optionsLanguaje">
+                                <div class="content">
+                                    <div class="english" onclick="es_en('en')">
+                                        <img src="../images/american-flag.png" alt="">
+                                        <p>English</p>
+                                    </div>
+                                    <div class="spanish" onclick="es_en('es')">
+                                        <img src="../images/colombia.png" alt="">
+                                        <p>Spanish</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="checkbox" id="btnMenu" />
+                        <div class="menu">
+                            <div class="contentMenu">
                             <a href="/${this.languaje}/producciones">
                                 <p>Producciones</p>
                             </a>
@@ -237,58 +364,14 @@ export function createheaderbanacuaco() {
                             <a href="/${this.languaje}/contacto">
                                 <p>Contactenos</p>
                             </a>
-                        </div>
-                        <div class="hamburgerMenu">
-                            <label for="btnMenu">
-                                <img
-                                    src="../images/menuMobil.svg"
-                                    class="iconoMenu"
-                                    id="menuClick"
-                                    onclick="changeMenu()"
-                                />
-                            </label>
-                        </div>
-                    </div>
-                    <div class="optionsLanguaje">
-                        <div class="content">
-                            <div class="english" onclick="es_en('en')">
-                                <img src="../images/american-flag.png" alt="">
-                                <p>Ingles</p>
-                            </div>
-                            <div class="spanish" onclick="es_en('es')">
-                                <img src="../images/colombia.png" alt="">
-                                <p>Español</p>
+                                
                             </div>
                         </div>
-                    </div>
-                </div>
-                <input type="checkbox" id="btnMenu" />
-                <div class="menu">
-                    <div class="contentMenu">
-                    <a href="/${this.languaje}/producciones">
-                        <p>Producciones</p>
-                    </a>
-                    <a href="/${this.languaje}/servicios">
-                        <p>Servicios</p>
-                    </a>
-                    
-                    <a href="/${this.languaje}/nosotros">
-                        <p>Nosotros</p>
-                    </a>
-                    
-                    <a href="/${this.languaje}/galeria">
-                        <p>Galeria</p>
-                    </a>
-                    
-                    <a href="/${this.languaje}/contacto">
-                        <p>Contactenos</p>
-                    </a>
-                        
-                    </div>
-                </div>
-        
-            </header>
-        ${this.getStyle()}`;
+                
+                    </header>
+                ${this.getStyle()}`;
+            }
+            
             return template;
         }
 
