@@ -10,14 +10,14 @@ module.exports.contact = async function contacts(nombre, mensaje, emails) {
             ciphers:'SSLv3'
         },
         auth: {
-        user: 'camilovalenciapadilla@hotmail.com',
-        pass: 'camilosemilo1'
+        user: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        pass: 'xxxxxxxxxxxxxxx'
         }
     });
 
         let mailOptions = {
-            from: 'camilovalenciapadilla@hotmail.com',
-            to: 'camilovalenciapadilla@gmail.com',
+            from: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+            to: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
             subject: `email enviado de la direccion de correo de: ${emails}`,
             html: `<html lang="en">
             <head>
