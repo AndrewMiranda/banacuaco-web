@@ -126,6 +126,10 @@ label span{
     padding-top: 10px;
 }
 
+#imgPremiere{
+    display: none !important;
+}
+
 
 @media screen and (max-width: 768px) {
 
