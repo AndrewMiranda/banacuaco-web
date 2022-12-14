@@ -183,6 +183,11 @@ router.get("/dashboard/producciones", (req, res) => {
     res.render("dashboard/productionsDashboard");
 });
 
+
+router.get("/dashboard/estrenos", (req, res) => {
+    res.render("dashboard/premieresDashboard");
+});
+
 router.get("/dashboard/galeria", (req, res) => {
     res.render("dashboard/galeryDashboard");
 });
