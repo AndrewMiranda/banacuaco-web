@@ -57,6 +57,11 @@
     margin-bottom:20px;
 }
 
+.infoProduction img:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
 .infoProduction p{
     color: #007F10;
     font-size: 16px;
