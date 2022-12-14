@@ -19,19 +19,20 @@
             </div>
             <div class="titleProductions">Producciónes</div>
             <div class="contentProductions">
-                <div class="infoProduction">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="">
-                    <div class="icons">
-                        <div class="iconsImgEdit">
-                            <a href="/dashboard/editarProduccion"><img src="../images/editCrud.svg" alt="" > </a>
+                <% productions.forEach(function(productions) { %>
+                    <div class="infoProduction">
+                        <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="">
+                        <div class="icons">
+                            <div class="iconsImgEdit">
+                                <a href="/dashboard/editarProduccion"><img src="../images/editCrud.svg" alt="" > </a>
+                            </div>
+                            <div class="iconsImgDelete">
+                                <img src="../images/deleteCrud.svg" alt="delete" onclick="deleteAlert()">
+                            </div>
                         </div>
-                        <div class="iconsImgDelete">
-                            <img src="../images/deleteCrud.svg" alt="delete" onclick="deleteAlert()">
-                        </div>
+                        <p>fdsfdfdfdfdfsd</p>
                     </div>
-                    <p>fdsfdfdfdfdfsd</p>
-                    
-                </div>
+                <% }); %>
             </div>
         </div>
     </div>

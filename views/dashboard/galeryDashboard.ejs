@@ -25,21 +25,15 @@
                 Galeria
             </div>
             <div class="contentGalery">
-                <div class="imgGalery">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert()">
+                <% images.forEach(function(images) { %>
+                    <div class="imgGalery">
+                        <img src="../content/<%= images.url %>" alt="" />
+                        <div class="iconsImg">
+                            <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert()">
+                        </div>
                     </div>
-                </div>
-
-                <div class="imgGalery">
-                    <img src="../images/Escala personajes copia.jpg" alt="" />
-                    <div class="iconsImg">
-                        <img src="../images/deleteCrud2.svg" alt="" onclick="deleteAlert()">
-                    </div>
-                </div>
+                <% }); %>
             </div>
-
         </div>
     </div>
 </body>
