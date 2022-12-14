@@ -22,24 +22,25 @@
     <div class="containerContact">
         <div class="titlecontact">CONTACT US</div>
 
-        <form action="/<%= idiom%>/contacto" method="POST">
+        <form id="form" action="/<%= idiom%>/contacto" method="post">
             <div class="containerForm">
                 <div class="optionsForm">
                     <p>Name:</p>
-                    <input type="text" name="nombre">
+                    <input type="text" name="nombre" id="nombre">
                 </div>
                 <div class="optionsForm">
                     <p>E-mail:</p>
-                    <input type="text" name="emails" >
+                    <input type="text" name="emails"  id="email">
                 </div>
+                <div class="errorAlert" id="errorEmail"></div>
                 <div class="optionsFormMessaje">
                     <p>Message:</p>
-                    <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
                 </div>
-
+                <div class="errorAlert" id="errorPassword"></div>
                 <div class="contentSend">
                     <div class="buttonSend">
-                        <button type="submit" value="Save"> Enviar</button>
+                        <div class="sendsDiv" onclick="submitFun()" > Enviar</div>
                     </div>
                 </div>
             </div>
@@ -57,6 +58,7 @@
 <!--
     alerta modal
 -->
+<script type="text/javascript" src="../js/general/contact.js"></script>
 <script type="text/javascript" src="../js/general/es-en.js"></script>
 <script src="../js/general/addAlertModal.js"></script>
 <script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

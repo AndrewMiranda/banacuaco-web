@@ -76,6 +76,13 @@ form{
     outline: none;
 }
 
+.errorAlert{
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
 .optionsFormMessaje{
     display: flex;
     justify-content: center;
@@ -109,7 +116,7 @@ form{
     align-items: center;
 }
 
-.buttonSend button{
+.buttonSend .sendsDiv{
     background-color: #fff;
     padding: 10px 40px ;
     font-family: "arnold";
