@@ -33,8 +33,9 @@
 }
 
 .contentGalery{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     column-gap: 5%;
     row-gap: 50px;
     width: 90%;
@@ -43,7 +44,8 @@
 }
 
 .infoGalery{
-    width: 100%;
+    width: 330px;
+    max-width: 90%;
     height: 200px;
 }
 
@@ -65,18 +67,4 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: "roboto-bold";
-}
-
-@media screen and (max-width: 1023px){
-    .contentGalery{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 768px){
-    .contentGalery{
-        display: grid;
-        grid-template-columns: 1fr;
-    }
 }
