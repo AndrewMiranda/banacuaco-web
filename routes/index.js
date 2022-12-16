@@ -33,7 +33,7 @@ router.get('/:idioma/contacto', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+"/contact.ejs", { title: 'contact',idiom: idioma });
+    res.render(idioma+"/contact.ejs", { title: 'contact', idiom: idioma });
 });
 
 //Recibir información de formulario de contacto
@@ -50,37 +50,39 @@ router.get('/:idioma/nosotros', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/nosotros', { title: 'nosotros',idiom: idioma });
+    res.render(idioma+'/nosotros', { title: 'nosotros', idiom: idioma });
 });
 
-router.get('/:idioma/producciones', (req, res) => {
+router.get('/:idioma/producciones', async(req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/productions', { title: 'nosotros',idiom: idioma });
+    let data =  await pool.query("SELECT * FROM `"+idioma+"_productions`");
+    //data = data[0];
+    //console.log(data)
+
+    res.render(idioma+'/productions', { title: 'nosotros', idiom: idioma, productions: data});
 });
 
-router.get('/:idioma/produccion', (req, res) => {
+router.get('/:idioma/produccion', async(req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/productionEspc', { title: 'nosotros',idiom: idioma });
+    let template = req.query.template;
+    let id = req.query.id
+
+    let data =  await pool.query("SELECT * FROM `"+idioma+"_productions` WHERE id = "+id);
+
+    console.log(data)
+
+    res.render(idioma+'/productionEspc'+template, { title: 'nosotros', idiom: idioma, production: data[0]});
 });
-
-router.get('/:idioma/produccion2', (req, res) => {
-    let idioma = req.params.idioma;
-    if(idioma == undefined) idioma = defaultLanguage;
-
-    res.render(idioma+'/productionEspc2', { title: 'nosotros',idiom: idioma });
-});
-
 
 router.get('/:idioma/galeria', async (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
     let data = await pool.query("SELECT * FROM `images`");
-    console.log(data)
     res.render(idioma+'/galery', { title: 'Galeria', images: data, idiom: idioma, });
 });
 
@@ -108,7 +110,7 @@ router.post("/dashboard", async(req, res) => {
     if (await controlUser.login(user, password) == true) {
         res.cookie("session" , true).redirect("/dashboard/main");
     } else {
-        res.redirect("/dashboard?error=1");
+        res.redirect("dashboard?error=1");
     }
 });
 
@@ -120,58 +122,112 @@ router.get("/dashboard/main", (req, res) => {
     };
 });
 
-router.get("/dashboard/producciones", (req, res) => {
-    res.render("dashboard/productionsDashboard");
+router.get("/dashboard/productions", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        let data = await pool.query("SELECT * FROM `en_productions`");
+        res.render("dashboard/productionsDashboard", {productions: data});
+    };
 });
 
 
-router.get("/dashboard/estrenos", (req, res) => {
-    res.render("dashboard/premieresDashboard");
+router.get("/dashboard/premieres", (req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/premieresDashboard");
+    };
 });
 
-router.get("/dashboard/galeria", (req, res) => {
-    res.render("dashboard/galeryDashboard");
+router.get("/dashboard/galery", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        let data = await pool.query("SELECT * FROM `images`");
+        res.render('dashboard/galeryDashboard', { images: data });
+    };
 });
 
 router.get("/dashboard/usuarios", (req, res) => {
-    res.render("dashboard/usersDashboard");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/usersDashboard");
+    };
 });
 
 router.get("/dashboard/nuevoUsuario", (req, res) => {
-    res.render("dashboard/newUserDashboard");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/newUserDashboard");
+    };
 });
 
 router.get("/dashboard/editarUsuario", (req, res) => {
-    res.render("dashboard/editUserDashboard");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/editUserDashboard");
+    };
 });
 
 router.get("/dashboard/editarProduccion", (req, res) => {
-    res.render("dashboard/editProductionDashboardSinopsis");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/editProductionDashboardSinopsis");
+    };
 });
 
 router.get("/dashboard/editarProduccionPersonajes", (req, res) => {
-    res.render("dashboard/editProductionDashboardcharacter");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/editProductionDashboardcharacter");
+    };
 });
 
 router.get("/dashboard/editarProduccionFauna", (req, res) => {
-    res.render("dashboard/editProductionDashboardFauna");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/editProductionDashboardFauna");
+    };
 });
 
 
 router.get("/dashboard/editarProduccionVerPersonajes", (req, res) => {
-    res.render("dashboard/editProductionDashboardSeeCharacters");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/editProductionDashboardSeeCharacters");
+    };
 });
 
 router.get("/dashboard/editarProduccionFondos", (req, res) => {
-    res.render("dashboard/editProductionDashboardBackground");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/editProductionDashboardBackground");
+    };
 });
 
 router.get("/dashboard/editarProduccionIlustraciones", (req, res) => {
-    res.render("dashboard/editProductionDashboardIllustrations");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/editProductionDashboardIllustrations");
+    };
 });
 
 router.get("/dashboard/fondosEdit", (req, res) => {
-    res.render("dashboard/editProductionDashboardSeeBackgrounds");
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+    if(controlUser.verify(req, res) == true){
+        res.render("dashboard/editProductionDashboardSeeBackgrounds");
+    };
 });
 
 module.exports = router;

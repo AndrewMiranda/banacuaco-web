@@ -57,6 +57,7 @@
     border-radius: 60px;
     margin-bottom:20px;
     object-fit: fill;
+    transition: 0.3s;
 }
 
 .infoProduction img:hover {

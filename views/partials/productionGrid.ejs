@@ -1,13 +1,10 @@
-<% images.forEach(function(data) { %>
-    <div class="infoGalery">
-        <img src="../content/<%= images.url %>" alt="">
-    </div>
-    <a href="/<%= idiom%>/produccion/<%= data.template %>/<%= data.id %>">
+<% productions.forEach(function(productions) { %>
+    <a href="/<%= idiom %>/produccion?template=<%= productions.template %>&id=<%= productions.id %>">
         <div class="infoProduction">
-            <img src="../images/<%= data.image %>" alt="">
-            <p><%= data.name %></p>
-            <p>><%= data.format %></p>
-            <p> ><%= data.year %> </p>
+            <img src="../images/<%= productions.mainImage %>" alt="">
+            <p><%= productions.name %></p>
+            <p><%= productions.format %></p>
+            <p><%= productions.year %> </p>
         </div>
     </a>
 <% }); %>

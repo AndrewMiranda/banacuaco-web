@@ -67,12 +67,18 @@ body{
     height: 160px;
     width: 250px;
     position: relative;
+    transition: 0.3s;
 }
 .infoProduction img{
     width: 100%;
     height: 100%;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.infoProduction:hover{
+    transition: 0.3s;
+    transform: scale(1.05);
 }
 
 .infoProduction p{
