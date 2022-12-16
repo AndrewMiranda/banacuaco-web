@@ -3,8 +3,8 @@
     src: url("../fonts/arnold-21_[allfont.es].ttf");
 }
 @font-face {
-    font-family: "roboto-bold";
-    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    font-family: "arial-Rounded";
+    src: url("../fonts/arlrdbd.ttf");
 }
 
 * {
@@ -61,7 +61,7 @@
 .usText p{
     font-size: 20px;
     color: #333;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
 }
 
 .imgUs{
@@ -93,7 +93,7 @@
 
 .description{
     color: #0000;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     text-align: justify;
     width: 325px;
     height: 120px;
@@ -103,7 +103,7 @@
 .description p{
     font-size: 18px;
     line-height: 25px;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
 }
 
 .imgHistory{
@@ -157,7 +157,7 @@
 
 .textTeam{
     
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     text-align: center;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .textMision p{
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     text-align: center;
     font-size: 18px;
     margin-bottom: 50px;
@@ -220,7 +220,7 @@
 
 .textAwards p{
     font-size: 18px;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     width: 70%;
     text-align: justify;
     margin: auto;
@@ -232,7 +232,7 @@
     color: #000;
     padding-top: 40px;
     padding-bottom: 15px;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
 }
 
 .normativity p{
@@ -240,7 +240,7 @@
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
 }
 
 @media screen and (max-width: 1052px) {

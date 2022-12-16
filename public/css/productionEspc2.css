@@ -6,8 +6,8 @@
 }
 
 @font-face {
-    font-family: "roboto-bold";
-    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    font-family: "arial-Rounded";
+    src: url("../fonts/arlrdbd.ttf");
 }
 
 
@@ -50,7 +50,7 @@
 
 .textSinopsis p{
     font-size: 18px;
-    font-family: "roboto-bold";
+    font-family:"arial-Rounded";
     width: 100%;
     text-align: justify;
     padding: 0 5%;
@@ -116,7 +116,7 @@
 
 .txt p{
     font-size: 18px;
-    font-family: "roboto-bold";
+    font-family:"arial-Rounded";
     width: 100%;
     text-align: justify;
     padding: 0 5%;
@@ -157,7 +157,7 @@
     font-size: 18px;
     line-height: 1.5;
     color: #333;
-    font-family: "roboto-bold";
+    font-family:"arial-Rounded";
 }
 
 .containerGalery{
@@ -202,7 +202,7 @@
 
 .txtGalery p{
     font-size: 18px;
-    font-family: "roboto-bold";
+    font-family:"arial-Rounded";
     width: 100%;
     text-align: center;
     padding: 0 5%;
@@ -268,5 +268,5 @@
     color: #000;
     padding-top: 40px;
     padding-bottom: 15px;
-    font-family: "roboto-bold";
+    font-family:"arial-Rounded";
 }

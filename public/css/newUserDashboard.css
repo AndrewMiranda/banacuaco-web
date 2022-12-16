@@ -1,8 +1,7 @@
 @font-face {
-    font-family: "roboto-bold";
-    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    font-family: "arial-Rounded";
+    src: url("../fonts/arlrdbd.ttf");
 }
-
 @font-face {
     font-family: "roboto-regular";
     src: url("../fonts/Roboto/Roboto-Regular.ttf");
@@ -73,7 +72,7 @@ form{
 
 .userName p,
 .userPassword p{
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     font-size: 20px;
     color: #000;
 }

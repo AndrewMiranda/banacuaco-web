@@ -5,9 +5,10 @@
     src: url("../fonts/arnold-21_[allfont.es].ttf");
 }
 
+
 @font-face {
-    font-family: "roboto-bold";
-    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    font-family: "arial-Rounded";
+    src: url("../fonts/arlrdbd.ttf");
 }
 
 
@@ -16,7 +17,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "roboto-regular", sans-serif;
+    font-family: "roboto-regular", sans-serif, "arial-Rounded";
     text-decoration: none;
     color: #333; /*color de textos*/
 }
@@ -44,7 +45,7 @@
 
 .title p{
     color: #b73310;
-    font-family: "arnold";
+    font-family: "arial-Rounded";
     font-size: 40px;
     text-align: center;
     margin-top: 40px;
@@ -53,7 +54,7 @@
 
 .textSinopsis p{
     font-size: 18px;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     width: 100%;
     text-align: justify;
     padding: 0 5%;
@@ -100,7 +101,7 @@
 /**Seccion idea */
 .idea h3{
     color: #b73310;
-    font-family: "arnold";
+    font-family: "arial-Rounded";
     font-size: 42px;
     text-align: center;
     margin-top: 40px;
@@ -199,7 +200,7 @@
     font-size: 18px;
     line-height: 1.5;
     color: #80240B;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
 }
 
 
