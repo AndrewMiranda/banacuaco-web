@@ -74,11 +74,11 @@ router.get('/:idioma/produccion', async(req, res) => {
     let data =  await pool.query("SELECT * FROM `"+idioma+"_productions` WHERE id = "+id);
     let ideaImages =  await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND idProduction = "+id+" AND idea = 1");
     let charactersSection =  await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND idProduction = "+id+" AND characters = 1");
-    //let characters = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND idProduction = "+id+" AND characters = 1");
+    let characters = await pool.query("SELECT * FROM `"+idioma+"_characters`WHERE production = "+id);
 
-    console.log(data)
+    console.log(characters)
 
-    res.render(idioma+'/productionEspc'+template, { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection});
+    res.render(idioma+'/productionEspc'+template, { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: characters});
 });
 
 router.get('/:idioma/galeria', async (req, res) => {

@@ -71,36 +71,40 @@
                                     <% }); %>
                                 </div>
                             </div>
-
-                                <div class="containerDescriptionA reverse">
-                                    <div class="contentDescriptionA ">
-                                        <div class="txtA">
-                                            <h3>Abuelito peyo</h3>
+                            <% var i = 0 %>
+                            <% characters.forEach(function(characters) { %>
+                                <% if(i%2==0){%>
+                                    <div class="containerDescriptionA reverse">
+                                        <div class="contentDescriptionA ">
+                                            <div class="txtA">
+                                                <h3>Abuelito peyo</h3>
+                                            </div>
+                                            <div class="contentA">
+                                                <p>Es un viejito trabajador y muy sabio, cargado de historias, cuentos y anécdotas interesantes, con un gran sentido del humor, hace bromas con cualquier situación.</p>
+                                            </div>
                                         </div>
-                                        <div class="contentA">
-                                            <p>Es un viejito trabajador y muy sabio, cargado de historias, cuentos y anécdotas interesantes, con un gran sentido del humor, hace bromas con cualquier situación.</p>
+                                        <div class="imgA">
+                                            <img src="../images/Abuelito-06.jpg" alt="">
+                                            <img src="../images/Abuelito-07.jpg" alt="">
                                         </div>
-                                    </div>
-                                    <div class="imgA">
-                                        <img src="../images/Abuelito-06.jpg" alt="">
-                                        <img src="../images/Abuelito-07.jpg" alt="">
-                                    </div>
-                                </div> 
-                                <div class="containerDescriptionA">
-                                    <div class="contentDescriptionA">
-                                        <div class="txtA">
-                                            <h3>Isabela</h3>
+                                    </div> 
+                                <% }else{ %>    
+                                    <div class="containerDescriptionA">
+                                        <div class="contentDescriptionA">
+                                            <div class="txtA">
+                                                <h3>Isabela</h3>
+                                            </div>
+                                            <div class="contentA ">
+                                                <p>La nieta de Peyo, una pequeña cargada de inocencia e ingenuidad, posee una gran curiosidad que hace que pregunte el porqué de las cosas.</p>
+                                            </div>
                                         </div>
-                                        <div class="contentA ">
-                                            <p>La nieta de Peyo, una pequeña cargada de inocencia e ingenuidad, posee una gran curiosidad que hace que pregunte el porqué de las cosas.</p>
+                                        <div class="imgA">
+                                            <img src="../images/Niña-14.jpg" alt="">
+                                            <img src="../images/Niña-15.jpg" alt="">
                                         </div>
-                                    </div>
-                                    <div class="imgA">
-                                        <img src="../images/Niña-14.jpg" alt="">
-                                        <img src="../images/Niña-15.jpg" alt="">
-                                    </div>
-                                    
-                                </div>                                            
+                                    </div>   
+                                <% } %>   
+                            <% }); %>                                        
                         </div>
                     </div>
                 </div>
