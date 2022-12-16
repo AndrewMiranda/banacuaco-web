@@ -75,10 +75,10 @@
                                     <div class="containerDescriptionA reverse">
                                         <div class="contentDescriptionA ">
                                             <div class="txtA">
-                                                <h3>Abuelito peyo</h3>
+                                                <h3><%= characters.name %></h3>
                                             </div>
                                             <div class="contentA">
-                                                <p>Es un viejito trabajador y muy sabio, cargado de historias, cuentos y anécdotas interesantes, con un gran sentido del humor, hace bromas con cualquier situación.</p>
+                                                <p><%= characters.description %></p>
                                             </div>
                                         </div>
                                         <div class="imgA">
@@ -90,10 +90,10 @@
                                     <div class="containerDescriptionA">
                                         <div class="contentDescriptionA">
                                             <div class="txtA">
-                                                <h3>Isabela</h3>
+                                                <h3><%= characters.name %></h3>
                                             </div>
                                             <div class="contentA ">
-                                                <p>La nieta de Peyo, una pequeña cargada de inocencia e ingenuidad, posee una gran curiosidad que hace que pregunte el porqué de las cosas.</p>
+                                                <p><%= characters.description %></p>
                                             </div>
                                         </div>
                                         <div class="imgA">
@@ -102,7 +102,7 @@
                                         </div>
                                     </div>   
                                 <% } %>   
-                            <% }); %>                                        
+                            <% i++; }); %>                                        
                         </div>
                     </div>
                 </div>
