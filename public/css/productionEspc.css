@@ -186,7 +186,6 @@
 }
 
 .contentDescriptionA {
-    margin-top: 5%;
     width: 50%;
 }
 
@@ -195,7 +194,11 @@
     color:#fff;
     font-size:42px;
     margin-bottom: 20px;
+    text-align: right;
+}
 
+.reverse .contentDescriptionA .txtA h3{
+    text-align: left !important;
 }
 
 .contentA p{
