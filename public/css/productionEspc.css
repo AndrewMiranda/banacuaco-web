@@ -168,11 +168,13 @@
 
 .containerDescriptionA{
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0 5%;
     column-gap: 20px;
 }
 .imgA{
-    width: 100%;
+    width: auto;
     display: flex;
     column-gap: 10px;
     height: 100%;
@@ -185,6 +187,7 @@
 
 .contentDescriptionA {
     margin-top: 5%;
+    width: 50%;
 }
 
 .txtA h3{
@@ -199,7 +202,7 @@
     text-align: justify;
     font-size: 18px;
     line-height: 1.5;
-    color: #80240B;
+    color: #000000;
     font-family: "roboto-bold";
 }
 
@@ -229,22 +232,20 @@
 }
 
 .contentGalery{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5%;
-    row-gap: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
     width: 90%;
     margin: auto;
     margin-bottom: 50px;
 }
 
-.infoGalery{
-    width: 100%;
-    
-}
+
 
 .infoGalery img{
-    width: 100%;
+    width: 300px;
     height: 100%;
     object-fit: cover;
     
@@ -288,8 +289,6 @@
         display: inline;
     }     
 
-
-
     .contentA p {
         padding: 0 5%;
     }
@@ -319,9 +318,13 @@
         width: 300px;
     } 
 
+}
 
-
-
+@media screen and (max-width: 1023px){
+    .contentDescriptionA {
+        margin-top: 5%;
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -353,7 +356,10 @@
         width: 300px;
     }
 
-
+    .infoGalery{
+        display: flex;
+        justify-content: center;
+    }
 
     .imgidea {
         height: 100%;
@@ -388,7 +394,7 @@
 
     .reverse{
         display: flex !important;
-        flex-direction: column-reverse !important;
+        flex-direction: column !important;
     }
 
     .textInfo{
