@@ -6,8 +6,8 @@
 }
 
 @font-face {
-    font-family: "roboto-bold";
-    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    font-family: "arial-Rounded";
+    src: url("../fonts/arlrdbd.ttf");
 }
 
 * {
@@ -98,7 +98,7 @@
     color: #007F10;
     font-size: 16px;
     text-align: center;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     margin: 15px auto;
 }
 
@@ -137,7 +137,7 @@
 }
 
 .description p{
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     font-size: 20px;
     color: #005E9B;
     margin-bottom: 10px;
