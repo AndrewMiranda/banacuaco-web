@@ -171,6 +171,7 @@
     align-items: center;
     padding: 0 5%;
     column-gap: 20px;
+    margin-bottom: 20px;
 }
 .imgA{
     width: auto;
@@ -239,6 +240,7 @@
     width: 90%;
     margin: auto;
     margin-bottom: 50px;
+    max-width: 1300px;
 }
 
 
@@ -252,11 +254,6 @@
 
 
 @media screen and ( min-width: 768px) and (max-width: 1023px){
-    /*galeria*/
-    .contentGalery{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
     /***/
     .imgidea {
         height: 100%;
@@ -295,7 +292,7 @@
 
     .reverse{
         display: flex !important;
-        flex-direction: column-reverse !important;
+        flex-direction: column !important;
     }
 
     .textInfo{
@@ -316,14 +313,11 @@
     .fleximg img {
         width: 300px;
     } 
-
-}
-
-@media screen and (max-width: 1023px){
     .contentDescriptionA {
         margin-top: 5%;
         width: 70%;
     }
+
 }
 
 @media screen and (max-width: 768px){
