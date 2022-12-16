@@ -14,11 +14,11 @@
     
 </head>
 <body>
-    <header-banacuaco languaje="/<%= idiom%>"></header-banacuaco>
+    <header-banacuaco languaje="<%= idiom %>"></header-banacuaco>
 
     <div class="containerProduction">
         <div class="imgHome">
-            <img src="../images/intro_Logo.png" alt="" />
+            <img src="../content/<%= production.mainImage %>" alt="" />
         </div>
 
         <div class="title">
@@ -27,15 +27,14 @@
 
 
         <div class="textSinopsis">
-            <p>una niña antes de dormir le pide a su abuelito que le cuente una historia. El abuelo herramienta online gratuita te permit le pregunta por sus vivencias del día, la pequeña le cuenta algún problema o
-                dificultad que experimentó durante ese día que tienen que ver con su cotidianidad en el colegio, en el barrio o en casa. El abuelito con su experiencia le cuenta historias como cuentos, anécdotas de su vida, leyendas o chistes, cada una con su respectiva moraleja que le ayudan a la pequeña a implementar la creatividad en la resolución de conflictos y desarrollar valores.</p>
+            <p><%= production.synopsis %></p>
         </div>
 
         <div class="containerInfoServices">
             <div class="franjaServices">
                 <div class="contentInfo">
                     <div class="imgService desktop">
-                        <video src="https://carontestudio.com/img/f4.mp4" autoplay="true"></video>
+                        <iframe width="350" height="196" src="<%= production.urlVideo %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -46,8 +45,8 @@
                 <h3>Idea</h3>
                 <div class="imgidea">
 
-                    <img src="../images/Cuentos del Abuelo - Dibujo_1.jpg" alt="">
-                    <img src="../images/Cuentos del Abuelo - Dibujo_4.jpg" alt="">
+                    <img src="../content/Cuentos del Abuelo - Dibujo_1.jpg" alt="">
+                    <img src="../content/Cuentos del Abuelo - Dibujo_4.jpg" alt="">
                 </div>
                 
             </div>

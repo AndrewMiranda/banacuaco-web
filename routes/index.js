@@ -33,7 +33,7 @@ router.get('/:idioma/contacto', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+"/contact.ejs", { title: 'contact',idiom: idioma });
+    res.render(idioma+"/contact.ejs", { title: 'contact', idiom: idioma });
 });
 
 //Recibir información de formulario de contacto
@@ -50,30 +50,33 @@ router.get('/:idioma/nosotros', (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/nosotros', { title: 'nosotros',idiom: idioma });
+    res.render(idioma+'/nosotros', { title: 'nosotros', idiom: idioma });
 });
 
-router.get('/:idioma/producciones', (req, res) => {
+router.get('/:idioma/producciones', async(req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/productions', { title: 'nosotros',idiom: idioma });
+    let data =  await pool.query("SELECT * FROM `"+idioma+"_productions`");
+    //data = data[0];
+    //console.log(data)
+
+    res.render(idioma+'/productions', { title: 'nosotros', idiom: idioma, productions: data});
 });
 
-router.get('/:idioma/produccion', (req, res) => {
+router.get('/:idioma/produccion', async(req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    res.render(idioma+'/productionEspc', { title: 'nosotros',idiom: idioma });
+    let template = req.query.template;
+    let id = req.query.id
+
+    let data =  await pool.query("SELECT * FROM `"+idioma+"_productions` WHERE id = "+id);
+
+    console.log(data)
+
+    res.render(idioma+'/productionEspc'+template, { title: 'nosotros', idiom: idioma, production: data[0]});
 });
-
-router.get('/:idioma/produccion2', (req, res) => {
-    let idioma = req.params.idioma;
-    if(idioma == undefined) idioma = defaultLanguage;
-
-    res.render(idioma+'/productionEspc2', { title: 'nosotros',idiom: idioma });
-});
-
 
 router.get('/:idioma/galeria', async (req, res) => {
     let idioma = req.params.idioma;

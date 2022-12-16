@@ -33,8 +33,9 @@
 }
 
 .contentProduction{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     column-gap: 5%;
     row-gap: 50px;
     width: 90%;
@@ -43,7 +44,7 @@
 }
 
 .infoProduction{
-    width: 100%;
+    max-width: 400px;
     height: 100%;
 
 }
@@ -55,6 +56,7 @@
     box-shadow: -8px 8px 4px 0px #33333340;
     border-radius: 60px;
     margin-bottom:20px;
+    object-fit: fill;
     transition: 0.3s;
 }
 
