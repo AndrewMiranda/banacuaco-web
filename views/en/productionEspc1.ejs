@@ -46,9 +46,9 @@
             <div class="idea">
                 <h3>Idea</h3>
                 <div class="imgidea">
-
-                    <img src="../content/Cuentos del Abuelo - Dibujo_1.jpg" alt="">
-                    <img src="../content/Cuentos del Abuelo - Dibujo_4.jpg" alt="">
+                    <% ideaImages.forEach(function(ideaImages) { %>
+                        <img src="../content/<%= ideaImages.url %>" alt="">
+                    <% }); %>
                 </div>
                 
             </div>
@@ -61,13 +61,14 @@
                             </div>
 
                             <div class="imgChart">
-                                <div class="comlunImg">
+                                <!-- <div class="comlunImg">
                                     <img src="../images/Cuentos del Abuelo - Dibujo_5.jpg" alt="">
                                     <img src="../images/Cuentos del Abuelo - Dibujo_6.jpg" alt="">
-                                </div>
+                                </div> -->
                                 <div class="fleximg">
-                                    <img src="../images/01 Abuelo.jpg" alt="">
-                                    <img src="../images/02 Nieta.jpg" alt="">
+                                    <% charactersSection.forEach(function(charactersSection) { %>
+                                        <img src="../content/<%= charactersSection.url %>" alt="">
+                                    <% }); %>
                                 </div>
                             </div>
 
