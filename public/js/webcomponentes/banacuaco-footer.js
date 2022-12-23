@@ -55,7 +55,6 @@ export function createFooterBanacuaco() {
             footer {
                 background-color: #f0f4fb;
                 width: 100%;
-                margin-top: 20px;
                 }
                 
                 .contentFooter {
