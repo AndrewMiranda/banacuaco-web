@@ -11,11 +11,9 @@ let c = b.length
 
 // Realiza el cambio de idioma, mandando por la ruta /es para español y /en para ingles 
 function es_en(params) {
-    b = routes.split('/');
-    c = b.length
-    console.log(b)
+    // b = routes.split('/');
+    // c = b.length
     if(c === 2){
-        console.log('se ejecuta')
         if(b[c-1] === params){
             window.location = routes;
         }
@@ -28,7 +26,6 @@ function es_en(params) {
             window.location = routes;
         }
         else{
-            console.log('se ejecuta else')
             r = '/' + params + '/' + b[2];
             for(e in b){
                 if (e > 3){
