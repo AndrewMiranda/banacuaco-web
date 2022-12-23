@@ -74,10 +74,10 @@ table td{
 }
 
 table th{
-    color: #FFBD00;
+    color: #B73310;
     font-size: 20px;
     font-family: "arial-Rounded";
-    border-bottom: 1px solid #FBB040;
+    border-bottom: 1px solid #B73310;
 }
 
 table td{
@@ -91,7 +91,7 @@ table td{
 /*clase para editar usuario*/
 .inputEditUser{
     border: 0;
-    color: #A2A2A2;
+    color: #000000;
 }
 
 .inputEditUser:hover{
