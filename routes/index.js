@@ -71,14 +71,73 @@ router.get('/:idioma/produccion', async(req, res) => {
     let template = req.query.template;
     let id = req.query.id
 
+    //Datos generales
     let data =  await pool.query("SELECT * FROM `"+idioma+"_productions` WHERE id = "+id);
+
+    //Imagenes de la seccion de "ideas"
     let ideaImages =  await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND idProduction = "+id+" AND idea = 1");
+
+    //Imagenes de la seccion "personajes"
     let charactersSection =  await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND idProduction = "+id+" AND characters = 1");
-    let characters = await pool.query("SELECT * FROM `"+idioma+"_characters`WHERE production = "+id);
 
-    console.log(characters)
+    //Informacion de cada personaje
+    let dataCharacters = await pool.query("SELECT * FROM `"+idioma+"_characters`WHERE production = "+id);
+    dataCharacters = JSON.parse(JSON.stringify(dataCharacters));
 
-    res.render(idioma+'/productionEspc'+template, { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: characters});
+    for (let index = 0; index < dataCharacters.length; index++) {
+        let imagesCharacter = [];
+        //Imagenes de los personajes
+        let dataTempCharacters = await pool.query("SELECT url FROM `images` WHERE id_character = "+dataCharacters[index].id+" AND idiom = '"+idioma+"' ");
+        dataTempCharacters = JSON.parse(JSON.stringify(dataTempCharacters))
+        
+        for (let x = 0; x < dataTempCharacters.length; x++) {
+            imagesCharacter[x] = dataTempCharacters[x].url
+        }
+        dataCharacters[index].images = imagesCharacter;
+    }
+
+    //Fondos
+    let fondos = await pool.query("SELECT a.orderSection AS 'order', a.id FROM `backgroundsections` AS a WHERE a.id_production = "+id+" AND idiom = '"+idioma+"' ORDER BY a.orderSection ASC");
+    fondos = JSON.parse(JSON.stringify(fondos));
+
+    if (fondos.length > 0) {
+        for (let index = 0; index < fondos.length; index++) {
+            let backgrounds = [];
+            imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND background = "+fondos[index].id);
+    
+            for (let index = 0; index < imagesBackground.length; index++) {
+                backgrounds[index] = imagesBackground[index].url;
+            }
+            fondos[index].url = backgrounds;
+        }
+    } else {
+        let imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND backgroundImage = 1 AND idProduction = "+idA+" AND idiom = '"+idioma+"' ORDER BY a.orderSection ASC");
+        imagesBackground = JSON.parse(JSON.stringify(imagesBackground));
+        fondos = imagesBackground;
+    }
+
+    //Illustrations
+    let illustrations = await pool.query("SELECT a.orderSection AS 'order', a.id FROM `illustrationssection` AS a WHERE a.id_production = "+id+" ORDER BY a.orderSection ASC");
+    illustrations = JSON.parse(JSON.stringify(illustrations));
+
+    if (illustrations.length > 0) {
+        for (let index = 0; index < illustrations.length; index++) {
+            let imagesIllustrations = [];
+            imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND illustrations = "+fondos[index].id);
+    
+            for (let index = 0; index < imagesBackground.length; index++) {
+                imagesIllustrations[index] = imagesBackground[index].url;
+            }
+            illustrations[index].url = imagesIllustrations;
+        }
+    } else {
+        let imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND backgroundImage = 1 AND idProduction = "+id);
+        imagesBackground = JSON.parse(JSON.stringify(imagesBackground));
+        illustrations = imagesBackground;
+    }
+
+    console.log(illustrations)
+    res.render(idioma+'/productionEspc'+template, { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: dataCharacters, fondos: fondos, illustrations: illustrations});
 });
 
 router.get('/:idioma/galeria', async (req, res) => {

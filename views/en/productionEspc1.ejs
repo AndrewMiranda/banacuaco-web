@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Produccion</title>
+    <title>Production</title>
     <link rel="stylesheet" href="../css/productionEspc.css" />
     
 </head>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="title">
-            <p>Sinopsis</p>
+            <p>Synopsis</p>
         </div>
 
 
@@ -55,22 +55,19 @@
                     <div class="contentInfo degContentArts">                      
                         <div class="textInfo">
                             <div class="titleChart">
-                                <h3>Personajes</h3>
+                                <h3>Characters</h3>
                             </div>
 
                             <div class="imgChart">
-                                <!-- <div class="comlunImg">
-                                    <img src="../images/Cuentos del Abuelo - Dibujo_5.jpg" alt="">
-                                    <img src="../images/Cuentos del Abuelo - Dibujo_6.jpg" alt="">
-                                </div> -->
                                 <div class="fleximg">
                                     <% charactersSection.forEach(function(charactersSection) { %>
                                         <img src="../content/<%= charactersSection.url %>" alt="">
                                     <% }); %>
                                 </div>
                             </div>
-                            <% var i = 0 %>
+                            <% var i = 0; %>
                             <% characters.forEach(function(characters) { %>
+                                <% var images = characters.images %>
                                 <% if(i%2==0){%>
                                     <div class="containerDescriptionA reverse">
                                         <div class="contentDescriptionA ">
@@ -82,8 +79,9 @@
                                             </div>
                                         </div>
                                         <div class="imgA">
-                                            <img src="../images/Abuelito-06.jpg" alt="">
-                                            <img src="../images/Abuelito-07.jpg" alt="">
+                                            <% images.forEach(function(images) { %>
+                                                <img src="../content/<%= images %>" alt="">
+                                            <% }); %>   
                                         </div>
                                     </div> 
                                 <% }else{ %>    
@@ -97,8 +95,9 @@
                                             </div>
                                         </div>
                                         <div class="imgA">
-                                            <img src="../images/Niña-14.jpg" alt="">
-                                            <img src="../images/Niña-15.jpg" alt="">
+                                            <% images.forEach(function(images) { %>
+                                                <img src="../content/<%= images %>" alt="">
+                                            <% }); %>   
                                         </div>
                                     </div>   
                                 <% } %>   
@@ -109,29 +108,34 @@
 
                 <div class="containerMoreInfo">
                     <div class="title">
-                        <p>Fondo</p>
+                        <p>Background</p>
                     </div>
+
                     <div class="imgAFondo">
-                        <img src="../images/Fondo cuarto niña versión 3.jpg" alt="">
+                        <% fondos.forEach(function(fondos) { %>
+                            <% imagesFondos = fondos.url %>  
+                            <% imagesFondos.forEach(function(imagesFondos) { %>
+                                <img src="../content/<%= imagesFondos %>" alt="">
+                            <% }); %>
+                        <% }); %>
                     </div>
 
                     <div class="title">
-                        <p>Ilustraciones cuento</p>
+                        <p>Story illustrations</p>
                     </div>
-            
-                    <div class="textSinopsis">
-                        <p>una niña antes de dormir le pide a su abuelito que le cuente una historia. El abuelo herramienta online gratuita te permit le pregunta por sus vivencias del día, la pequeña le cuenta algún problema o
-                            dificultad que experimentó durante ese día que tienen que ver con su cotidianidad en el colegio, en el barrio o en casa. El abuelito con su experiencia le cuenta historias como cuentos, anécdotas de su vida, leyendas o chistes, cada una con su respectiva moraleja que le ayudan a la pequeña a implementar la creatividad en la resolución de conflictos y desarrollar valores.</p>
-                    </div>
+                    
+                    <div id="illustrations">
+                        <% illustrations.forEach(function(illustrations) { %>
+                            <div class="textSinopsis">
+                                <p><%= illustrations. %>"</p>
+                            </div>
+                        <% }); %>
 
-                    <div class="containerGalery">
-                        <div class="title">
-                            <p>galeria</p>
-                        </div>                     
-                        <div class="contentGalery">
-                            <div class="infoGalery">
-                            <img src="../images/Ilustración-1.jpg" alt="">
-                        </div>                 
+                        <div class="containerGalery">
+                            <div class="contentGalery">
+                                <div class="infoGalery">
+                                <img src="../images/Ilustración-1.jpg" alt="">
+                            </div>                 
                             <div class="infoGalery">
                                 <img src="../images/Ilustración-2.jpg" alt="">
                             </div>                 
@@ -151,6 +155,7 @@
                                 <img src="../images/Ilustración-11.jpg" alt="">
                             </div>                    
                         </div>
+                    </div>
                 </div>      
     
                 <social-banacuaco></social-banacuaco>
