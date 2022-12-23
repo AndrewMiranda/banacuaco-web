@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "roboto-bold";
-    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    font-family: "arial-Rounded";
+    src: url("../fonts/arlrdbd.ttf");
 }
 
 @font-face {
@@ -52,7 +52,7 @@
     background-color: #B73310;
     color: #fff;
     font-size: 20px;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     border: 0;
     padding: 5px 20px;
     border-radius: 5px;
@@ -76,7 +76,7 @@ table td{
 table th{
     color: #FFBD00;
     font-size: 20px;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
     border-bottom: 1px solid #FBB040;
 }
 

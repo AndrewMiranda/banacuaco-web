@@ -3,8 +3,8 @@
     src: url("../fonts/arnold-21_[allfont.es].ttf");
 }
 @font-face {
-    font-family: "roboto-bold";
-    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    font-family: "arial-Rounded";
+    src: url("../fonts/arlrdbd.ttf");
 }
 
 * {
@@ -114,7 +114,7 @@
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family: "roboto-bold";
+    font-family: "arial-Rounded";
 }
 
 /*responsive**/
