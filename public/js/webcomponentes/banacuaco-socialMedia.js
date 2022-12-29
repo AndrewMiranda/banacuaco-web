@@ -56,13 +56,19 @@ export function createSocialMediaBanacuaco() {
             template.innerHTML =
                 `<div class="socialMedia">
                 <div class="icon">
-                    <img src="../images/facebook.svg" alt="">
+                    <a href="https://www.facebook.com/banacuaco/?mibextid=ZbWKwL">
+                        <img src="../images/facebook.svg" alt="">
+                    </a>
                 </div>
                 <div class="icon">
-                    <img src="../images/instagram.svg" alt="">
+                    <a href="https://instagram.com/banacuaco?igshid=YmMyMTA2M2Y=">
+                        <img src="../images/instagram.svg" alt="">
+                    </a>
                 </div>
                 <div class="icon">
-                    <img src="../images/youtube.svg" alt="">
+                    <a href="https://www.youtube.com/@BANACUACO">
+                        <img src="../images/youtube.svg" alt="">
+                    </a>
                 </div>
             </div>
         ${this.getStyle()}`;
