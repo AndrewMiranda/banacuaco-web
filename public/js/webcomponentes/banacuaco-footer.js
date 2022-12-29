@@ -87,7 +87,7 @@ export function createFooterBanacuaco() {
                     
                 <div class="contentFooter">
                     <div class="autores">
-                        <p>© 2022 Banacuaco - BioIdeaz </p>
+                        <p>© 2022 Banacuaco</p>
                     </div>
                 </div>
             </footer>

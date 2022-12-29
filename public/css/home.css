@@ -25,6 +25,11 @@
 
 }
 
+.title{
+    padding: 0 5%;
+    
+}
+
 .title p{
     color: #80240B;
     font-family: "arnold";
@@ -162,17 +167,16 @@
 
 .title p {
     font-size: 30px;
-  }
+}
 
-.descriptionService p {
-   
+.descriptionService p { 
     margin:auto;
     text-align:justify;
     width:70%;
     padding-bottom: 5%;
 }
 .franjaServices {
-    width: 112%;
-    margin-left: -6%;
-  }
+    width: 120%;
+    margin-left: -10%;
+}
 }

@@ -92,7 +92,7 @@ body{
 
 }
 
-.imgService img{
+.imgService video{
     height: 220px;
     width: 440px;
     border-radius: 60px;
