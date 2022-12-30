@@ -85,7 +85,7 @@
     position: absolute;
     
 }
-.imgService video{
+.imgService iframe{
     width: 350px;
     border-radius: 60px;
     box-shadow: 12px 8px 1px 0px #B9860A;
