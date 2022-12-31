@@ -29,7 +29,6 @@
 
 .titleUs{
     text-align: center;
-    font-size: 40px;
     margin-bottom: 50px;
     margin-top: 70px;
 }
@@ -37,6 +36,9 @@
 .titleUs h3{
     font-family: "arnold";
     color:#653392;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 2px;
 }
 
 .contentUs{
@@ -55,7 +57,9 @@
     color:#653392;
     margin-bottom: 20px;
     width: 432px;
-    font-size: 40px;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing:1px;
 }
 
 .usText p{
@@ -146,6 +150,8 @@
     font-family: "arnold";
     color: #653392;
     padding-bottom: 5%;
+    font-weight: 100;
+    letter-spacing: 2px ;
 }
 
 .imgTeam img{
@@ -216,6 +222,8 @@
     font-family: "arnold";
     font-size: 40px;
     text-align: center;
+    font-weight: 100;
+    letter-spacing: 2px;
 }
 
 .textAwards p{

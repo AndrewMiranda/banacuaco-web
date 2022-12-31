@@ -24,12 +24,14 @@
     overflow: hidden;
 }
 
-.title{
+.title h3{
     font-family: "arnold";
     color: #FE670E;
     text-align: center;
     font-size: 40px;
     margin-bottom: 50px;
+    font-weight: 100;
+    letter-spacing: 2px;
 }
 
 .contentGalery{

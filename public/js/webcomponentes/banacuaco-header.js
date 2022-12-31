@@ -232,11 +232,11 @@ export function createheaderbanacuaco() {
                                     </a>
                                     
                                     <a href="/${this.languaje}/galeria">
-                                        <p>Galeria</p>
+                                        <p>Galería</p>
                                     </a>
                                     
                                     <a href="/${this.languaje}/contacto">
-                                        <p>Contactenos</p>
+                                        <p>Contáctenos</p>
                                     </a>
                                 </div>
                                 <div class="hamburgerMenu">
@@ -254,7 +254,7 @@ export function createheaderbanacuaco() {
                                 <div class="content">
                                     <div class="english" onclick="es_en('en')">
                                         <img src="../images/american-flag.png" alt="">
-                                        <p>Ingles</p>
+                                        <p>Inglés</p>
                                     </div>
                                     <div class="spanish" onclick="es_en('es')">
                                         <img src="../images/colombia.png" alt="">
@@ -278,7 +278,7 @@ export function createheaderbanacuaco() {
                             </a>
                             
                             <a href="/${this.languaje}/galeria">
-                                <p>Galeria</p>
+                                <p>Galería</p>
                             </a>
                             
                             <a href="/${this.languaje}/contacto">
