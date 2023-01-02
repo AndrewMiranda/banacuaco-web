@@ -57,11 +57,11 @@ router.get('/:idioma/producciones', async(req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    let data =  await pool.query("SELECT * FROM `"+idioma+"_productions`");
+    // let data =  await pool.query("SELECT * FROM `"+idioma+"_productions`");
     //data = data[0];
     //console.log(data)
 
-    res.render(idioma+'/productions', { title: 'nosotros', idiom: idioma, productions: data});
+    res.render(idioma+'/productions', { title: 'nosotros', idiom: idioma});
 });
 
 router.get('/:idioma/produccion', async(req, res) => {
