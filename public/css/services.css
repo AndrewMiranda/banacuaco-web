@@ -150,7 +150,7 @@ body{
     justify-content: center;
     padding: 2%;
     margin: auto;
-        display: flex;
+    display: flex;
 }
 
 .textInfoHistory{
@@ -166,34 +166,56 @@ body{
     object-fit: contain;
 }
 
-.foundImgService{
+/* .foundImgService{
     background-image: url("../images/GEO\ ROBOTS\ sin\ logos.jpg");
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     margin-top: -5%;
-   /* background-size: 100% 100%;*/
+   / background-size: 100% 100%;/
+} */
 
+.imgContent{
+    height: inherit;
+    width: inherit;
 }
+.imgContent img{
+    width: 100%;
+    height: 100%;
+}
+
 .contentPostproduction{
-    padding-top: 5%;
+    margin-top: -5%;
     height: 410px;
     width: 100vw;
 }
 
 .textPostproduction{
-    width: 25%;
-    align-items: center;
-    padding-top: 10%;
+    /* align-items: center; */
+    width: 100%;
+    top: -82%;
     margin-right: 5%;
     margin-left: auto;
     text-align: justify;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.textPostproduction img{
+    height: 300px;
+}
+
+
+.postproductionTitle{
+    margin: auto;
+    width: 40%;
 }
 
 .postproductionTitle h3{
     color: #005E9B;
+    margin-bottom: 15px;
 }
-
 
 .contentContact{
     background-color: #FFBD00;
@@ -244,6 +266,10 @@ body{
         margin-top: 40px;
         
     }
+
+    .textPostproduction img {
+        height: 260px;
+    }
 }
 
 
@@ -269,12 +295,12 @@ body{
         display: flex;
         flex-direction: column;
         row-gap: 12px;
-      }
+    }
 
-      .descriptionService p{
+    .descriptionService p{
         width: 100%;
         margin: auto;
-      }
+    }
 
     .imgService img{
         margin: auto;
@@ -299,9 +325,24 @@ body{
         height: 220PX;
     }
 
-  .textPostproduction{
-     width:100%; 
-     padding: 30px;
-     margin-top:35%;
-  }
-  }
+    .contentPostproduction {
+        height: 630px;
+    }
+
+    .postproductionTitle {
+        margin: auto;
+        width: 90%;
+        margin-top: 35px;
+    }
+
+    .textPostproduction{
+        width:100%;
+        top: -90%;
+        flex-direction: column;
+    }
+
+    .textPostproduction img {
+        width:320px;
+        object-fit: fill;
+    }
+}
