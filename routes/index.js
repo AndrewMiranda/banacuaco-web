@@ -111,7 +111,7 @@ router.get('/:idioma/produccion', async(req, res) => {
             fondos[index].url = backgrounds;
         }
     } else {
-        let imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND backgroundImage = 1 AND idProduction = "+idA+" AND idiom = '"+idioma+"' ORDER BY a.orderSection ASC");
+        let imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND backgroundImage = 1 AND idProduction = "+id+" AND idiom = '"+idioma+"'");
         imagesBackground = JSON.parse(JSON.stringify(imagesBackground));
         fondos = imagesBackground;
     }
@@ -123,8 +123,8 @@ router.get('/:idioma/produccion', async(req, res) => {
     if (illustrations.length > 0) {
         for (let index = 0; index < illustrations.length; index++) {
             let imagesIllustrations = [];
-            imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND illustrations = "+fondos[index].id);
-    
+            imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND illustrations = "+illustrations[index].id);
+            
             for (let index = 0; index < imagesBackground.length; index++) {
                 imagesIllustrations[index] = imagesBackground[index].url;
             }
@@ -136,7 +136,6 @@ router.get('/:idioma/produccion', async(req, res) => {
         illustrations = imagesBackground;
     }
 
-    console.log(illustrations)
     res.render(idioma+'/productionEspc'+template, { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: dataCharacters, fondos: fondos, illustrations: illustrations});
 });
 
