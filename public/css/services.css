@@ -206,8 +206,15 @@ body{
     height: 300px;
 }
 
+
+.postproductionTitle{
+    margin: auto;
+    width: 40%;
+}
+
 .postproductionTitle h3{
     color: #005E9B;
+    margin-bottom: 15px;
 }
 
 .contentContact{
@@ -259,6 +266,10 @@ body{
         margin-top: 40px;
         
     }
+
+    .textPostproduction img {
+        height: 260px;
+    }
 }
 
 
@@ -284,12 +295,12 @@ body{
         display: flex;
         flex-direction: column;
         row-gap: 12px;
-      }
+    }
 
-      .descriptionService p{
+    .descriptionService p{
         width: 100%;
         margin: auto;
-      }
+    }
 
     .imgService img{
         margin: auto;
@@ -314,9 +325,24 @@ body{
         height: 220PX;
     }
 
-  .textPostproduction{
-     width:100%; 
-     padding: 30px;
-     margin-top:35%;
-  }
-  }
+    .contentPostproduction {
+        height: 630px;
+    }
+
+    .postproductionTitle {
+        margin: auto;
+        width: 90%;
+        margin-top: 35px;
+    }
+
+    .textPostproduction{
+        width:100%;
+        top: -90%;
+        flex-direction: column;
+    }
+
+    .textPostproduction img {
+        width:320px;
+        object-fit: fill;
+    }
+}
