@@ -82,7 +82,7 @@ export function createheaderbanacuaco() {
                 }
                 
                 .optionsLanguaje{
-                    width: 30%;
+                    width: 35%;
                     height: 60px;
                     background-color: #B73310;
                     column-gap: 20px;
