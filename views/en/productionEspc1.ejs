@@ -125,38 +125,27 @@
                     </div>
                     
                     <div id="illustrations">
-                        <% illustrations.forEach(function(illustrations) { %>
+                        <% illustrations.forEach(function(illustrations) { let illustrationsImages = illustrations.url; let i = 0 %>
                             <div class="textSinopsis">
                                 <p><%= illustrations.body %></p>
                             </div>
+                            <div class="containerGalery">
+                                <% illustrationsImages.forEach(function(illustrationsImages) { %>
+                                    <% if(i == 0){ i++;%>
+                                        <div class="contentGalery">
+                                            <div class="infoGalery">
+                                                <img src="../content/<%= illustrationsImages %>" alt="">
+                                        </div>
+                                    <% }else{ %>   
+                                        <div class="infoGalery">
+                                            <img src="../content/<%= illustrationsImages %>" alt="">
+                                        </div>
+                                    <% }; %>
+                                <% }); %>
+                            </div>
                         <% }); %>
-
-                        <div class="containerGalery">
-                            <div class="contentGalery">
-                                <div class="infoGalery">
-                                <img src="../images/Ilustración-1.jpg" alt="">
-                            </div>                 
-                            <div class="infoGalery">
-                                <img src="../images/Ilustración-2.jpg" alt="">
-                            </div>                 
-                            <div class="infoGalery">
-                                <img src="../images/Ilustracion-3.jpg" alt="">
-                            </div>                 
-                            <div class="infoGalery">
-                                <img src="../images/Ilustración-4.jpg" alt="">
-                            </div>                
-                            <div class="infoGalery">
-                                <img src="../images/Ilustracion-5.jpg" alt="">
-                            </div>                
-                            <div class="infoGalery">
-                                <img src="../images/Ilustración-7.jpg" alt="">
-                            </div>  
-                            <div class="infoGalery">
-                                <img src="../images/Ilustración-11.jpg" alt="">
-                            </div>                    
-                        </div>
                     </div>
-                </div>      
+                </div>
     
     </div>
     
@@ -170,4 +159,4 @@
 -->
 <script type="text/javascript" src="../js/general/es-en.js"></script>
 <script src="../js/general/addAlertModal.js"></script>
-<script type="module" src="../js/general/modules/headerAndSocialMedia.mjs"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>
