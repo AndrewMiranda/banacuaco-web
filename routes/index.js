@@ -16,7 +16,7 @@ router.get('/:idioma/home', async(req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    let data =  await pool.query("SELECT * FROM `"+idioma+"_premieres` ORDER BY `date` DESC LIMIT 1");
+    let data =  await pool.query("SELECT * FROM `premieres` WHERE language = '"+idioma+"' ORDER BY `date` DESC LIMIT 1");
     data = data[0];
 
     res.render(idioma+'/home', { title: 'home', idiom: idioma, img: data.image, desc: data.description, character: data.characters});
@@ -57,7 +57,7 @@ router.get('/:idioma/producciones', async(req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    let data =  await pool.query("SELECT * FROM `"+idioma+"_productions`");
+    let data =  await pool.query("SELECT * FROM `productions` WHERE language = '"+idioma+"'");
     //data = data[0];
     //console.log(data)
 
@@ -72,7 +72,7 @@ router.get('/:idioma/produccion', async(req, res) => {
     let id = req.query.id
 
     //Datos generales
-    let data =  await pool.query("SELECT * FROM `"+idioma+"_productions` WHERE id = "+id);
+    let data =  await pool.query("SELECT * FROM `productions` WHERE language = '"+idioma+"' AND id = "+id);
 
     //Imagenes de la seccion de "ideas"
     let ideaImages =  await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND idProduction = "+id+" AND idea = 1");
@@ -135,8 +135,7 @@ router.get('/:idioma/produccion', async(req, res) => {
         imagesBackground = JSON.parse(JSON.stringify(imagesBackground));
         illustrations = imagesBackground;
     }
-
-    console.log(illustrations)
+    console.log(charactersSection)
     res.render(idioma+'/productionEspc'+template, { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: dataCharacters, fondos: fondos, illustrations: illustrations});
 });
 

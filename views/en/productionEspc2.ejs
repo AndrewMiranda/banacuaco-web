@@ -19,7 +19,7 @@
 
     <div class="containerProduction">
         <div class="imgHome">
-            <img src="../images/Logotipo Los Cuentos del Abuelo.png" alt="" />
+            <img src="../content/<%= production.mainImage %>" alt="" />
         </div>
 
         <div class="titleCharacters">
@@ -28,8 +28,7 @@
 
 
         <div class="txt">
-            <p>una niña antes de dormir le pide a su abuelito que le cuente una historia. El abuelo herramienta online gratuita te permit le pregunta por sus vivencias del día, la pequeña le cuenta algún problema o
-                dificultad que experimentó durante ese día que tienen que ver con su cotidianidad en el colegio, en el barrio o en casa. El abuelito con su experiencia le cuenta historias como cuentos, anécdotas de su vida, leyendas o chistes, cada una con su respectiva moraleja que le ayudan a la pequeña a implementar la creatividad en la resolución de conflictos y desarrollar valores.</p>
+            <p><%= production.synopsis %></p>
         </div>
 
         <div class="containerInfoServices">
@@ -38,8 +37,8 @@
                     <div class="fondo">
                         <img src="../images/barraLateral.png" alt="">
                             <div class="imgService">
-                                 <iframe width="350" height="196" src="<%= production.urlVideo %>" title="YouTube video player" frameborder="0"
-                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="350" height="196" src="<%= production.urlVideo %>" title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>                  
                 </div>
@@ -48,14 +47,14 @@
         
         <div class="characters">
             <div class="titleCharacters">
-                <h3>Personajes</h3>
+                <h3>Characters</h3>
             </div>
             <div class="imgInit">
                 <img src="../images/Grupo - Bocetos 2 fondo blanco.jpg" alt="">
                 <img src="../images/Grupo - Bocetos 3 fondo blanco nombres.jpg" alt="">
             </div>
             <div class="txt">
-                <p>En un principio, el abuelo y su nieto Kenechu serían de la comunidad indígena de los Kogui y Úrsula sería una Wayuú. Sin embargo el proceso de investigación para adecuar el comportamiento de estos personajes a la realidad de esas comunidades tomaría mucho tiempo y se necesitaba dar inicio a la producción. Por este motivo y por respeto a esos grupos indígenas se decidió crear unas comunidades ficticias. La del abuelo y el Kenechu se llamaría "Los Chatakunes" y la de Úrsula sería los "Yuguakos".</p>
+                <p><%= production.charactersSection %></p>
             </div>
         </div>
     <div class="containercharacters">
@@ -260,4 +259,4 @@
 <script type="text/javascript" src="../js/general/es-en.js"></script>
 <script type="text/javascript" src="../js/general/closeMenu.js"></script>
 <script src="../js/general/addAlertModal.js"></script>
-<script type="module" src="../js/general/modules/headerAndSocialMedia.mjs"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>
