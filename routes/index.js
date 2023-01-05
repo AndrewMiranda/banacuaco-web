@@ -61,7 +61,7 @@ router.get('/:idioma/producciones', async(req, res) => {
     //data = data[0];
     //console.log(data)
 
-    res.render(idioma+'/productions', { title: 'nosotros', idiom: idioma, productions: data});
+    res.render(idioma+'/productions', { title: 'nosotros', idiom: idioma, productions : data});
 });
 
 router.get('/:idioma/produccion', async(req, res) => {
