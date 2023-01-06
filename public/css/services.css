@@ -105,8 +105,8 @@ body{
 .imgService iframe {
     height: 196px;
     width: 350px;
-    border-radius: 60px;
-    box-shadow: 12px 8px 1px 0px #B9860A;
+    border-radius: 30px;
+    box-shadow: 10px 10px 0px 0px #DB8902;
 }
 
 .imgDesign img{
@@ -124,8 +124,8 @@ body{
 }
 
 .imgConceptArts img{
-    border-radius: 20px;
-    box-shadow: 16px 23px 4px 0px #B9860A;
+    border-radius: 13px;
+    box-shadow: 10px 10px 0px 0px #DB8902;
     height: 220px;
     width: 440px;
     object-fit: fill;
@@ -138,7 +138,7 @@ body{
 .imgGuiones img{
     height: 300px;
     width: 440px;
-    border-radius: 60px;
+    border-radius: 30px;
 }
 
 .contentStoryBoards{
