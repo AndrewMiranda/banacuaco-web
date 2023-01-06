@@ -111,7 +111,7 @@ router.get('/:idioma/produccion', async(req, res) => {
             fondos[index].url = backgrounds;
         }
     } else {
-        let imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND backgroundImage = 1 AND idProduction = "+idA+" AND idiom = '"+idioma+"' ORDER BY a.orderSection ASC");
+        let imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND backgroundImage = 1 AND idProduction = "+id+" AND idiom = '"+idioma+"' ORDER BY a.orderSection ASC");
         imagesBackground = JSON.parse(JSON.stringify(imagesBackground));
         fondos = imagesBackground;
     }
