@@ -44,7 +44,7 @@
 .contentUs{
     background-color: #FEBD00;
     border-radius: 0px 50px 50px 0px;
-    height: 300px;
+    height: 290px;
     display: flex;
     align-items: center;
 }
@@ -99,7 +99,7 @@
     padding: 0 5%;
     flex-wrap: wrap;
     justify-content: space-around;
-    column-gap: 5%;
+    column-gap: 3%;
     
 }
 
@@ -117,7 +117,7 @@
     font-size: 18px;
     line-height: 25px;
     font-family: "arial-Rounded";
-    letter-spacing: 1px;
+    letter-spacing: 0px;
 }
 
 .imgHistory{
@@ -141,7 +141,7 @@
     padding: 0 5%;
     flex-wrap: wrap;
     justify-content: space-around;
-    column-gap: 5%;
+    column-gap: 3%;
     row-gap: 30px;
     
 }
