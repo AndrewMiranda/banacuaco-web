@@ -57,7 +57,7 @@ router.get('/:idioma/producciones', async(req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    let data =  await pool.query("SELECT * FROM `productions` WHERE language = '"+idioma+"'");
+    let data =  await pool.query("SELECT a.template, a.id, a.name, a.year, b.name AS format, a.mainImage FROM `productions` AS a LEFT JOIN formats AS b ON b.id = a.format WHERE a.language = '"+idioma+"'");
     //data = data[0];
     //console.log(data)
 
@@ -81,7 +81,7 @@ router.get('/:idioma/produccion', async(req, res) => {
     let charactersSection =  await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND idProduction = "+id+" AND characters = 1");
 
     //Informacion de cada personaje
-    let dataCharacters = await pool.query("SELECT * FROM `"+idioma+"_characters`WHERE production = "+id);
+    let dataCharacters = await pool.query("SELECT * FROM `characters` WHERE language = '"+idioma+"' AND production = "+id);
     dataCharacters = JSON.parse(JSON.stringify(dataCharacters));
 
     for (let index = 0; index < dataCharacters.length; index++) {
@@ -97,7 +97,7 @@ router.get('/:idioma/produccion', async(req, res) => {
     }
 
     //Fondos
-    let fondos = await pool.query("SELECT a.orderSection AS 'order', a.id FROM `backgroundsections` AS a WHERE a.id_production = "+id+" AND idiom = '"+idioma+"' ORDER BY a.orderSection ASC");
+    let fondos = await pool.query("SELECT a.orderSection AS 'order', a.id, a.body FROM `backgroundsections` AS a WHERE a.id_production = "+id+" AND idiom = '"+idioma+"' ORDER BY a.orderSection ASC");
     fondos = JSON.parse(JSON.stringify(fondos));
 
     if (fondos.length > 0) {
@@ -111,7 +111,7 @@ router.get('/:idioma/produccion', async(req, res) => {
             fondos[index].url = backgrounds;
         }
     } else {
-        let imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND backgroundImage = 1 AND idProduction = "+id+" AND idiom = '"+idioma+"' ORDER BY a.orderSection ASC");
+        let imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND backgroundImage = 1 AND idProduction = "+id+"");
         imagesBackground = JSON.parse(JSON.stringify(imagesBackground));
         fondos = imagesBackground;
     }
@@ -123,7 +123,7 @@ router.get('/:idioma/produccion', async(req, res) => {
     if (illustrations.length > 0) {
         for (let index = 0; index < illustrations.length; index++) {
             let imagesIllustrations = [];
-            imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND illustrations = "+fondos[index].id);
+            imagesBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND illustrations = "+illustrations[index].id);
     
             for (let index = 0; index < imagesBackground.length; index++) {
                 imagesIllustrations[index] = imagesBackground[index].url;
@@ -135,8 +135,30 @@ router.get('/:idioma/produccion', async(req, res) => {
         imagesBackground = JSON.parse(JSON.stringify(imagesBackground));
         illustrations = imagesBackground;
     }
-    console.log(charactersSection)
-    res.render(idioma+'/productionEspc'+template, { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: dataCharacters, fondos: fondos, illustrations: illustrations});
+
+    //fauna
+    let fauna = await pool.query("SELECT a.orderSection AS 'order', a.id, body FROM `faunasections` AS a WHERE a.id_production = "+id+" ORDER BY a.orderSection ASC");
+    fauna = JSON.parse(JSON.stringify(fauna));
+
+    if (fauna.length > 0) {
+        for (let index = 0; index < fauna.length; index++) {
+            let imagesFauna = [];
+            FaunaBackground = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND fauna = "+fauna[index].id);
+    
+            for (let index = 0; index < FaunaBackground.length; index++) {
+                imagesFauna[index] = FaunaBackground[index].url;
+            }
+            fauna[index].url = imagesFauna;
+        }
+    } else {
+        let imagesFauna = await pool.query("SELECT url FROM `images` WHERE idiom = '"+idioma+"' AND faunaImage = 1 AND idProduction = "+id);
+        imagesFauna = JSON.parse(JSON.stringify(imagesFauna));
+        fauna = imagesFauna;
+    }
+
+    console.log(fauna)
+
+    res.render(idioma+'/productionEspc'+template, { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: dataCharacters, fondos: fondos, illustrations: illustrations, fauna: fauna});
 });
 
 router.get('/:idioma/galeria', async (req, res) => {
