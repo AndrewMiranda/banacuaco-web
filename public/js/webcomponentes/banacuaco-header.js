@@ -347,22 +347,22 @@ export function createheaderbanacuaco() {
                         <div class="menu">
                             <div class="contentMenu">
                             <a href="/${this.languaje}/producciones">
-                                <p>Producciones</p>
+                                <p>Productions</p>
                             </a>
                             <a href="/${this.languaje}/servicios">
-                                <p>Servicios</p>
+                                <p>Services</p>
                             </a>
                             
                             <a href="/${this.languaje}/nosotros">
-                                <p>Nosotros</p>
+                                <p>About Us</p>
                             </a>
                             
                             <a href="/${this.languaje}/galeria">
-                                <p>Galeria</p>
+                                <p>Gallery</p>
                             </a>
                             
                             <a href="/${this.languaje}/contacto">
-                                <p>Contactenos</p>
+                                <p>Contact Us</p>
                             </a>
                                 
                             </div>
