@@ -150,6 +150,7 @@ export function createheaderbanacuaco() {
                     row-gap: 40px;
                     position: absolute;
                     z-index: 1000;
+                    visibility: hidden;
                 }
                 
                 .contentMenu a p{
@@ -166,8 +167,9 @@ export function createheaderbanacuaco() {
                     margin-left: calc(100% - 290px);
                   }
                 
-                
+
                 @media screen and (max-width: 768px) {
+
                     .imgHeader {
                         height: 140px;
                         width: 100%;
