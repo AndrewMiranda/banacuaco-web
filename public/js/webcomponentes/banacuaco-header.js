@@ -54,7 +54,7 @@ export function createheaderbanacuaco() {
                 }
                 
                 .imgHeader{
-                    height: 200px;
+                    height: 15vw;
                     width: 100%;
                 }
                 
@@ -65,25 +65,24 @@ export function createheaderbanacuaco() {
                 }
                 
                 .navBar{
-                    height:60px;
                     width: 100%;
                     margin: 0;
                     background-color: #FFBD00;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 0 5%;
+                    padding: 1.2vw 5%;
                 }
                 
                 .navBar a p{
                     font-family: "arnold";
                     color: #80240B;
-                    font-size: 25px;
+                    font-size: 2vw;
                 }
                 
                 .optionsLanguaje{
                     width: 35%;
-                    height: 60px;
+                    padding: 1vw;
                     background-color: #B73310;
                     column-gap: 20px;
                     margin-right: 0;
@@ -107,14 +106,14 @@ export function createheaderbanacuaco() {
                 
                 .spanish img,
                 .english img{
-                    height: 40px;
-                    width: 48px;
+                    height: 3vwpx;
+                    width: 3vw;
                 }
                 
                 .english p,
                 .spanish p{
                     font-family: "arnold";
-                    font-size: 16px;
+                    font-size: 1.5vw;
                     color: #fff;
                 }
                 
@@ -139,7 +138,7 @@ export function createheaderbanacuaco() {
                     background-color: #FFBD00;
                     width: 100vw;
                     max-width: 290px;
-                    height: 100vh;
+                    height: 100%;
                     overflow: auto;
                     margin-right: 0%;
                     margin-left: auto;
@@ -150,13 +149,12 @@ export function createheaderbanacuaco() {
                     row-gap: 40px;
                     position: absolute;
                     z-index: 1000;
-                    visibility: hidden;
                 }
                 
                 .contentMenu a p{
                     font-family: "arnold";
                     color: #80240B;
-                    font-size: 25px;
+                    font-size: 2vw;
                     display: flex;
                     flex-direction: column;
                     row-gap: 100px;
@@ -173,7 +171,7 @@ export function createheaderbanacuaco() {
                     .imgHeader {
                         height: 140px;
                         width: 100%;
-                      }
+                    }
                 
                     .navBar{
                         display: none;
@@ -187,15 +185,12 @@ export function createheaderbanacuaco() {
                         background-color: #FFBD00;
                         padding: 0 5%;
                     }
-                
-                  
                     .iconoMenu {
                         display: flex;
                         justify-content: end;
                         cursor: pointer;
                         height: 40px;
                     }
-                      
                     .optionsLanguaje{
                         width: 100%;
                         height: 50px;
@@ -217,9 +212,11 @@ export function createheaderbanacuaco() {
                 template.innerHTML =
                         `<header>
                         <div class="conainerHeader">
-                            <div class="imgHeader">
-                                <a href="/${this.languaje}/home"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
-                            </div>
+                            <a href="/${this.languaje}/home">
+                                <div class="imgHeader">
+                                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco">
+                                </div>
+                            </a>
                             <div class="">
                                 <div class="navBar">
                                     <a href="/${this.languaje}/producciones">
@@ -297,9 +294,11 @@ export function createheaderbanacuaco() {
                         template.innerHTML =
                         `<header>
                         <div class="conainerHeader">
-                            <div class="imgHeader">
-                                <a href="/${this.languaje}/home"><img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco"></a>
-                            </div>
+                            <a href="/${this.languaje}/home">
+                                <div class="imgHeader">
+                                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco">
+                                </div>
+                            </a>
                             <div class="">
                                 <div class="navBar">
                                     <a href="/${this.languaje}/producciones">
