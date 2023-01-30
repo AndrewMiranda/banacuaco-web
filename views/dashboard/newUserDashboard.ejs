@@ -14,26 +14,20 @@
     </div>
     <div class="infoDashboard">
         <div class="containerNewUser">
-            <form>
+            <form action="/dashboard/usuarios/create" method="post" enctype="application/x-www-form-urlencoded">
                 <div class="contentNewUser">
-                        <div class="titleNewUser">
-                            Crear nuevo usuario
-                        </div>
-                        <div class="userName">
-                            <p>Nombre:</p>
-                            <input type="text" name="usuario" id="userName">
-                        </div>
-                        <div class="userPassword">
-                            <p>Usuario:</p>
-                            <input type="email" name="contraseña" id="passwName">
-                        </div>
-                        <div class="userPassword">
-                            <p>Contraseña:</p>
-                            <input type="password" name="contraseña" id="passwName">
-                        </div>
-                        <div class="submit">
-                            <input type="submit" value="enviar" id="sendUser">
-                        </div>
+                    <div class="titleNewUser">
+                        Crear nuevo usuario
+                    </div>
+                    <div class="userName">
+                        <input type="text" name="user" id="userName" placeholder="Usuario">
+                    </div>
+                    <div class="userPassword">
+                        <input type="password" name="password" id="passwName" placeholder="Contraseña">
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Crear" id="sendUser">
+                    </div>
                 </div>
             </form>
         </div>

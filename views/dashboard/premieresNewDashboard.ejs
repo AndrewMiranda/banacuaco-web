@@ -1,0 +1,62 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/editProductionsDashboardHeader.css">
+    <link rel="stylesheet" href="../css/editProductionDashboardSinopsis.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <!-- Agregar sinopsis-->
+    <div class="infoDashboard">
+        <div class="marginFormPremieres"></div>
+        <form action="/dashboard/premieres/create" method="post" enctype="multipart/form-data">
+            <div class="containerForm">
+                <div class="titleDescription">
+                    Agregar Estreno
+                </div>
+                <div class="optionFormProduction">
+                    <p>Nombre:</p>
+                    <input type="text" name="name" id="premiere">
+                </div>
+                <div class="optionFormProduction">
+                    <p>Imagen:</p>
+                    <label for="imgPremiere">
+                        <img class="addImg" src="../images/icoAddImgForm.svg" alt="">
+                        <span>inserta imagen</span>
+                    </label>
+                    <input type="file" name="image" id="imgPremiere">
+                </div>
+                <div class="optionFormProduction">
+                    <p>Personaje:</p>
+                    <label for="imgPremiere">
+                        <img class="addImg" src="../images/icoAddImgForm.svg" alt="">
+                        <span>inserta imagen</span>
+                    </label>
+                    <input type="file" name="character" id="imgPremiere">
+                </div>
+                <div class="optionFormProduction">
+                    <p>Idioma</p>
+                    <select name="language" id="plantilla">
+                        <option value="en" selected>Inglés</option>
+                        <option value="es">Español</option>
+                    </select>
+                    
+                </div>
+                <div class="optionFormProduction">
+                    <p>Descripción:</p>
+                    <textarea  name="description" id="decPremiere" cols="30" rows="10"></textarea>
+                </div>
+                
+                <div class="submit">
+                    <input type="submit" value="Guardar">
+                </div>
+            </div>        
+        </form>
+    </div>
+</body>
+</html>

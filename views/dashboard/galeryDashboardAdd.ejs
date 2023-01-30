@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+        <link href="../css/newImageDashboard.css" rel="stylesheet" type="text/css" media="all">
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <div class="containerLayout">
+            <%- include('./layout/index.ejs') %>
+        </div>
+        <div class="infoDashboard">
+            <div class="containerNewUser">
+                <form action="/dashboard/galery/create" method="post" enctype="multipart/form-data">
+                    <div class="contentNewUser">
+                        <div class="titleNewUser">
+                            Agregar imagen
+                        </div>
+                        <div class="userPassword">
+                            <p>Imagen:</p>
+                            <input type="file" name="image" id="user" style="background-color: #ffff; padding-top: 20px;">
+                        </div>
+                        <div class="userPassword">
+                            <p>Autor:</p>
+                            <input type="text" name="autor" id="pass">
+                        </div>
+                        <div class="userPassword">
+                            <p>Descripción EN:</p>
+                            <input type="text" name="descripcionEn" id="pass">
+                        </div>
+                        <div class="userPassword">
+                            <p>Descripción ES:</p>
+                            <input type="text" name="descripcionEs" id="pass">
+                        </div>
+
+                        <div class="submit">
+                            <input type="button" onclick="location.href='/dashboard/galery';" value="Cancelar">
+                            <input type="submit" value="Guardar" id="sendUser">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

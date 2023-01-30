@@ -1,3 +1,8 @@
+const cookieParser = require('cookie-parser');
+const fileUpload = require('express-fileupload');
+const fs = require('fs');
+const sharp = require('sharp');
+const path = require('path');
 const express = require('express');
 const router = express.Router();
 
@@ -156,8 +161,6 @@ router.get('/:idioma/produccion', async(req, res) => {
         fauna = imagesFauna;
     }
 
-    console.log(fauna)
-
     res.render(idioma+'/productionEspc'+template, { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: dataCharacters, fondos: fondos, illustrations: illustrations, fauna: fauna});
 });
 
@@ -165,7 +168,7 @@ router.get('/:idioma/galeria', async (req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    let data = await pool.query("SELECT * FROM `images`");
+    let data = await pool.query("SELECT * FROM `images` ORDER BY `images`.`id` DESC");
     res.render(idioma+'/galery', { title: 'Galeria', images: data, idiom: idioma, });
 });
 
@@ -174,12 +177,11 @@ router.get('/:idioma/galeria', async (req, res) => {
 router.get("/dashboard", (req, res, next) => {
     let controlUser = require("../modules/dashboard/login");
 
-    //Si ya está logueado lo manda al home del dashboard
-    //if(controlUser.verify(req, res) == true){
+    if (controlUser.verify(req, res) == true) {
         res.redirect("/dashboard/main");
-    //}
-
-    res.render("dashboard/login");
+    } else {
+        res.render("dashboard/login");   
+    }
 });
 
 router.post("/dashboard", async(req, res) => {
@@ -189,18 +191,26 @@ router.post("/dashboard", async(req, res) => {
     let user = req.body.user;
     let password = req.body.password;
 
-    redirect("/dashboard/main");
-});
+    if(await controlUser.login(user, password) == true){
+        res.cookie('trk500', true);
+        res.cookie('userday', user);
+        res.redirect("/dashboard/main");
+    }else{
+        res.redirect("/dashboard?error=e");
+    }
 
-//Karlojulio
-//1234
+});
 
 router.get("/dashboard/main", (req, res) => {
     //Verificación de sesión
     let controlUser = require("../modules/dashboard/login");
-    //if(controlUser.verify(req, res) == true){
-        res.render("dashboard/indexDashboard");
-    //};
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+        res.render("dashboard/indexDashboard", {user: user});
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
 });
 
 router.get("/dashboard/productions", async(req, res) => {
@@ -213,45 +223,267 @@ router.get("/dashboard/productions", async(req, res) => {
 });
 
 
-router.get("/dashboard/premieres", (req, res) => {
+router.get("/dashboard/premieres", async(req, res) => {
     //Verificación de sesión
     let controlUser = require("../modules/dashboard/login");
-    //if(controlUser.verify(req, res) == true){
-        res.render("dashboard/premieresDashboard");
-    //};
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        let data = await pool.query("SELECT * FROM `premieres` ORDER BY `premieres`.`date` DESC");
+        data = JSON.parse(JSON.stringify(data));
+
+        console.log(data);
+
+        res.render("dashboard/premieresDashboard", {user: user, data: data});
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
+});
+
+router.get("/dashboard/premieresAdd", (req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+        res.render("dashboard/premieresNewDashboard", {user: user});
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
+});
+
+router.post("/dashboard/premieres/create", (req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        console.log(req.body);
+        console.log("---------------");
+        console.log(req.files.image);
+        console.log("---------------");
+        console.log(req.files.image);
+
+
+        res.redirect("/dashboard/galery");
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
+});
+
+router.get("/dashboard/editarEstreno", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        let id = req.query.id
+
+        let data = await pool.query("SELECT * FROM `users` WHERE users_id = "+id);
+        data = JSON.parse(JSON.stringify(data));
+
+        res.render("dashboard/editUserDashboard", {user: user, data: data});
+        res.render("dashboard/premieresNewDashboard", {user: user});
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
 });
 
 router.get("/dashboard/galery", async(req, res) => {
-    //Verificación de sesión
     let controlUser = require("../modules/dashboard/login");
-    //if(controlUser.verify(req, res) == true){
-        let data = await pool.query("SELECT * FROM `images`");
-        res.render('dashboard/galeryDashboard', { images: data });
-    //};
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        let data = await pool.query("SELECT * FROM `images` ORDER BY `images`.`id` DESC");
+        data = JSON.parse(JSON.stringify(data));
+        
+        res.render('dashboard/galeryDashboard', {user: user, images: data });
+    }else{
+        res.redirect("/dashboard?error=n");
+    };
 });
 
-router.get("/dashboard/usuarios", (req, res) => {
+router.get("/dashboard/galeryAdd", async(req, res) => {
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        res.render('dashboard/galeryDashboardAdd', {user: user});
+    }else{
+        res.redirect("/dashboard?error=n");
+    };
+});
+
+router.post("/dashboard/galery/create", async(req, res) => {
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        //Recibir los datos
+        let image = req.files.image;
+        let autor = req.body.autor;
+        let descriptionEn = req.body.descripcionEn;
+        let descriptionEs = req.body.descripcionEs;
+
+        //Nombre aleatorio para la imagen
+        let randomString = require("../modules/randomString.js");
+
+        let imageName = randomString.randomString(12);
+
+        let wrongName = 1;
+
+        while (wrongName == 1) {
+            let verifyName = await pool.query("SELECT url FROM `images` WHERE url = '"+imageName+".jpg'");
+            if (verifyName.length > 0) {
+                imageName = randomString.randomString(12);
+                continue;
+            } else {
+                wrongName = 0;
+                continue
+            }
+        }
+        imageName += ".jpeg"
+        sharp(image.data).jpeg({ mozjpeg: true }).toFile(`./public/content/${imageName}`);
+        
+        await pool.query(`INSERT INTO images(url, idiom, author, descEn, descEs) VALUES ('${imageName}', 'en', '${autor}', '${descriptionEn}', '${descriptionEs}')`)
+
+        res.redirect("/dashboard/galery");
+
+    }else{
+        res.redirect("/dashboard?error=n");
+    };
+});
+
+router.post("/dashboard/galery/delete/:id", async(req, res) => {
     //Verificación de sesión
     let controlUser = require("../modules/dashboard/login");
-    //if(controlUser.verify(req, res) == true){
-        res.render("dashboard/usersDashboard");
-    //};
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        //Recibir ID a borrar
+        id = req.params.id;
+
+        let data = await pool.query(`SELECT * FROM images WHERE id = ${id}`);
+        data = JSON.parse(JSON.stringify(data));
+
+        try {
+            fs.unlinkSync('./public/content/'+data[0].url);
+            let dataB = await pool.query(`DELETE FROM images WHERE id = ${data[0].id}`);
+            res.send({"status":200});
+        } catch(err) {
+            res.send({"status":500});
+        }
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
+});
+
+
+router.get("/dashboard/usuarios", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        let data = await pool.query("SELECT * FROM `users`");
+        data = JSON.parse(JSON.stringify(data));
+
+        res.render("dashboard/usersDashboard", {user: user, data: data});
+    }else{
+        res.redirect("/dashboard?error=n");
+    };
 });
 
 router.get("/dashboard/nuevoUsuario", (req, res) => {
     //Verificación de sesión
     let controlUser = require("../modules/dashboard/login");
-    //if(controlUser.verify(req, res) == true){
-        res.render("dashboard/newUserDashboard");
-    //};
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        res.render("dashboard/newUserDashboard", {user: user});
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
 });
 
-router.get("/dashboard/editarUsuario", (req, res) => {
+router.post("/dashboard/usuarios/create", async(req, res) => {
     //Verificación de sesión
     let controlUser = require("../modules/dashboard/login");
-    //if(controlUser.verify(req, res) == true){
-        res.render("dashboard/editUserDashboard");
-    //};
+
+    if(controlUser.verify(req, res) == true){
+        let user = req.body.user;
+        let password = req.body.password;
+
+        let data = await pool.query("INSERT INTO `users`(`users_username`, `users_password`) VALUES ('"+user+"','"+password+"')");
+
+        res.redirect("/dashboard/usuarios")
+
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
+});
+
+router.get("/dashboard/editarUsuario", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        let id = req.query.id
+
+        let data = await pool.query("SELECT * FROM `users` WHERE users_id = "+id);
+        data = JSON.parse(JSON.stringify(data));
+
+        res.render("dashboard/editUserDashboard", {user: user, data: data});
+    }else{
+        res.redirect("/dashboard?error=n");
+    };
+});
+
+router.post("/dashboard/usuarios/edit/:id", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        let id = req.params.id;
+        let user = req.body.user;
+        let password = req.body.password1;
+
+        let data = await pool.query("UPDATE `users` SET `users_username`='"+user+"',`users_password`='"+password+"' WHERE `users_id` = "+id);
+
+        res.redirect("/dashboard/usuarios")
+
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
+});
+
+router.post("/dashboard/usuarios/delete/:id", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        //Recibir ID a borrar
+        id = req.params.id;
+
+        let data = await pool.query(`DELETE FROM users WHERE users_id = ${id}`);
+
+        res.send({"status":200});
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
 });
 
 router.get("/dashboard/editarProduccion", (req, res) => {
@@ -309,6 +541,11 @@ router.get("/dashboard/fondosEdit", (req, res) => {
     //if(controlUser.verify(req, res) == true){
         res.render("dashboard/editProductionDashboardSeeBackgrounds");
     //};
+});
+
+router.get('/favicon.ico', (req, res) => {
+    // Use actual relative path to your .ico file here
+    res.sendFile(path.resolve(__dirname, '../favicon.ico'));
 });
 
 module.exports = router;

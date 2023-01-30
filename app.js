@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const fileUpload = require('express-fileupload');
 // const bodyParser = require('body-parser')
 const app = express();
 
@@ -14,8 +15,8 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true  }));
 app.use(express.json());
 app.use(cookieParser());
-
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileUpload())
 // routes
 app.use(require('./routes'));
 

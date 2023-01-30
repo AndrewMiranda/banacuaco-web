@@ -1,54 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/editProductionsDashboardHeader.css">
-    <link rel="stylesheet" href="../css/editProductionDashboardSinopsis.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/userDashboard.css">
     <title>Dashboard</title>
+    <style>
+        td img{
+            width: 40%;
+        }
+    </style>
 </head>
 <body>
     <div class="containerLayout">
         <%- include('./layout/index.ejs') %>
     </div>
-    <!-- Agregar sinopsis-->
     <div class="infoDashboard">
-        <div class="marginFormPremieres"></div>
-        <form action="">
-            <div class="containerForm">
-                <div class="titleDescription">
-                    Estreno
+        <div class="containerCurdUsers">
+            <div class="contentCrudHeader">
+                <div class="titleUsers">
+                    Estrenos
                 </div>
-                <div class="optionFormProduction">
-                    <p>Nombre:</p>
-                    <input type="text" name="namePremiere" id="premiere">
+                <div class="newUser">
+                    <a href="/dashboard/premieresAdd"><button>Nuevo Estreno</button></a>
                 </div>
-                <div class="optionFormProduction">
-                    <p>Imagen:</p>
-                    <label for="imgPremiere">
-                        <img class="addImg" src="../images/icoAddImgForm.svg" alt="">
-                        <span>inserta imagen</span>
-                    </label>
-                    <input type="file" name="imagePremiere" id="imgPremiere">
-                </div>
-                <div class="optionFormProduction">
-                    <p>Idioma</p>
-                    <select name="Plantilla" id="plantilla">
-                        <option value="">Ingles</option>
-                        <option value="">Español</option>
-                    </select>
-                    
-                </div>
-                <div class="optionFormProduction">
-                    <p>Descripción:</p>
-                    <textarea  name="descriptionPremiere" id="decPremiere" cols="30" rows="10"></textarea>
-                </div>
-                
-                <div class="submit">
-                    <input type="submit" value="enviar">
-                </div>
-            </div>        
-        </form>
+            </div>
+
+
+            <div class="contentCrudUsers">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Personaje</th>
+                            <th scope="col">Idioma</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% let num = 1; %>
+                        <% data.forEach(function(data) { %>
+                            <% date = data.date; date = date.substr(0,10);%>
+                            <tr id="row-<%= data.id %>">
+                                <th scope="row"><%= num %></th>
+                                <td><%= data.title %></td>
+                                <td><img src="../content/<%= data.image %>"></td>
+                                <td><img src="../content/<%= data.characters %>"></td>
+                                <td><%= data.language %></td>
+                                <td><%= data.description %></td>
+                                <td><%= date %></td>
+                                <td>
+                                    <div class="containerIcons">
+                                        <div class="editUser">
+                                            <a href="/dashboard/editarEstreno?id=<%= data.id %>""><img src="../images/editCrud.svg" alt="" > </a>
+                                        </div>
+                                        <div class="deleteUser" id="alert"> 
+                                            <img src="../images/deletecrud.svg" onclick="deleteAlert(<%= data.id %>, 'premieres')">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% num++ %>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+
+
+<script src="../js/general/addAlertModal.js"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

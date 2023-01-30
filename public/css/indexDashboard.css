@@ -17,20 +17,30 @@
 .textWelcome h4{
     padding-top: 5%;
     text-align: center;
-    color: #005E9B ;
-    font-family: "arnold";
-    font-size: 40px;
+    color: #3C3C3C; ;
+    font-family: "roboto";
+    font-size: 32px;
+}
+
+.textWelcome p{
+    text-align: center;
+    padding-right: 32px;
 }
 
 .imgHome {
     padding:5%;
     width: 100%;
+    text-align: center;
 }
 
-.imgHome img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.imgHome a{
+    color: black;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+li{
+    margin-top: 3px;
 }
 
 @media screen and (max-width: 902px) {

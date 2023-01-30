@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
     <link rel="stylesheet" href="../css/userDashboard.css">
     <title>Dashboard</title>
 </head>
@@ -25,35 +28,40 @@
 
 
             <div class="contentCrudUsers">
-                <table>
+                <table class="table table-bordered table-hover">
                     <thead>
-                        <th>Nombre</th>
-                        <th>Usuario</th>
-                        <th>Contraseña</th>
-                        <th>Creación</th>
-                        <th>Opciones</th>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Contraseña</th>
+                            <th scope="col">Fecha de Creación</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Juan José Arteta Maury</td>
-                            <td>jj131204@gmail.com</td>
-                            <td>13/12/2004</td>
-                            <td>13/12/2004</td>
-                            <td>
-                                <div class="containerIcons">
-                                    <div class="editUser">
-                                        <a href="/dashboard/editarUsuario"><img src="../images/editCrud.svg" alt="" > </a>
+                        <% let num = 1; %>
+                        <% data.forEach(function(data) { %>
+                            <% date = data.users_date; date = date.substr(0,10);%>
+                            <tr id="row-<%= data.users_id %>">
+                                <th scope="row"><%= num %></th>
+                                <td><%= data.users_username %></td>
+                                <td><%= data.users_password %></td>
+                                <td><%= date %></td>
+                                <td>
+                                    <div class="containerIcons">
+                                        <div class="editUser">
+                                            <a href="/dashboard/editarUsuario?id=<%= data.users_id %>""><img src="../images/editCrud.svg" alt="" > </a>
+                                        </div>
+                                        <div class="deleteUser" id="alert"> 
+                                            <img src="../images/deletecrud.svg" onclick="deleteAlert(<%= data.users_id %>, 'usuarios')">
+                                        </div>
                                     </div>
-                                    <div class="deleteUser" id="alert">
-                                        <img src="../images/deletecrud.svg" alt="delete" onclick="deleteAlert()">
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-
-                        
+                                </td>
+                            </tr>
+                            <% num++ %>
+                        <% }); %>
                     </tbody>
-                    </table>
+                </table>
             </div>
         </div>
     </div>

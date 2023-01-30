@@ -1,74 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/userDashboard.css">
-    <title>Dashboard</title>
-</head>
-<body>
-    <div class="containerLayout">
-        <%- include('./layout/index.ejs') %>
-    </div>
-    <div class="infoDashboard">
-        <div class="containerCurdUsers">
-            <div class="contentCrudHeader">
-                <div class="titleUsers">
-                    Usuarios
-                </div>
-                <div class="newUser">
-                    <a href="/dashboard/nuevoUsuario"><button>Nuevo usuario</button></a>
-                </div>
-            </div>
-
-
-            <div class="contentCrudUsers">
-                <table>
-                    <thead>
-                        <th>Nombre</th>
-                        <th>Usuario</th>
-                        <th>Contraseña</th>
-                        <th>Creación</th>
-                        <th>Opciones</th>
-                    </thead>
-                    <tbody>
-                        <form action="">
-                            <td>
-                                <input type="text" value="Juan José Arteta Maury" id="editUserName"  class="inputEditUser">
-                            </td>
-                            <td>
-                                <input type="email" name="email" value="jj131204@gmail.com" id="editUserE-mail" class="inputEditUser">
-                            </td>
-                            <td>
-                                <input type="text" value="test" name="password" class="inputEditUser">
-                                </td>
-                            </td>
-                            <td>
-                                <input type="date" value="13/12/2004" name="dateTime" class="inputEditUser">
-                                </td>
-                            <td>
-                                <div class="containerIcons">
-                                    <!--<div class="editUser">
-                                        <a href="/descripcion"><img src="../images/editCrud.svg" alt="" > </a>
-                                    </div> -->
-                                    <input type="image" src="../images/icosave.svg" class="icoSaveUser">
-                                    <div class="deleteUser" id="alert">
-                                        <img src="../images/deletecrud.svg" alt="delete" onclick="deleteAlert()">
-                                    </div>
-                                </div>
-                            </td>
-                        </form>
-                    </tbody>
-                </table>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+        <link href="../css/newUserDashboard.css" rel="stylesheet" type="text/css" media="all">
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <div class="containerLayout">
+            <%- include('./layout/index.ejs') %>
+        </div>
+        <div class="infoDashboard">
+            <div class="containerNewUser">
+                <form action="/dashboard/usuarios/edit/<%= data[0].users_id %>" method="post" enctype="application/x-www-form-urlencoded">
+                    <div class="contentNewUser">
+                        <div class="titleNewUser">
+                            Editar usuario
+                        </div>
+                        <div class="userName">
+                            <input type="text" name="user" id="userName" placeholder="Usuario" value="<%= data[0].users_username %>">
+                        </div>
+                        <div class="userPassword">
+                            <input type="password" name="password1" id="passwName1" placeholder="Contraseña" oninput="verifyPass()">
+                        </div>
+                        <div class="userPassword" id="verifyPass">
+                            <input type="password" name="password2" id="passwName2" placeholder="Repetir contraseña" oninput="verifyPass()">
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Editar" id="sendUser">
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
-</body>
+        <script>
+            function verifyPass() {
+                let pass1 = document.getElementById("passwName1");
+                let p1 = pass1.value;
+                let pass2 = document.getElementById("passwName2");
+                let p2 = pass2.value;
+                let divPass2 = document.getElementById("verifyPass");
+
+                if (p1 != p2) {
+                    if (document.getElementById("nopass")) {
+                        pass2.setAttribute("style", "box-shadow: 0px 0px 12px 9px #C62922B0;");
+                    }else{
+                        divPass2.insertAdjacentHTML("beforebegin", "<p style='  font-weight: bold;' id='nopass'>Contraseñas no coinciden</p>");
+                        pass2.setAttribute("style", "box-shadow: 0px 0px 12px 9px #C62922B0;");
+                    }
+                }else{
+                    pass2.removeAttribute("style");
+                    let divP = document.getElementById("nopass");
+                    divP.remove();
+                }
+            }
+        </script>
+    </body>
 </html>
-
-
-<script src="../js/general/addAlertModal.js"></script>
-
-<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

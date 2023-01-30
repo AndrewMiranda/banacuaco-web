@@ -99,7 +99,6 @@ export function createAlertModal() {
                     text-align:right;
                     line-height: 1.5;
                     color: #707070;
-                    font-family: "roboto-bold";
                 }
         
                 .containerAlertButtons{
@@ -126,12 +125,14 @@ export function createAlertModal() {
                 .buttonCancel{
                     background-color: #FFBD00;
                     display:block ;
+                    font-family: 'roboto-regular', sans-serif;
                 }
         
         
                 .buttonDelete{
                     background-color: #B73310;
                     margin-left: 25px;
+                    font-family: 'roboto-regular', sans-serif;
                 }
                 @media screen and (max-width: 902px) {
                     .contentInfo img{
@@ -154,8 +155,8 @@ export function createAlertModal() {
                             </div>
                         </div>
                         <div class="containerAlertButtons">
-                            <div class=" AlertButtons buttonCancel" onclick="cancelAlert()">Cancelar</div>
-                            <div class="AlertButtons  buttonDelete" onclick="eliminar()">Eliminar</div>
+                            <div class=" AlertButtons buttonCancel" onclick="closeAlert()">Cancelar</div>
+                            <div class="AlertButtons  buttonDelete" onclick="borrarFila()">Eliminar</div>
                         </div>
                     </div>
                 </div>
@@ -178,9 +179,11 @@ export function cancelar(){
     document.querySelector('modal-banacuaco').remove();
 };
 
+export function borrarRegistro(){
+    document.querySelector('modal-banacuaco').remove();
+};
 
 export function launchAlert(){
     let alert = document.createElement('modal-banacuaco');
-
     document.body.appendChild(alert);
 };

@@ -19,17 +19,17 @@
                     <img src="../images/icoAddGalery.svg" alt="">
                 </div>
             </label>
-            <input type="file" id="newImage">
-            
+            <button id="newImage" onclick="location.href = '/dashboard/galeryAdd';"></button>
+
             <div class="titleGalery">
-                Galeria
+                Galería
             </div>
             <div class="contentGalery">
                 <% images.forEach(function(images) { %>
-                    <div class="imgGalery">
-                        <img src="../content/<%= images.url %>" alt="" />
+                    <div class="imgGalery" id="row-<%= images.id %>">
+                        <img src="../content/<%= images.url %>" alt="" onclick="galeryModal('<%= images.url %>', '<%= images.author %>', '<%= images.descEn %>', '<%= images.descEs %>')">
                         <div class="iconsImg">
-                            <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert()">
+                            <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert(<%= images.id %>, 'galery');">
                         </div>
                     </div>
                 <% }); %>
@@ -38,6 +38,7 @@
     </div>
 </body>
 </html>
-
 <script src="../js/general/addAlertModal.js"></script>
+<script src="../js/general/AddGaleryModal.js"></script>
 <script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>
+<script type="module" src="../js/general/modules/galeryModal.mjs"></script>

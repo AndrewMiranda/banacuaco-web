@@ -32,6 +32,8 @@
 }
 
 .contentCrudUsers{
+    width: 90%;
+    margin-left: 5%;
     display: flex;
     justify-content: center;
     height: auto;
@@ -59,33 +61,8 @@
     cursor: pointer;
 }
 
-table{
-    width: 90%;
-    margin: auto;
-
-}
-
-table th,
-table td{
-    width: auto;
-    text-align: center;
-    row-gap: 20px;
-    padding: 15px;
-}
-
-table th{
-    color: #B73310;
-    font-size: 20px;
-    font-family: "arial-Rounded";
-    border-bottom: 1px solid #B73310;
-}
-
-table td{
-    color: #A2A2A2;
-    font-size: 16px;
-    font-family: "roboto-regular";
-    border-bottom: 1px solid #008CDB;
-    cursor: pointer;
+.table-striped tbody tr:nth-of-type(2n+1) {
+	background-color: rgba(0,0,0,.05);
 }
 
 /*clase para editar usuario*/
@@ -102,7 +79,6 @@ table td{
 .containerIcons{
     display: flex;
     column-gap: 20px;
-    justify-content: center;
 }
 
 .editUser img,
@@ -111,6 +87,10 @@ table td{
     width: 24px;
     height: 24px;
     cursor: pointer;
+}
+
+.table-hover > tbody > tr:hover {
+	background-color: #f0f0f0;
 }
 
 @media screen and (max-width: 1023px){
