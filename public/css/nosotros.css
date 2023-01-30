@@ -20,10 +20,9 @@
 /*Seccion de Nosotros*/
 .containerUS{
     margin-top: 30px;
-    overflow: hidden;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
 
 }
 
@@ -36,15 +35,16 @@
 .titleUs h3{
     font-family: "arnold";
     color:#653392;
-    font-size: 50px;
+    font-size: 4.5vw;
     font-weight: 100;
     letter-spacing: 3px;
 }
 
 .contentUs{
     background-color: #FEBD00;
-    border-radius: 0px 50px 50px 0px;
-    height: 290px;
+    border-radius: 0px 5vw 5vw 0px;
+    padding: 4.5vw 0;
+    width: 55vw;
     display: flex;
     align-items: center;
 }
@@ -60,34 +60,33 @@
     font-family: "arnold";
     color:#653392;
     margin-bottom: 20px;
-    font-size: 50px;
+    font-size: 4vw;
     font-weight: 100;
     letter-spacing:3px;
     text-align: center;
 }
 
 .usText p{
-    font-size: 20px;
+    font-size: 1.9vw;
     color: #000000;
     font-family: "arial-Rounded";
-    width: 75%;
+    width: 80%;
     text-align: justify;
     margin: auto;
 }
 
 .imgUs{
     background: #FEBD00;
-    border-radius: 360px;
-    height: 300px;
-    width: 300px;
+    border-radius: 50%;
+    height: 26vw;
+    width: 26vw;
     text-align: center;
     margin-right: 5%;
-    margin-left: auto;
 }
 
 .imgUs img{
-    height: 300px;
-    
+    height: 26vw;
+    margin-top: -15px;
 }
 
 /*Seccion de historia*/
@@ -278,7 +277,7 @@
 
 
 .textAwards p{
-    font-size: 18px;
+    font-size: 3.1vw;
     width: 80%;
     padding: 0 5%;
 }
@@ -287,7 +286,7 @@
 .usText h3 {
     text-align: justify;
     width: 100%;
-    font-size: 40px;
+    font-size: 4.5vw;
     letter-spacing: 0;
 }
         
@@ -312,10 +311,12 @@
 .usText h3 {
     text-align: center;
     width: 100%;
+    font-size: 9.5vw;
 }
     
 .usText p {
     text-align: center;
+    font-size: 5vw;
 }
 .elipse{
     height: 350px;
