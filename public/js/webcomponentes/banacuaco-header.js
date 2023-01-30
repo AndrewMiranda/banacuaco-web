@@ -150,6 +150,7 @@ export function createheaderbanacuaco() {
                     row-gap: 40px;
                     position: absolute;
                     z-index: 1000;
+                    visibility: hidden;
                 }
                 
                 .contentMenu a p{
@@ -166,8 +167,9 @@ export function createheaderbanacuaco() {
                     margin-left: calc(100% - 290px);
                   }
                 
-                
+
                 @media screen and (max-width: 768px) {
+
                     .imgHeader {
                         height: 140px;
                         width: 100%;
@@ -347,22 +349,22 @@ export function createheaderbanacuaco() {
                         <div class="menu">
                             <div class="contentMenu">
                             <a href="/${this.languaje}/producciones">
-                                <p>Producciones</p>
+                                <p>Productions</p>
                             </a>
                             <a href="/${this.languaje}/servicios">
-                                <p>Servicios</p>
+                                <p>Services</p>
                             </a>
                             
                             <a href="/${this.languaje}/nosotros">
-                                <p>Nosotros</p>
+                                <p>About Us</p>
                             </a>
                             
                             <a href="/${this.languaje}/galeria">
-                                <p>Galeria</p>
+                                <p>Gallery</p>
                             </a>
                             
                             <a href="/${this.languaje}/contacto">
-                                <p>Contactenos</p>
+                                <p>Contact Us</p>
                             </a>
                                 
                             </div>
