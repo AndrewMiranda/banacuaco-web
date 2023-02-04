@@ -26,56 +26,77 @@
         </div>
 
         <!-- Agregar sinopsis-->
-        <form action="">
+        <form action="/dashboard/production/editSynopsis/<%= data[0].id %>" method="post" enctype="multipart/form-data">
             <div class="containerForm">
                 <div class="titleDescription">
                     Sinopsis
                 </div>
                 <div class="optionFormProduction">
                     <p>Nombre</p>
-                    <input type="text" name="nombre" id="video">
+                    <input type="text" name="name" id="video" value="<%= data[0].name %>" required>
                 </div>
                 <div class="optionFormProduction">
                     <p>Imagen principal:</p>
-                    <label for="imgProduction">
-                        <img class="addImg" src="../images/icoAddImgForm.svg" alt="">
-                        <span>inserta imagen</span>
-                    </label>
                     <input type="file" name="mainImage" id="imgProduction">
                 </div>
                 <div class="optionFormProduction">
-                    <p>url:</p>
-                    <input type="url" name="video" id="video" >
+                    <p>url video:</p>
+                    <input type="url" name="video" id="video" value="<%= data[0].urlVideo %>" required>
                 </div>
                 <div class="optionFormProduction">
                     <p>Idioma</p>
-                    <select name="languaje" id="languaje">
-                        <option value="">Ingles</option>
-                        <option value="">Español</option>
+                    <select name="language" id="languaje" required>
+                        <% if(data[0].language == "en") { %>
+                            <option value="en" selected>Inglés</option>
+                            <option value="es">Español</option>
+                        <% }else{ %>
+                            <option value="en">Inglés</option>
+                            <option value="es" selected>Español</option>
+                        <% } %>
                     </select>
                     
                 </div>
                 <div class="optionFormProduction">
                     <p>Plantilla</p>
-                    <select name="Plantilla" id="plantilla">
-                        <option value="">Plantilla 1</option>
-                        <option value="">Plantilla 2</option>
+                    <select name="plantilla" id="plantilla" required>
+                        <% if(data[0].template == "1") { %>
+                            <option value="1" selected>Plantilla 1</option>
+                            <option value="2">Plantilla 2</option>
+                        <% }else{ %>
+                            <option value="1">Plantilla 1</option>
+                            <option value="2" selected>Plantilla 2</option>
+                        <% } %>
                     </select>
                     
                 </div>
-
                 <div class="optionFormProduction">
-                    <p>Descripción:</p>
-                    <textarea  name="Descipcion" id="description" cols="30" rows="10"></textarea>
+                    <p>Formato</p>
+                    <select name="formato" id="plantilla" required>
+                        <% formats.forEach(function(formats) { %>
+                            <% if(data[0].format == formats.id) { %>
+                                <option value="<%= formats.id %>" selected><%= formats.name %></option>
+                            <% }else{ %>
+                                <option value="<%= formats.id %>"><%= formats.name %></option>
+                            <% } %>
+                        <% }); %>
+                    </select>
                     
                 </div>
-                
+                <div class="optionFormProduction">
+                    <p>Synopsis:</p>
+                    <textarea  name="description" id="description" cols="30" rows="10"><%= data[0].synopsis %></textarea>
+                    
+                </div>
+                <div class="optionFormProduction">
+                    <p>Año:</p>
+                    <input type="number" name="year" min="1900" max="3000" step="1" value="<%= data[0].year %>" required>
+                    
+                </div>
                 <div class="submit">
-                    <input type="submit" value="enviar">
+                    <input type="submit" value="Guardar">
                 </div>
             </div>        
         </form>
-
     </div>
-    </body>
+</body>
 </html>

@@ -24,23 +24,28 @@
 
         <div class="containerProductions">
             <div class="newProductions">
-                <a href="/dashboard/editarProduccionPersonajes"><img src="../images/icoAddProduction.svg" alt=""></a>
+                <a href="/dashboard/crearProduccionPersonajes?idProd=<%= idProd %>"><img src="../images/icoAddProduction.svg" alt=""></a>
+            </div>
+            <div class="newProductions" style="right: 6%;">
+                <a href="/dashboard/editarTextCharacter?idProd=<%= idProd %>"><img src="../images/edit_note.svg" alt=""></a>
             </div>
             <div class="titleProductions">Personajes</div>
+            <p style="margin-bottom: 2%;"><%= dataB %></p>
             <div class="contentProductions">
-                <div class="infoProduction">
-                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="">
-                    <div class="icons">
-                        <div class="iconsImgEdit">
-                            <a href="/dashboard/editarProduccionPersonajes"><img src="../images/editCrud.svg" alt="" > </a>
+                <% data.forEach(function(data) { %>
+                    <div class="infoProduction" id="row-<%= data.id %>">
+                        <img src="../content/<%= data.url %>" alt="">
+                        <div class="icons">
+                            <div class="iconsImgEdit">
+                                <a href="/dashboard/editarProduccionPersonajes?idProd=<%= idProd %>&id=<%= data.id %>"><img src="../images/editCrud.svg" alt="" > </a>
+                            </div>
+                            <div class="iconsImgDelete">
+                                <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert(<%= data.id %>, 'character')">
+                            </div>
                         </div>
-                        <div class="iconsImgDelete">
-                            <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert()">
-                        </div>
+                        <p><%= data.name %></p>
                     </div>
-                    <p>fdsfdfdfdfdfsd</p>
-                    
-                </div>
+                <% }); %>
             </div>
         </div>
     </div>

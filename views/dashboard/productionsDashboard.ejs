@@ -15,22 +15,22 @@
     <div class="infoDashboard">
         <div class="containerProductions">
             <div class="newProductions">
-                <a href="/dashboard/editarProduccion"><img src="../images/icoAddProduction.svg" alt=""></a>
+                <a href="/dashboard/addProduction"><img src="../images/icoAddProduction.svg" alt=""></a>
             </div>
-            <div class="titleProductions">Producciónes</div>
+            <div class="titleProductions">Producciones</div>
             <div class="contentProductions">
-                <% productions.forEach(function(productions) { %>
+                <% data.forEach(function(productions) { %>
                     <div class="infoProduction">
-                        <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="">
+                        <img src="../content/<%= productions.mainImage %>" alt="">
                         <div class="icons">
                             <div class="iconsImgEdit">
-                                <a href="/dashboard/editarProduccion"><img src="../images/editCrud.svg" alt="" > </a>
+                                <a href="/dashboard/editarProduccion?id=<%= productions.id %>"><img src="../images/editCrud.svg" alt="" > </a>
                             </div>
                             <div class="iconsImgDelete">
                                 <img src="../images/deleteCrud.svg" alt="delete" onclick="deleteAlert()">
                             </div>
                         </div>
-                        <p>fdsfdfdfdfdfsd</p>
+                        <p><%= productions.name %></p>
                     </div>
                 <% }); %>
             </div>

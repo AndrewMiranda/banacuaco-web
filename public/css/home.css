@@ -50,6 +50,8 @@
 
 .imgKimia{
     width: 100%;
+    position: relative;
+    top: -10px;
 }
 .imgKimia img{
     height: 400px;
@@ -62,6 +64,7 @@
     width: 150px;
     position: relative;
     top: 40px;
+    margin-right: 40px;
 }
 
 .mobile{

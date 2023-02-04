@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/galeryDashboard.css">
+    <title>Dashboard</title>
+    <style>
+        .imgGalery{
+            text-align: center;
+            color: #653392;
+            height: 210px;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <div class="infoDashboard">
+        <div class="conatinerGalery">
+            <label for="newImage">
+                <div class="newGalery">
+                    <img src="../images/person_add.svg" alt="">
+                </div>
+            </label>
+            <button id="newImage" onclick="location.href = '/dashboard/teamAdd';"></button>
+
+            <div class="titleGalery">
+                Equipo
+            </div>
+            <div class="contentGalery">
+                <% data.forEach(function(data) { %>
+                    <div class="imgGalery" id="row-<%= data.id %>">
+                        <img src="../content/team/<%= data.url %>" alt="">
+                        <div class="iconsImg">
+                            <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert(<%= data.id %>, 'team');">
+                        </div>
+                        <br>
+                        <p><%= data.name %></p>
+                        <p><%= data.cargo_en %></p>
+                        <p><%= data.cargo_es %></p>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../js/general/addAlertModal.js"></script>
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

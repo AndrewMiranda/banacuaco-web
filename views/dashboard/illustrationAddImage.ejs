@@ -1,0 +1,65 @@
+<!--  
+    Documento creado para la secciones de editar las producciones del dashboard (personajes)
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/editProductionsDashboardHeader.css">
+    <link rel="stylesheet" href="../css/editProductionDashboardSinopsis.css">
+    <title>Dashboard</title>
+    <style>
+        #deleteButton{
+            color: black;
+            cursor: pointer;
+            text-decoration-line: underline;
+            font-size: 1vw;
+        }
+
+        .optionFormProduction {
+            justify-content: center;
+            flex-flow: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <div class="infoDashboard">
+        <div>
+            <%- include('./partials/productionsDashboardCreateAndEdit.ejs') %>
+        </div>
+
+        <!-- Agregar sinopsis-->
+        <form action="/dashboard/illustrations/add/<%= idProd %>" method="post" enctype="multipart/form-data">
+            <div class="containerForm">
+                <div class="titleDescription">
+                    Agregar ilustración
+                </div>
+                <div class="optionFormProduction">
+                    <input type="file" name="image" id="user" style="background-color: #ffff; padding-top: 20px;" required>
+                    <input type="hidden" name="language" value="<%= data[0].idiom %>">
+                    <select name="section" required>
+                        <% num = 1; %>
+                        <% data.forEach(function(data) { %>
+                            <option value="<%= data.id %>">#<%= num %> <%= data.body %></option>
+                        <% num++ }); %>
+                    </select>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Guardar">
+                </div>
+            </div>        
+        </form>
+    </div>
+
+    </body>
+</html>
+
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

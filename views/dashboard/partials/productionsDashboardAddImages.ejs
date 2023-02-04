@@ -2,29 +2,58 @@
     Documento que contiene la grilla para las imagenes de las producciones (faunas, fondos e ilustraciones)
 -->
 
+<style>
+    .icons{
+        justify-content: end;
+    }
 
+    h3{
+        width: 100%;
+        margin-bottom: -2%;
+        text-align: center;
+    }
+
+    .contentSection {
+        margin-bottom: 4%;
+    }
+
+    h3 a{
+        color: black;
+        text-decoration-line: underline;
+    }
+</style>
 <div class="conatinerImages">
-    <div class="newImages">
-        <label for="newImage">
-            <img src="../images/icoAddGalery.svg" alt="">
-        </label>
-        <input type="file" id="newImage">
+    <% if(data.length > 0){ %>
+        <div class="newImages">
+            <a href="/dashboard/<%= module %>AddImage?idProd=<%= idProd %>">
+                <img src="../images/icoAddGalery.svg" alt="">
+            </a>
+        </div>
+    <% } %>
+    <div class="newImages" style="right: 6%;">
+        <a href="/dashboard/<%= module%>AddSection?idProd=<%= idProd %>">
+            <img src="../images/format_list_bulleted_add.svg" alt="">
+        </a>
     </div>
     <div class="titleSection">
-        Titulo de la sección
+        <%= title %>
     </div>
-    <div class="contentSection">
-        <div class="imgSection">
-            <img src="../images/Escala personajes copia.jpg" alt="" />
-            <div class="icons">
-                <div class="iconsImgEdit">
-                    <a href="/dashboard/fondosEdit"><img src="../images/editCrud.svg" alt="" > </a>
-                </div>
-                <div class="iconsImgDelete">
-                    <img src="../images/deleteCrud.svg" alt="" onclick="deleteAlert()">
-                </div>
-            </div>
-            <p>Grupo 1</p>
-        </div> 
-    </div>
+    <% let num = 1;%>
+    <% data.forEach(function(data) { %>
+        <div class="contentSection">
+            <h3><a href="/dashboard/<%= module %>EditSection?id=<%= data.id %>&idProd=<%= idProd %>">#<%= num %> <%= data.body %></a></h3>
+            <% let images = data.url %>
+            <% images.forEach(function(image) { %>
+                <div class="imgSection" id="row-<%= image %>">
+                    <img src="../content/<%= image %>" alt="" />
+                    <div class="icons">
+                        <div class="iconsImgDelete">
+                            <img src="../images/deleteCrud.svg" alt="" onclick="deleteAlert('<%= image %>','<%= module %>')">
+                        </div>
+                    </div>
+                </div> 
+            <% }); %>
+        </div>
+        <% num++ %>
+    <% }); %>
 </div>

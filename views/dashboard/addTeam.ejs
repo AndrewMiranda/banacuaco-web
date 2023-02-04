@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+        <link href="../css/newImageDashboard.css" rel="stylesheet" type="text/css" media="all">
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <div class="containerLayout">
+            <%- include('./layout/index.ejs') %>
+        </div>
+        <div class="infoDashboard">
+            <div class="containerNewUser">
+                <form action="/dashboard/team/create" method="post" enctype="multipart/form-data">
+                    <div class="contentNewUser">
+                        <div class="titleNewUser">
+                            Agregar miembro al equipo
+                        </div>
+                        <div class="userPassword">
+                            <p>Imagen:</p>
+                            <input type="file" name="image" id="user" style="background-color: #ffff; padding-top: 20px;" required>
+                        </div>
+                        <div class="userPassword">
+                            <p>Nombre:</p>
+                            <input type="text" name="name" id="pass" required>
+                        </div>
+                        <div class="userPassword">
+                            <p>Cargo EN:</p>
+                            <input type="text" name="cargoen" id="pass" required>
+                        </div>
+                        <div class="userPassword">
+                            <p>Cargo ES:</p>
+                            <input type="text" name="cargoes" id="pass" required>
+                        </div>
+
+                        <div class="submit">
+                            <input type="button" onclick="location.href='/dashboard/team';" value="Cancelar">
+                            <input type="submit" value="Guardar" id="sendUser">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,6 +1,6 @@
 
 <% images.forEach(function(images) { %>
     <div class="infoGalery">
-        <img src="../content/<%= images.url %>" alt="">
+        <img src="../content/<%= images.miniature %>"  onclick="galeryModal('<%= images.url %>', '<%= images.author %>', '<%= images.description %>', '<%= idiom %>')" alt="">
     </div>
 <% }); %>

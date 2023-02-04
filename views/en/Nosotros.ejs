@@ -75,36 +75,17 @@
             <h3>Our team</h3>
         </div>
         <section class="ourTeam">
-            <div class="containerTeam">
-                <div class="imgTeam">
-                    <img src="../images/Vanessa ID" alt="" />
+            <% data.forEach(function(data) { %>
+                <div class="containerTeam">
+                    <div class="imgTeam">
+                        <img src="../content/team/<%= data.url %>" alt="" />
+                    </div>
+                    <div class="textTeam">
+                        <p><%= data.name %></p>
+                        <p><%= data.cargo %></p>
+                    </div>
                 </div>
-                <div class="textTeam">
-                    <p>VANESSA BENDENK</p>
-                    <p>CEO</p>
-                    <p>Productora Ejecutiva</p>
-                </div>
-            </div>
-    
-            <div class="containerTeam">
-                <div class="imgTeam">
-                    <img src="../images/Karlojulio ID.jpg" alt="" />
-                </div>
-                <div class="textTeam">
-                    <p>KARLO JULIO</p>
-                    <p>Director de Animación</p>
-                </div>
-            </div>
-
-            <div class="containerTeam">
-                <div class="imgTeam">
-                    <img src="../images/Chacamaya ID.jpg" alt="" />
-                </div>
-                <div class="textTeam">
-                    <p>CHAYAMACA</p>
-                    <p>El Espíritu del Arte</p>
-                </div>
-            </div>
+            <% }); %>
         </section>
     </div>
 

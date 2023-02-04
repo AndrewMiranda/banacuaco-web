@@ -27,7 +27,7 @@
             <div class="contentGalery">
                 <% images.forEach(function(images) { %>
                     <div class="imgGalery" id="row-<%= images.id %>">
-                        <img src="../content/<%= images.url %>" alt="" onclick="galeryModal('<%= images.url %>', '<%= images.author %>', '<%= images.descEn %>', '<%= images.descEs %>')">
+                        <img src="../content/<%= images.miniature %>" alt="" onclick="galeryModal('<%= images.url %>', '<%= images.author %>', '<%= images.descEn %>', '<%= images.descEs %>')">
                         <div class="iconsImg">
                             <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert(<%= images.id %>, 'galery');">
                         </div>

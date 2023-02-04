@@ -1,0 +1,64 @@
+<!--  
+    Documento creado para la secciones de editar las producciones del dashboard (personajes)
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/editProductionsDashboardHeader.css">
+    <link rel="stylesheet" href="../css/editProductionDashboardSinopsis.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <div class="infoDashboard">
+        <div>
+            <%- include('./partials/productionsDashboardCreateAndEdit.ejs') %>
+        </div>
+
+        <!-- Agregar sinopsis-->
+        <form action="/dashboard/character/add/<%= idProd %>" method="post" enctype="multipart/form-data">
+            <div class="containerForm">
+                <div class="titleDescription">
+                    Crear personaje
+                </div>
+                <div class="optionFormProduction">
+                    <p>Nombre del personaje</p>
+                    <input type="text" name="name" id="name" value="" required>
+                </div>
+                <div class="optionFormProduction">
+                    <p>Color (ffffff):</p>
+                    <input type="text" name="color" value="ffffff" required>
+                </div>
+                <div class="optionFormProduction">
+                    <p>Imagen del personaje:</p>
+                    <input type="file" name="mainImage" id="imgProduction" required>
+                </div>
+                <div class="optionFormProduction">
+                    <p>Imagen 2 (opcional):</p>
+                    <input type="file" name="mainImage2" id="imgProduction">
+                </div>
+                <div class="optionFormProduction">
+                    <p>Descripción:</p>
+                    <textarea  name="description" id="description" cols="30" rows="10" required></textarea>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Guardar">
+                </div>
+            </div>        
+        </form>
+    </div>
+
+    </body>
+</html>
+
+
+
+<script type="module" src="../js/general/modules/headerAndsocialMedia.mjs"></script>

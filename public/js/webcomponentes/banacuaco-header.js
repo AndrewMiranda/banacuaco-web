@@ -163,7 +163,7 @@ export function createheaderbanacuaco() {
                 #btnMenu:checked ~ .menu {
                     display: block;
                     margin-left: calc(100% - 290px);
-                  }
+                }
                 
 
                 @media screen and (max-width: 768px) {
@@ -214,7 +214,7 @@ export function createheaderbanacuaco() {
                         <div class="conainerHeader">
                             <a href="/${this.languaje}/home">
                                 <div class="imgHeader">
-                                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco">
+                                    <img src="../images/BANACUACO Banner2 Youtube 2022 web.jpg" alt="banacuaco">
                                 </div>
                             </a>
                             <div class="">
@@ -296,7 +296,7 @@ export function createheaderbanacuaco() {
                         <div class="conainerHeader">
                             <a href="/${this.languaje}/home">
                                 <div class="imgHeader">
-                                    <img src="../images/BANACUACO Banner Youtube 2022 web.jpg" alt="banacuaco">
+                                    <img src="../images/BANACUACO Banner2 Youtube 2022 web.jpg" alt="banacuaco">
                                 </div>
                             </a>
                             <div class="">

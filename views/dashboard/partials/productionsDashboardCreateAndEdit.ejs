@@ -2,29 +2,60 @@
     Documento que contiene el mini header para las sección de editar producciones
 -->
 
-<div class="containerInfoProduction">
-    <div class="contentInfoProduction">
-        <div class="headerInfoProduction">
-            <a href="/dashboard/editarProduccion">
-                <p>Sinopsis</p>
-            </a>
-            <a href="/dashboard/editarProduccionVerPersonajes">
-                <p>Personajes</p>
-            </a>
-            
-            <a href="/dashboard/editarProduccionFondos">
-                <p>Fondos</p>
-            </a>
+<% if(submenu == "disabled" ){ %>
+    <style>
+        .not-active { 
+            pointer-events: none; 
+            cursor: default; 
+        }
+    </style>
+    <div class="containerInfoProduction">
+        <div class="contentInfoProduction">
+            <div class="headerInfoProduction">
+                <a href="/dashboard/editarProduccion?id=<%= data[0].id %>" class="not-active">
+                    <p>Sinopsis</p>
+                </a>
+                <a href="/dashboard/editarProduccionVerPersonajes?id=<%= data[0].id %>" class="not-active"> 
+                    <p>Personajes</p>
+                </a>
+                
+                <a href="/dashboard/editarProduccionFondos?id=<%= data[0].id %>" class="not-active">
+                    <p>Fondos</p>
+                </a>
 
-            <a href="/dashboard/editarProduccionFauna">
-                <p>Fauna</p>
-            </a>
+                <a href="/dashboard/editarProduccionFauna?id=<%= data[0].id %>" class="not-active">
+                    <p>Fauna</p>
+                </a>
 
-            <a href="/dashboard/editarProduccionIlustraciones">
-                <p>Ilustraciones</p>
-            </a>
-            
-
+                <a href="/dashboard/editarProduccionIlustraciones?id=<%= data[0].id %>" class="not-active">
+                    <p>Ilustraciones</p>
+                </a>
+            </div>
         </div>
     </div>
-</div>
+<% }else{ %>
+    <div class="containerInfoProduction">
+        <div class="contentInfoProduction">
+            <div class="headerInfoProduction">
+                <a href="/dashboard/editarProduccion?id=<%= idProd %>">
+                    <p>Sinopsis</p>
+                </a>
+                <a href="/dashboard/editarProduccionVerPersonajes?id=<%= idProd %>"> 
+                    <p>Personajes</p>
+                </a>
+                
+                <a href="/dashboard/editarProduccionFondos?id=<%= idProd %>">
+                    <p>Fondos</p>
+                </a>
+
+                <a href="/dashboard/editarProduccionFauna?id=<%= idProd %>">
+                    <p>Fauna</p>
+                </a>
+
+                <a href="/dashboard/editarProduccionIlustraciones?id=<%= idProd %>">
+                    <p>Ilustraciones</p>
+                </a>
+            </div>
+        </div>
+    </div>
+<% } %>

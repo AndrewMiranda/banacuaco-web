@@ -64,11 +64,14 @@ body{
 }
 
 .infoProduction{
-    height: 160px;
-    width: 250px;
+    height: 11vw;
+    width: 14vw;
     position: relative;
     transition: 0.3s;
+    box-shadow: -6px 7px 11px 2px #b3b4b3ed;
+    border-radius: 27px;
 }
+
 .infoProduction img{
     width: 100%;
     height: 100%;
@@ -88,6 +91,7 @@ body{
     font-family: "arial-Rounded";
     width: 80%;
     margin: 15px  auto;
+    margin-top: 1vw;
 }
 
 .icons{
@@ -117,6 +121,22 @@ body{
     width: 24px;
     height: 24px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1650px) {
+    .infoProduction{
+        height: 16vw;
+        width: 19vw;
+        position: relative;
+        transition: 0.3s;
+        box-shadow: -6px 7px 11px 2px #b3b4b3ed;
+        border-radius: 27px;
+    }
+
+    .infoProduction p {
+        margin: auto;
+        margin-top: 1.9vw;
+    }
 }
 
 @media screen and (max-width: 902px) {

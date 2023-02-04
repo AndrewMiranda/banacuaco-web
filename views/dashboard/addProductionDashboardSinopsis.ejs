@@ -1,0 +1,86 @@
+<!--  
+    Documento creado para la secciones de editar las producciones del dashboard.
+    Primera seccion en la cual hay un formulario para ingresar lso datos de la sinopsis
+
+    nota: esta siemrpe sera la primera seccion cunado se edite o cree una produccion
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/editProductionsDashboardHeader.css">
+    <link rel="stylesheet" href="../css/editProductionDashboardSinopsis.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="containerLayout">
+        <%- include('./layout/index.ejs') %>
+    </div>
+    <div class="infoDashboard">
+
+        <!-- Agregar sinopsis-->
+        <form action="/dashboard/production/create" method="post" enctype="multipart/form-data">
+            <div class="containerForm">
+                <div class="titleDescription">
+                    Sinopsis
+                </div>
+                <div class="optionFormProduction">
+                    <p>Nombre</p>
+                    <input type="text" name="name" id="video" required>
+                </div>
+                <div class="optionFormProduction">
+                    <p>Imagen principal:</p>
+                    <input type="file" name="mainImage" id="imgProduction" required>
+                </div>
+                <div class="optionFormProduction">
+                    <p>url video:</p>
+                    <input type="url" name="video" id="video" required>
+                </div>
+                <div class="optionFormProduction">
+                    <p>Idioma</p>
+                    <select name="language" id="languaje" required>
+                        <option value="en" selected>Ingles</option>
+                        <option value="es">Español</option>
+                    </select>
+                    
+                </div>
+                <div class="optionFormProduction">
+                    <p>Plantilla</p>
+                    <select name="plantilla" id="plantilla" required>
+                        <option value="1">Plantilla 1</option>
+                        <option value="2">Plantilla 2</option>
+                    </select>
+                    
+                </div>
+                <div class="optionFormProduction">
+                    <p>Formato</p>
+                    <select name="formato" id="plantilla" required>
+                        <% formats.forEach(function(formats) { %>
+                            <option value="<%= formats.id %>"><%= formats.name %></option>
+                        <% }); %>
+                    </select>
+                    
+                </div>
+                <div class="optionFormProduction">
+                    <p>Descripción:</p>
+                    <textarea  name="description" id="description" cols="30" rows="10"></textarea>
+                    
+                </div>
+                <div class="optionFormProduction">
+                    <p>Año:</p>
+                    <input type="number" name="year" min="1900" max="3000" step="1" value="2023" required>
+                    
+                </div>
+                
+                <div class="submit">
+                    <input type="submit" value="Guardar">
+                </div>
+            </div>        
+        </form>
+    </div>
+</body>
+</html>

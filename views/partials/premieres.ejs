@@ -1,36 +1,35 @@
-<div class="containerInfoServices">
-    <div class="franjaServices">
-        <div class="contentInfo">
-            <div class="textInfo">
-                <div class="imgKimia desktop">
-                    <img src="../content/<%= img %>" alt="" class="imgKimia" />
-                </div>
+<% data.forEach(function(data) { %>
+    <div class="containerInfoServices">
+        <div class="franjaServices">
+            <div class="contentInfo">
+                <div class="textInfo">
+                    <div class="imgKimia desktop">
+                        <img src="../content/premieres/<%= data.image %>" alt="" class="imgKimia" />
+                    </div>
 
-                <div class="descriptionService">
-                    <div class="titleSecund">
-                        <h3>
-                            <% if(idiom == 'en'){ %>
-                                Our next premiere 
-                            <% } else{ %>  
-                                Nuestro próximo estreno
-                            <% } %>
-                        </h3>
+                    <div class="descriptionService">
+                        <div class="titleSecund">
+                            <h3>
+                                <% if(idiom == 'en'){ %>
+                                    Our next premiere 
+                                <% } else{ %>  
+                                    Nuestro próximo estreno
+                                <% } %>
+                            </h3>
+                        </div>
+                        <div class="imgKimia mobile" >
+                            <img src="../content/premieres/<%= data.image %>" alt="" class="imgKimia" />
+                        </div>
+                        <p>
+                            <%= data.description %> 
+                        </p>
                     </div>
-                    <div class="imgKimia mobile" >
-                        <img src="../content/<%= img %>" alt="" class="imgKimia" />
+                    <div class="imgKimiaPerson">
+                        <img
+                            src="../content/premieres/<%= data.characters %> "/>
                     </div>
-                    <p>
-                        <%= desc %> 
-                    </p>
-                </div>
-                <div class="imgKimiaPerson">
-                    <img
-                        src="../content/<%= character %> "
-                        alt=""
-                        class=""
-                    />
                 </div>
             </div>
         </div>
     </div>
-</div>
+<% }); %>

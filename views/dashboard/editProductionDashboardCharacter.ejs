@@ -24,31 +24,33 @@
         </div>
 
         <!-- Agregar sinopsis-->
-        <form action="">
+        <form action="/dashboard/character/edit/<%= data[0].id %>?idProd=<%= idProd %>" method="post" enctype="multipart/form-data">
             <div class="containerForm">
                 <div class="titleDescription">
-                    Personaje
+                    Editar personaje
                 </div>
                 <div class="optionFormProduction">
                     <p>Nombre del personaje</p>
-                    <input type="text" name="nombre" id="video">
+                    <input type="text" name="name" id="name" value="<%= data[0].name %>" required>
+                </div>
+                <div class="optionFormProduction">
+                    <p>Color (ffffff):</p>
+                    <input type="text" name="color" value="<%= data[0].color %>" required>
                 </div>
                 <div class="optionFormProduction">
                     <p>Imagen del personaje:</p>
-                    <label for="imgProduction">
-                        <img class="addImg" src="../images/icoAddImgForm.svg" alt="">
-                        <span>inserta imagen</span>
-                    </label>
                     <input type="file" name="mainImage" id="imgProduction">
                 </div>
                 <div class="optionFormProduction">
-                    <p>Descripción:</p>
-                    <textarea  name="Descipcion" id="description" cols="30" rows="10"></textarea>
-                    
+                    <p>Imagen 2 (opcional):</p>
+                    <input type="file" name="mainImage2" id="imgProduction">
                 </div>
-                
+                <div class="optionFormProduction">
+                    <p>Descripción:</p>
+                    <textarea  name="description" id="description" cols="30" rows="10" required><%= data[0].description %></textarea>
+                </div>
                 <div class="submit">
-                    <input type="submit" value="enviar">
+                    <input type="submit" value="Guardar">
                 </div>
             </div>        
         </form>

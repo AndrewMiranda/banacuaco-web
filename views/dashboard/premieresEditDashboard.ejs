@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="stylesheet" href="../css/editProductionsDashboardHeader.css">
+        <link rel="stylesheet" href="../css/addPremiere.css">
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <div class="containerLayout">
+            <%- include('./layout/index.ejs') %>
+        </div>
+        <!-- Agregar sinopsis-->
+        <div class="infoDashboard">
+            <div class="marginFormPremieres"></div>
+            <form action="/dashboard/premieres/edit/<%= data[0].id %>" method="post" enctype="multipart/form-data">
+                <div class="containerForm">
+                    <div class="titleDescription">
+                        Agregar Estreno
+                    </div>
+                    <div class="optionFormProduction">
+                        <p>Nombre:</p>
+                        <input type="text" name="name" id="premiere" value="<%= data[0].title %>">
+                    </div>
+                    <div class="optionFormProduction">
+                        <p>Imagen (500x400):</p>
+                        <input type="file" name="image" id="imgPremiere">
+                    </div>
+                    <div class="optionFormProduction">
+                        <p>Personaje (150x400):</p>
+                        <input type="file" name="character" id="imgPremiere">
+                    </div>
+                    <div class="optionFormProduction">
+                        <p>Idioma</p>
+                        <select name="language" id="plantilla">
+                            <% if(data[0].language == "en") { %>
+                                <option value="en" selected>Inglés</option>
+                                <option value="es">Español</option>
+                            <% }else{ %>
+                                <option value="en">Inglés</option>
+                                <option value="es" selected>Español</option>
+                            <% } %>
+                        </select>
+                        
+                    </div>
+                    <div class="optionFormProduction">
+                        <p>Descripción:</p>
+                        <textarea  name="description" id="decPremiere" cols="30" rows="10"><%= data[0].description %></textarea>
+                    </div>
+                    
+                    <div class="submit">
+                        <input type="submit" value="Guardar">
+                    </div>
+                </div>        
+            </form>
+        </div>
+    </body>
+</html>
