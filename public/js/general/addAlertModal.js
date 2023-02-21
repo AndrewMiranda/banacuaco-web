@@ -23,13 +23,12 @@ function borrarFila() {
     })
     .then((response) => response.json())
     .then((data) => {
-        console.log(data)
         if (data.status === 200) {
             let rowToDelete = document.getElementById("row-"+idDelete);
-            console.log("row-"+idDelete);
             rowToDelete.remove();
             closeAlert();      
         } else {
+            alert("Error al borrar producción, intente nuevamente");
             closeAlert();
         }
     })  

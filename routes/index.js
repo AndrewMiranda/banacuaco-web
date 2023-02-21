@@ -598,11 +598,15 @@ router.get("/dashboard/editarUsuario", async(req, res) => {
         user = req.cookies.userday;
 
         let id = req.query.id
+        
+        if(id == 1){
+        	res.redirect("/dashboard/usuarios");
+        }else{
+        	let data = await pool.query("SELECT * FROM `users` WHERE users_id = "+id);
+        	data = JSON.parse(JSON.stringify(data));
 
-        let data = await pool.query("SELECT * FROM `users` WHERE users_id = "+id);
-        data = JSON.parse(JSON.stringify(data));
-
-        res.render("dashboard/editUserDashboard", {user: user, data: data});
+        	res.render("dashboard/editUserDashboard", {user: user, data: data});
+        }
     }else{
         res.redirect("/dashboard?error=n");
     };
@@ -799,6 +803,56 @@ router.post("/dashboard/production/editSynopsis/:id", async(req, res) => {
         res.redirect("/dashboard?error=n");
     }
 });
+
+router.post("/dashboard/productions/delete/:id", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        //Recibir ID a borrar
+        id = req.params.id;
+
+        try {
+            dataImages = await pool.query("SELECT id, url FROM `images` WHERE idProduction = "+id);
+            dataImages = JSON.parse(JSON.stringify(dataImages));
+
+            if (dataImages.length > 0) {
+                for (const iterator of dataImages) {
+                    try {
+                        fs.unlinkSync('./public/content/'+iterator.url);
+                        await pool.query(`DELETE FROM images WHERE id = ${iterator.id}`);
+                    } catch (error) {
+                        res.send({"status":500});
+                    }
+                }
+            }
+            
+            await pool.query(`DELETE FROM backgroundsections WHERE id_production = ${id}`);
+
+            await pool.query(`DELETE FROM characters WHERE production = ${id}`);
+
+            await pool.query(`DELETE FROM faunasections WHERE id_production = ${id}`);
+
+            let imageProduction = await pool.query("SELECT mainImage FROM `productions` WHERE id = "+id);
+            imageProduction = JSON.parse(JSON.stringify(imageProduction));
+            try {
+                fs.unlinkSync('./public/content/'+imageProduction[0].mainImage);
+                await pool.query(`DELETE FROM productions WHERE id = ${id}`);
+            } catch (error) {
+                res.send({"status":500});
+            }
+
+            res.send({"status":200});
+        } catch (error) {
+            res.send({"status":500});   
+        }
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
+});
+
 
 router.get("/dashboard/editarProduccionVerPersonajes", async(req, res) => {
     //Verificación de sesión

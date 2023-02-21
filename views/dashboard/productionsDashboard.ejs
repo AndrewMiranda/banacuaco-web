@@ -20,14 +20,14 @@
             <div class="titleProductions">Producciones</div>
             <div class="contentProductions">
                 <% data.forEach(function(productions) { %>
-                    <div class="infoProduction">
+                    <div class="infoProduction" id="row-<%= productions.id %>">
                         <img src="../content/<%= productions.mainImage %>" alt="">
                         <div class="icons">
                             <div class="iconsImgEdit">
                                 <a href="/dashboard/editarProduccion?id=<%= productions.id %>"><img src="../images/editCrud.svg" alt="" > </a>
                             </div>
                             <div class="iconsImgDelete">
-                                <img src="../images/deleteCrud.svg" alt="delete" onclick="deleteAlert()">
+                                <img src="../images/deleteCrud.svg" alt="delete" onclick="deleteAlert(<%= productions.id %>, 'productions')">
                             </div>
                         </div>
                         <p><%= productions.name %></p>
