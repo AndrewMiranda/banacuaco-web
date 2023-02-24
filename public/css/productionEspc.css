@@ -66,21 +66,15 @@
 
 .franjaServices{
     margin-top: 100px;
-    background-color: #FFBD00;
-    transform: rotate(5deg);
     width: 112%;
     margin-left: -6%;
     padding: 1%;  
+    background-color: #FFBD00;
 }
 
 .contentInfo{
-    width: 90%;
+    width: 100%;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    column-gap: 10%;
-    transform: rotate(-5deg);
-    align-items: center;
 }
 
 .deg{
@@ -105,7 +99,6 @@
     font-size: 42px;
     text-align: center;
     margin-top: 40px;
-    width: 35%;
 }
 
 .imgidea{
@@ -120,30 +113,24 @@
 }
 
 /*Seccion personajes*/
-
-.reverse{
-    display: flex !important;
-    flex-direction: row-reverse !important;
+.containerCharacters{
+    margin-top: 100px;
+    width: 100%;  
 }
-
-.degArts{
-    transform: rotate(-5deg);
-    padding-bottom: 5%; /* Le añade un padding abajo para que no se salga la imagen*/
-}
-
-.degContentArts{
-    transform: rotate(5deg);
+.textInfo{
+    width: 100%;
 }
 
 .titleChart{
-    padding-right: 15%;
     margin-bottom: 20px;
 }
 .titleChart h3{
     font-family: "arnold";
-    color: #fff;
-    text-align: right;
-    font-size: 42px
+    color: #4b1f03;
+    text-align: center;
+    font-size: 42px;
+    background-color: #FFBD00;
+    padding: 1% 0;
 }
 .imgChart{
     width: 100%;
@@ -174,16 +161,17 @@
     padding: 0 5%;
     column-gap: 20px;
     margin-bottom: 20px;
+    flex-direction: column;
 }
 .imgA{
-    width: auto;
     display: flex;
+    justify-content: center;
     column-gap: 10px;
     height: 100%;
 }
 
 .imgA img{
-    width: 250px;
+    width: 30%;
     margin: 5px;
 }
 
@@ -193,14 +181,15 @@
 
 .txtA h3{
     font-family: "arnold";
-    color:#fff;
+    color:#bb5a56;
     font-size:42px;
-    margin-bottom: 20px;
-    text-align: right;
+    margin: 20px 0;
+    text-align: center;
 }
 
-.reverse .contentDescriptionA .txtA h3{
-    text-align: left !important;
+.contentA {
+    width: 70%;
+    padding: 2% 0;
 }
 
 .contentA p{
