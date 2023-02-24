@@ -113,7 +113,7 @@ export function createheaderbanacuaco() {
                 .english p,
                 .spanish p{
                     font-family: "arnold";
-                    font-size: 1.5vw;
+                    font-size: 1.8vw;
                     color: #fff;
                 }
                 
@@ -154,7 +154,7 @@ export function createheaderbanacuaco() {
                 .contentMenu a p{
                     font-family: "arnold";
                     color: #80240B;
-                    font-size: 2vw;
+                    font-size: 4vw;
                     display: flex;
                     flex-direction: column;
                     row-gap: 100px;
@@ -167,6 +167,12 @@ export function createheaderbanacuaco() {
                 
 
                 @media screen and (max-width: 768px) {
+                	.english p,
+                    .spanish p{
+                    	font-family: "arnold";
+                    	font-size: 2.8vw;
+                    	color: #fff;
+                	}
 
                     .imgHeader {
                         height: 140px;
@@ -198,9 +204,9 @@ export function createheaderbanacuaco() {
                 
                     .spanish img,
                     .english img{
-                    height: 30px;
-                    width: 35px;
-                }
+                    	height: 30px;
+                    	width: 35px;
+                	}
                 }
                 
                 </style>`
@@ -252,11 +258,11 @@ export function createheaderbanacuaco() {
                             <div class="optionsLanguaje">
                                 <div class="content">
                                     <div class="english" onclick="es_en('en')">
-                                        <img src="../images/american-flag.png" alt="">
+                                        <img src="../images/Gift-Banderas-ingles.gif" alt="">
                                         <p>Inglés</p>
                                     </div>
                                     <div class="spanish" onclick="es_en('es')">
-                                        <img src="../images/colombia.png" alt="">
+                                        <img src="../images/Gift-Banderas-Espanol.gif" alt="">
                                         <p>Español</p>
                                     </div>
                                 </div>
@@ -333,13 +339,13 @@ export function createheaderbanacuaco() {
                             </div>
                             <div class="optionsLanguaje">
                                 <div class="content">
-                                    <div class="english" onclick="es_en('en')">
-                                        <img src="../images/american-flag.png" alt="">
-                                        <p>English</p>
+									<div class="english" onclick="es_en('en')">
+                                        <img src="../images/Gift-Banderas-ingles.gif" alt="">
+                                        <p>Inglés</p>
                                     </div>
                                     <div class="spanish" onclick="es_en('es')">
-                                        <img src="../images/colombia.png" alt="">
-                                        <p>Spanish</p>
+                                        <img src="../images/Gift-Banderas-Espanol.gif" alt="">
+                                        <p>Español</p>
                                     </div>
                                 </div>
                             </div>

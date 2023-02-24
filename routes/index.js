@@ -853,7 +853,6 @@ router.post("/dashboard/productions/delete/:id", async(req, res) => {
     }
 });
 
-
 router.get("/dashboard/editarProduccionVerPersonajes", async(req, res) => {
     //Verificación de sesión
     let controlUser = require("../modules/dashboard/login");
