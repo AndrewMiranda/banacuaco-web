@@ -51,101 +51,68 @@
                 
             </div>
 
-                <div class="franjaServices degArts">
-                    <div class="contentInfo degContentArts">                      
-                        <div class="textInfo">
-                            <div class="titleChart">
-                                <h3>Personajes</h3>
-                            </div>
-
-                            <div class="imgChart">
-                                <div class="fleximg">
-                                    <% charactersSection.forEach(function(charactersSection) { %>
-                                        <img src="../content/<%= charactersSection.url %>" alt="">
-                                    <% }); %>
-                                </div>
-                            </div>
-                            <% var i = 0; %>
-                            <% characters.forEach(function(characters) { %>
-                                <% var images = characters.images %>
-                                <% if(i%2==0){%>
-                                    <div class="containerDescriptionA reverse">
-                                        <div class="contentDescriptionA ">
-                                            <div class="txtA">
-                                                <h3><%= characters.name %></h3>
-                                            </div>
-                                            <div class="contentA">
-                                                <p><%= characters.description %></p>
-                                            </div>
-                                        </div>
-                                        <div class="imgA">
-                                            <% images.forEach(function(images) { %>
-                                                <img src="../content/<%= images %>" alt="">
-                                            <% }); %>   
-                                        </div>
-                                    </div> 
-                                <% }else{ %>    
-                                    <div class="containerDescriptionA">
-                                        <div class="contentDescriptionA">
-                                            <div class="txtA">
-                                                <h3><%= characters.name %></h3>
-                                            </div>
-                                            <div class="contentA ">
-                                                <p><%= characters.description %></p>
-                                            </div>
-                                        </div>
-                                        <div class="imgA">
-                                            <% images.forEach(function(images) { %>
-                                                <img src="../content/<%= images %>" alt="">
-                                            <% }); %>   
-                                        </div>
-                                    </div>   
-                                <% } %>   
-                            <% i++; }); %>                                        
+            <div class="containerCharacters">
+                <div class="contentInfo">                      
+                    <div class="textInfo">
+                        <div class="titleChart">
+                            <h3>Characters</h3>
                         </div>
+                        <% var i = 0; %>
+                        <% characters.forEach(function(characters) { %>
+                            <% var images = characters.images %>
+                            <% if(i%2==0){%>
+                                <div class="containerDescriptionA">
+                                    <div class="contentDescriptionA ">
+                                    </div>
+                                    <div class="imgA">
+                                        <% images.forEach(function(images) { %>
+                                            <img src="../content/<%= images %>" alt="">
+                                        <% }); %>   
+                                    </div>
+                                    <div class="txtA">
+                                        <h3><%= characters.name %></h3>
+                                    </div>
+                                    <div class="contentA">
+                                        <p><%= characters.description %></p>
+                                    </div>
+
+                                </div>
+                                </div> 
+                            <% }else{ %>    
+                                <div class="containerDescriptionA">
+                                    <div class="contentDescriptionA">
+                                    </div>
+                                    <div class="imgA">
+                                        <% images.forEach(function(images) { %>
+                                            <img src="../content/<%= images %>" alt="">
+                                        <% }); %>   
+                                    </div>
+                                    <div class="txtA">
+                                        <h3><%= characters.name %></h3>
+                                    </div>
+                                    <div class="contentA ">
+                                        <p><%= characters.description %></p>
+                                    </div>
+                                </div>   
+                            <% } %>   
+                        <% i++; }); %>                                        
                     </div>
                 </div>
-
-                <div class="containerMoreInfo">
-                    <div class="title">
-                        <p>Fondos</p>
-                    </div>
-
-                    <div class="imgAFondo">
-                        <% fondos.forEach(function(fondos) { %>
-                            <% imagesFondos = fondos.url %>  
-                            <% imagesFondos.forEach(function(imagesFondos) { %>
-                                <img src="../content/<%= imagesFondos %>" alt="">
-                            <% }); %>
+            </div>
+            <div class="titleChart">
+                <h3>Fondo</h3>
+            </div>
+            <div class="containerMoreInfo">
+                <div class="imgAFondo">
+                    <% fondos.forEach(function(fondos) { %>
+                        <% imagesFondos = fondos.url %>  
+                        <% imagesFondos.forEach(function(imagesFondos) { %>
+                            <img src="../content/<%= imagesFondos %>" alt="">
                         <% }); %>
-                    </div>
-
-                    <div class="title">
-                        <p>Ilustraciones</p>
-                    </div>
-                    
-                    <div id="illustrations">
-                        <% illustrations.forEach(function(illustrations) { let illustrationsImages = illustrations.url; let i = 0 %>
-                            <div class="textSinopsis">
-                                <p><%= illustrations.body %></p>
-                            </div>
-                            <div class="containerGalery">
-                                <% illustrationsImages.forEach(function(illustrationsImages) { %>
-                                    <% if(i == 0){ i++;%>
-                                        <div class="contentGalery">
-                                            <div class="infoGalery">
-                                                <img src="../content/<%= illustrationsImages %>" alt="">
-                                        </div>
-                                    <% }else{ %>   
-                                        <div class="infoGalery">
-                                            <img src="../content/<%= illustrationsImages %>" alt="">
-                                        </div>
-                                    <% }; %>
-                                <% }); %>
-                            </div>
-                        <% }); %>
-                    </div>
-                </div>
+                    <% }); %>
+                </div>                
+            </div>
+        </div>
     
     </div>
     
