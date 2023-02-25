@@ -1,6 +1,6 @@
 <% if(productions.length > 0){ %>
     <% productions.forEach(function(productions) { %>
-        <a href="/<%= idiom %>/produccion?template=<%= productions.template %>&id=<%= productions.id %>">
+        <a href="/<%= idiom %>/produccion?id=<%= productions.id %>">
             <div class="infoProduction">
                 <img src="../content/<%= productions.mainImage %>" alt="">
                 <p><%= productions.name %></p>
