@@ -40,6 +40,10 @@
                     <input type="file" name="mainImage" id="imgProduction">
                 </div>
                 <div class="optionFormProduction">
+                    <p>Minuatura (264X216):</p>
+                    <input type="file" name="miniature" id="imgProduction">
+                </div>
+                <div class="optionFormProduction">
                     <p>url video:</p>
                     <input type="url" name="video" id="video" value="<%= data[0].urlVideo %>" required>
                 </div>
@@ -52,19 +56,6 @@
                         <% }else{ %>
                             <option value="en">Inglés</option>
                             <option value="es" selected>Español</option>
-                        <% } %>
-                    </select>
-                    
-                </div>
-                <div class="optionFormProduction">
-                    <p>Plantilla</p>
-                    <select name="plantilla" id="plantilla" required>
-                        <% if(data[0].template == "1") { %>
-                            <option value="1" selected>Plantilla 1</option>
-                            <option value="2">Plantilla 2</option>
-                        <% }else{ %>
-                            <option value="1">Plantilla 1</option>
-                            <option value="2" selected>Plantilla 2</option>
                         <% } %>
                     </select>
                     

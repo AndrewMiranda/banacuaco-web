@@ -384,6 +384,7 @@ router.post("/dashboard/premieres/delete/:id", async(req, res) => {
             res.send({"status":200});
         } catch(err) {
             res.send({"status":500});
+            console.log(err);
         }
     }else{
         res.redirect("/dashboard?error=n");
@@ -495,6 +496,7 @@ router.post("/dashboard/galery/delete/:id", async(req, res) => {
             res.send({"status":200});
         } catch(err) {
             res.send({"status":500});
+            console.log(err);
         }
     }else{
         res.redirect("/dashboard?error=n");
@@ -599,6 +601,7 @@ router.post("/dashboard/usuarios/delete/:id", async(req, res) => {
 
         if (id == 1) {
             res.send({"status":500});
+            console.log(err);
         }else{
             let data = await pool.query(`DELETE FROM users WHERE users_id = ${id}`);
             res.send({"status":200});
@@ -681,14 +684,15 @@ router.post("/dashboard/production/create", async(req, res) => {
                     imageNameB = randomString.randomString(12);
                     continue;
                 } else {
-                    wrongName = 0;
+                    wrongNameB = 0;
                     continue
                 }
             }
 
-            imageName += ".jpeg"
+            imageName += ".jpeg";
             sharp(image.data).jpeg({ mozjpeg: true }).toFile(`./public/content/${imageName}`);
-            imageName += ".jpeg"
+
+            imageNameB += ".jpeg";
             sharp(miniature.data).jpeg({ mozjpeg: true }).toFile(`./public/content/${imageNameB}`);
 
             await pool.query("INSERT INTO `productions`(`name`, `language`, `format`, `year`, `mainImage`, `miniature`, `synopsis`, `urlVideo`) VALUES ('"+name+"','"+language+"','"+format+"','"+year+"','"+imageName+"', '"+imageNameB+"','"+description+"','"+video+"')");
@@ -744,13 +748,16 @@ router.post("/dashboard/production/editSynopsis/:id", async(req, res) => {
         
         if (req.files) {
             let image = req.files.mainImage;
+            let miniature = req.files.miniature;
 
             //Librería para nombre aleatorio para la imagen
             let randomString = require("../modules/randomString.js");
 
             let imageName = randomString.randomString(12);
+            let imageNameB = randomString.randomString(12);
 
             let wrongName = 1;
+            let wrongNameB = 1;
 
             while (wrongName == 1) {
                 let verifyName = await pool.query("SELECT url FROM `images` WHERE url = '"+imageName+".jpg'");
@@ -763,15 +770,29 @@ router.post("/dashboard/production/editSynopsis/:id", async(req, res) => {
                 }
             }
 
+            while (wrongNameB == 1) {
+                let verifyName = await pool.query("SELECT url FROM `images` WHERE url = '"+imageNameB+".jpg'");
+                if (verifyName.length > 0) {
+                    imageNameB = randomString.randomString(12);
+                    continue;
+                } else {
+                    wrongNameB = 0;
+                    continue
+                }
+            }
+
             imageName += ".jpeg"
             sharp(image.data).jpeg({ mozjpeg: true }).toFile(`./public/content/${imageName}`);
 
-            let data = await pool.query("UPDATE `productions` SET `name`='"+name+"',`language`='"+language+"',`format`='"+format+"',`year`='"+year+"',`synopsis`='"+description+"',`urlVideo`='"+video+"', `mainImage` = '"+imageName+"' WHERE `id` = "+id);
+            imageNameB += ".jpeg"
+            sharp(miniature.data).jpeg({ mozjpeg: true }).toFile(`./public/content/${imageNameB}`);
+
+            let data = await pool.query("UPDATE `productions` SET `name`='"+name+"',`language`='"+language+"',`format`='"+format+"',`year`='"+year+"',`synopsis`='"+description+"',`urlVideo`='"+video+"', `mainImage` = '"+imageName+"', `miniature` = '"+imageNameB+"' WHERE `id` = "+id);
             data = JSON.parse(JSON.stringify(data));
             res.redirect("/dashboard/editarProduccion?id="+id);
             
         }else{
-            let data = await pool.query("UPDATE `productions` SET `name`='"+name+"',`language`='"+language+"',`format`='"+format+"',`template`='"+template+"',`year`='"+year+"',`synopsis`='"+description+"',`urlVideo`='"+video+"' WHERE `id` = "+id);
+            let data = await pool.query("UPDATE `productions` SET `name`='"+name+"',`language`='"+language+"',`format`='"+format+"',`year`='"+year+"',`synopsis`='"+description+"',`urlVideo`='"+video+"' WHERE `id` = "+id);
             data = JSON.parse(JSON.stringify(data));
             res.redirect("/dashboard/editarProduccion?id="+id);
         }
@@ -801,6 +822,7 @@ router.post("/dashboard/productions/delete/:id", async(req, res) => {
                         await pool.query(`DELETE FROM images WHERE id = ${iterator.id}`);
                     } catch (error) {
                         res.send({"status":500});
+                        console.log(err);
                     }
                 }
             }
@@ -818,11 +840,13 @@ router.post("/dashboard/productions/delete/:id", async(req, res) => {
                 await pool.query(`DELETE FROM productions WHERE id = ${id}`);
             } catch (error) {
                 res.send({"status":500});
+                console.log(err);
             }
 
             res.send({"status":200});
         } catch (error) {
             res.send({"status":500});   
+            console.log(err);
         }
     }else{
         res.redirect("/dashboard?error=n");
@@ -1158,6 +1182,7 @@ router.post("/dashboard/character/delete/:id", async(req, res) => {
         } catch(err) {
             console.log(err)
             res.send({"status":500});
+            console.log(err);
         }
         
     }else{
@@ -1305,6 +1330,7 @@ router.post("/dashboard/background/delete/:idProd", async(req, res) => {
             res.send({"status":200});
         } catch (error) {
             res.send({"status":500});
+            console.log(err);
         }
     }else{
         res.redirect("/dashboard?error=n");
