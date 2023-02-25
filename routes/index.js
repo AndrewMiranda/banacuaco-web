@@ -1964,6 +1964,79 @@ router.post("/dashboard/team/delete/:id", async(req, res) => {
     }
 });
 
+router.get("/dashboard/editarEquipo", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        let id = req.query.id;
+
+        let data = await pool.query("SELECT * FROM `team` WHERE id = "+id);
+        data = JSON.parse(JSON.stringify(data));
+
+        res.render("dashboard/editTeam", {user: user, data: data});
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
+});
+
+router.post("/dashboard/team/edit/:id", async(req, res) => {
+    //Verificación de sesión
+    let controlUser = require("../modules/dashboard/login");
+
+    if(controlUser.verify(req, res) == true){
+        user = req.cookies.userday;
+
+        let id = req.params.id;
+
+        let name = req.body.name;
+        let cargoEn = req.body.cargoen;
+        let cargoEs = req.body.cargoes;
+
+        if (req.files) {
+            let randomString = require("../modules/randomString.js");
+            let image = req.files.image;
+
+            let imageName = randomString.randomString(12);
+
+            let wrongName = 1;
+
+            while (wrongName == 1) {
+                let verifyName = await pool.query("SELECT url FROM `team` WHERE url = '"+imageName+".jpg'");
+                if (verifyName.length > 0) {
+                    imageName = randomString.randomString(12);
+                    continue;
+                } else {
+                    wrongName = 0;
+                    continue
+                }
+            }
+
+            imageName += ".jpeg";
+
+            try {
+                sharp(image.data).jpeg({ mozjpeg: true }).toFile(`./public/content/team/${imageName}`);
+                await pool.query(`UPDATE team SET url ='${imageName}' ,name ='${name}',cargo_en='${cargoEn}',cargo_es='${cargoEs}' WHERE id = ${id}`);
+                res.redirect("/dashboard/team");
+            } catch(err) {
+                res.redirect("/dashboard/team");
+            }
+        }else{
+            try {
+                await pool.query(`UPDATE team SET name ='${name}',cargo_en='${cargoEn}',cargo_es='${cargoEs}' WHERE id = ${id}`);
+                res.redirect("/dashboard/team");
+            } catch(err) {
+                res.redirect("/dashboard/team");
+            }
+        }
+    }else{
+        res.redirect("/dashboard?error=n");
+    }
+});
+
+
 router.get("/dashboard/services", (req, res) => {
         //Verificación de sesión
         let controlUser = require("../modules/dashboard/login");

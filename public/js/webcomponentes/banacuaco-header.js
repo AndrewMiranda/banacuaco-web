@@ -208,7 +208,28 @@ export function createheaderbanacuaco() {
                     	width: 35px;
                 	}
                 }
-                
+
+                @media screen and (max-width: 540px) {
+                    .contentMenu a p{
+                        font-family: "arnold";
+                        color: #80240B;
+                        font-size: 6vw;
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 100px;
+                    }
+                }
+
+                @media screen and (max-width: 395px) {
+                    .contentMenu a p{
+                        font-family: "arnold";
+                        color: #80240B;
+                        font-size: 7vw;
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 100px;
+                    }
+                }
                 </style>`
         }
 

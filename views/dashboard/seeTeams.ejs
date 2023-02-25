@@ -13,6 +13,39 @@
             color: #653392;
             height: 210px;
         }
+
+        .icons{
+            display: flex;
+            margin-top: -20%;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+
+        .iconsImgEdit,
+        .iconsImgDelete{
+            background: #00000060;
+            z-index: 100;
+            position: relative;
+            padding: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .iconsImgEdit, .iconsImgEdit img, .iconsImgDelete img{
+            box-shadow: none;
+        }
+
+        .iconsImgEdit:hover,
+        .iconsImgDelete:hover{
+            background-color: #000000;
+        }
+
+        .iconsImgEdit img,
+        .iconsImgDelete img{
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -35,8 +68,13 @@
                 <% data.forEach(function(data) { %>
                     <div class="imgGalery" id="row-<%= data.id %>">
                         <img src="../content/team/<%= data.url %>" alt="">
-                        <div class="iconsImg">
-                            <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert(<%= data.id %>, 'team');">
+                        <div class="icons">
+                            <div class="iconsImgEdit">
+                                <a href="/dashboard/editarEquipo?id=<%= data.id %>"><img src="../images/editCrud.svg" alt="" ></a>
+                            </div>
+                            <div class="iconsImgDelete">
+                                <img src="../images/deleteCrud.svg" alt=""  onclick="deleteAlert(<%= data.id %>, 'team');">
+                            </div>
                         </div>
                         <br>
                         <p><%= data.name %></p>
