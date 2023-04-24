@@ -74,7 +74,7 @@ router.get('/:idioma/producciones', async(req, res) => {
     let idioma = req.params.idioma;
     if(idioma == undefined) idioma = defaultLanguage;
 
-    let data =  await pool.query("SELECT a.id, a.name, a.year, b.name AS format, a.mainImage FROM `productions` AS a LEFT JOIN formats AS b ON b.id = a.format WHERE a.language = '"+idioma+"'");
+    let data =  await pool.query("SELECT a.id, a.name, a.year, b.name AS format, a.miniature FROM `productions` AS a LEFT JOIN formats AS b ON b.id = a.format WHERE a.language = '"+idioma+"'");
 
     res.render(idioma+'/productions', { title: 'nosotros', idiom: idioma, productions : data});
 });
@@ -130,7 +130,7 @@ router.get('/:idioma/produccion', async(req, res) => {
         fondos = imagesBackground;
     }
 
-    res.render(idioma+'/productionEspc', { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: dataCharacters, fondos: fondos});
+    res.render(idioma+'/productionEspc1', { idiom: idioma, production: data[0], ideaImages: ideaImages, charactersSection: charactersSection, characters: dataCharacters, fondos: fondos});
 });
 
 router.get('/:idioma/galeria', async (req, res) => {
@@ -465,8 +465,8 @@ router.post("/dashboard/galery/create", async(req, res) => {
         imageName += ".jpeg";
         imageName2 += ".jpeg";
 
-        sharp(image.data).jpeg({ mozjpeg: true }).toFile(`./public/content/${imageName}`);
-        sharp(miniature.data).jpeg({ mozjpeg: true }).toFile(`./public/content/${imageName2}`);
+        await sharp(image.data).jpeg({ mozjpeg: true }).toFile(`./public/content/${imageName}`);
+        await sharp(miniature.data).jpeg({ mozjpeg: true }).toFile(`./public/content/${imageName2}`);
         
         await pool.query(`INSERT INTO images(url, miniature ,idiom, author, descEn, descEs) VALUES ('${imageName}', '${imageName2}', 'en', '${autor}', '${descriptionEn}', '${descriptionEs}')`);
 
@@ -1290,7 +1290,7 @@ router.post("/dashboard/backgroundImage/add/:idProd", async(req, res) => {
         //Librería para nombre aleatorio para la imagen
         let randomString = require("../modules/randomString.js");
         let imageName = randomString.randomString(12);
-
+        
         let wrongName = 1;
         while (wrongName == 1) {
             let verifyName = await pool.query("SELECT url FROM `images` WHERE url = '"+imageName+".jpg'");

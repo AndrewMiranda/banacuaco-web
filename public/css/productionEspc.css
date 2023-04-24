@@ -68,7 +68,7 @@
     margin-top: 100px;
     width: 112%;
     margin-left: -6%;
-    padding: 1%;  
+    padding: 3%;  
     background-color: #FFBD00;
 }
 
@@ -204,6 +204,7 @@
 
 .imgAFondo img{
     width: 100%;
+    margin-bottom: 1%;
     padding: 0 5%;
     object-fit: cover;
 }
@@ -309,7 +310,7 @@
 
 }
 
-@media screen and (min-width: 480px) and (max-width:  768px){
+@media screen and (min-width: 280px) and (max-width:  900px){
     /*galeria*/
     .contentGalery{
         display: grid;
@@ -317,13 +318,14 @@
     }
     /***/
 
-    .imgService video {
+    .imgService iframe {
         width: 300px;
     }
 
     .franjaServices{
     width: 200%;
     margin-left: -50%;
+    padding: 6%;
     }
     .imgHome img {
         width: 60%;
@@ -405,6 +407,3 @@
     padding-bottom: 15px;
     font-family: "roboto-bold";
 }
-
-
-    
